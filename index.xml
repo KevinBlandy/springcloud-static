@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SpringCloud中文社区 on</title><link>https://www.springcloud.io/</link><description>Recent content in SpringCloud中文社区 on</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Tue, 06 Oct 2020 08:47:36 +0000</lastBuildDate><atom:link href="https://www.springcloud.io/index.xml" rel="self" type="application/rss+xml"/><item><title>关于我们</title><link>https://www.springcloud.io/about/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://www.springcloud.io/about/</guid><description>SpringCloud中文社区(springcloud.io)，提供免费的中文文档。
-英文水平有限，使用 Deepl 人工进行翻译。
 只要官方发布新版本，就会跟进更新。
-如果你觉得翻译的内容有改进之处，欢迎提交PR帮助我们完善，非常感谢。
+如果你觉得翻译的内容有改进之处，欢迎联系我们帮助完善，非常感谢。
 联系 t486597@gmail.com
-kevinblandy.cn@gmail.com</description></item><item><title>感谢你们的贡献</title><link>https://www.springcloud.io/thanks/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://www.springcloud.io/thanks/</guid><description/></item><item><title>行业资讯</title><link>https://www.springcloud.io/blog/</link><pubDate>Tue, 06 Oct 2020 08:49:55 +0000</pubDate><guid>https://www.springcloud.io/blog/</guid><description/></item><item><title>Docs</title><link>https://www.springcloud.io/docs/</link><pubDate>Tue, 06 Oct 2020 08:48:23 +0000</pubDate><guid>https://www.springcloud.io/docs/</guid><description/></item></channel></rss>
+kevinblandy.cn@gmail.com
+QQ群： undefined
+微信群： undefined</description></item><item><title>感谢你们的贡献</title><link>https://www.springcloud.io/thanks/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://www.springcloud.io/thanks/</guid><description/></item><item><title>翻译计划</title><link>https://www.springcloud.io/translation/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://www.springcloud.io/translation/</guid><description>Spring无疑是Java界王者级别的框架，这么优秀的一个框架。官方一直没提供中文文档。
+网上零零散散有一些，但是大都是“谷歌翻译”后的内容。而且已经长久没有更新，版本比较落后。
+为了填补这一空白。所以，我们打算来做这个事情：对Spring系列框架的官方文档进行翻译，并且及时更新版本
+如果你也有兴趣参与，欢迎加入我们，在我们相互协作的一个过程中，完成对英文文档的翻译，这本身就是对Spring系列框架的一种深入学习。
+英语不好？没任何关系，只要你是技术开发，配合一些优秀的翻译工具，连蒙带猜也能清楚的知道技术文档所表达的意思。然后只需要把“生硬的中文翻译结果”修改为“技术人通俗易懂”的词汇就好了。</description></item><item><title>行业资讯</title><link>https://www.springcloud.io/blog/</link><pubDate>Tue, 06 Oct 2020 08:49:55 +0000</pubDate><guid>https://www.springcloud.io/blog/</guid><description/></item><item><title>Docs</title><link>https://www.springcloud.io/docs/</link><pubDate>Tue, 06 Oct 2020 08:48:23 +0000</pubDate><guid>https://www.springcloud.io/docs/</guid><description/></item></channel></rss>

@@ -1,0 +1,899 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=preload as=font href=https://www.springcloud.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=https://www.springcloud.io/fonts/vendor/jost/jost-v4-latin-700.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=https://www.springcloud.io/main.9f315399c0f37ff319ccd4f40971e41d0dfcc09c1b1bb649eaa98747dc2f68d3bfb6b943ada8a6d6e219696da36f93cf3b667dcc6b01c32c02bd77da51b3bf7c.css integrity="sha512-nzFTmcDzf/MZzNT0CXHkHQ38wJwbG7ZJ6qmHR9wvaNO/trlDraim1uIZaW2jb5PPO2Z9zGsBwywCvXfaUbO/fA==" crossorigin=anonymous><noscript><style>img.lazyload{display:none}</style></noscript><meta name=keywords content="springcloud官方,springcloud中文文档,springcloud最新文档,springcloud中国"><meta name=robots content="index, follow"><meta name=googlebot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name=bingbot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><title>Spring Cloud Sleuth - SpringCloud中文社区</title><meta name=description content="Spring Cloud Sleuth为分布式追踪提供了Spring Boot的自动配置。"><link rel=canonical href=https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/><meta property="og:locale" content="zh-CN"><meta property="og:type" content="article"><meta property="og:title" content="Spring Cloud Sleuth"><meta property="og:description" content="Spring Cloud Sleuth为分布式追踪提供了Spring Boot的自动配置。"><meta property="og:url" content="https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/"><meta property="og:site_name" content="SpringCloud中文社区"><meta property="article:published_time" content="2020-11-12T13:26:54+01:00"><meta property="article:modified_time" content="2020-11-12T13:26:54+01:00"><meta property="og:image" content="https://www.springcloud.io/doks.png"><meta property="og:image:alt" content="SpringCloud中文社区"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@getdoks"><meta name=twitter:creator content="@henkverlinde"><meta name=twitter:title content="Spring Cloud Sleuth"><meta name=twitter:description content="Spring Cloud Sleuth为分布式追踪提供了Spring Boot的自动配置。"><meta name=twitter:image content="https://www.springcloud.io/doks.png"><meta name=twitter:image:alt content="Spring Cloud Sleuth"><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.springcloud.io/#/schema/organization/1","name":"Doks","url":"https://www.springcloud.io/","sameAs":["https://twitter.com/kevinblandy","https://github.com/KevinBlandy"],"logo":{"@type":"ImageObject","@id":"https://www.springcloud.io/#/schema/image/1","url":"https://www.springcloud.io/logo-doks.png","width":512,"height":512,"caption":"Doks"},"image":{"@id":"https://www.springcloud.io/#/schema/image/1"}},{"@type":"WebSite","@id":"https://www.springcloud.io/#/schema/website/1","url":"https://www.springcloud.io/","name":"SpringCloud中文社区","description":"SpringCloud中文社区专注于文档汉化，更新，以及行业前沿资讯的发布。","publisher":{"@id":"https://www.springcloud.io/#/schema/organization/1"}},{"@type":"WebPage","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/","url":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/","name":"Spring Cloud Sleuth","description":"Spring Cloud Sleuth为分布式追踪提供了Spring Boot的自动配置。","isPartOf":{"@id":"https://www.springcloud.io/#/schema/website/1"},"about":{"@id":"https://www.springcloud.io/#/schema/organization/1"},"datePublished":"2020-11-12T13:26:54CET","dateModified":"2020-11-12T13:26:54CET","breadcrumb":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/#/schema/breadcrumb/1"},"primaryImageOfPage":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/#/schema/image/2"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/"]}]},{"@type":"BreadcrumbList","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/#/schema/breadcrumb/1","name":"Breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.springcloud.io","url":"https://www.springcloud.io","name":"Home"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.springcloud.io/docs/","url":"https://www.springcloud.io/docs/","name":"Docs"}},{"@type":"ListItem","position":4,"item":{"@type":"WebPage","@id":"https://www.springcloud.io/docs/springcloud/","url":"https://www.springcloud.io/docs/springcloud/","name":"Springcloud"}},{"@type":"ListItem","position":5,"item":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/"}}]},{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.springcloud.io/#/schema/article/1","headline":"Spring Cloud Sleuth","description":"Spring Cloud Sleuth为分布式追踪提供了Spring Boot的自动配置。","isPartOf":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/"},"mainEntityOfPage":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/"},"datePublished":"2020-11-12T13:26:54CET","dateModified":"2020-11-12T13:26:54CET","author":{"@id":"https://www.springcloud.io/#/schema/person/2"},"publisher":{"@id":"https://www.springcloud.io/#/schema/organization/1"},"image":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/#/schema/image/2"}}]},{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://www.springcloud.io/#/schema/person/2","name":"kevinblandy","sameAs":["https://twitter.com/kevinblandy","https://github.com/KevinBlandy"]}]},{"@context":"https://schema.org","@graph":[{"@type":"ImageObject","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/#/schema/image/2","url":"https://www.springcloud.io/doks.png","contentUrl":"https://www.springcloud.io/doks.png","caption":"Spring Cloud Sleuth"}]}]}</script><meta name=theme-color content="#fff"><link rel=apple-touch-icon sizes=180x180 href=https://www.springcloud.io/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://www.springcloud.io/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://www.springcloud.io/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=https://www.springcloud.io/site.webmanifest><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?d725343fdb7604c5bd89b377295901df",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></head><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" type=checkbox id=menu-btn>
+<label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://www.springcloud.io/>SpringCloud中文社区</a>
+<button id=mode class="btn btn-link order-2 order-md-4" type=button aria-label="Toggle mode">
+<span class=toggle-dark><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><span class=toggle-light><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span></button><ul class="navbar-nav social-nav order-3 order-md-5"></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class=nav-item><a class=nav-link href=https://www.springcloud.io/docs/>中文文档</a></li><li class=nav-item><a class=nav-link href=https://www.springcloud.io/blog/>行业资讯</a></li></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input id=userinput class="form-control is-search" type=search placeholder="Search docs..." aria-label="Search docs..." autocomplete=off><div id=suggestions class="shadow bg-white rounded"></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav class=docs-links aria-label="Main navigation"><ul class="list-unstyled collapsible-sidebar"><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-SpringBoot aria-expanded=false>
+SpringBoot</button></li><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-SpringCloud aria-expanded=true>
+SpringCloud</button><div class="collapse show" id=section-SpringCloud><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-alibaba/>Spring Cloud Alibaba</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-bus/>Spring Cloud Bus</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-circuit-breaker/>Spring Cloud Circuit Breaker</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-config/>Spring Cloud Config</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-consul/>Spring Cloud Consul</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-gateway/>Spring Cloud Gateway</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-kubernetes/>Spring Cloud Kubernetes</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-netflix/>Spring Cloud Netflix</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-openfeign/>Spring Cloud OpenFeign</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-security-/>Spring Cloud Security</a></li><li><a class="docs-link rounded active" href=https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/>Spring Cloud Sleuth</a></li></ul></div></li></ul></nav></div><nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#1-法律条款>1. 法律条款</a></li><li><a href=#2-开始使用>2. 开始使用</a><ul><li><a href=#21-spring-cloud-sleuth-介绍>2.1. Spring Cloud Sleuth 介绍</a></li><li><a href=#22-发你的第一个基于spring-cloud-sleuth的应用程序>2.2. 发你的第一个基于Spring Cloud sleuth的应用程序</a></li><li><a href=#23-接下来的步骤>2.3. 接下来的步骤</a></li></ul></li><li><a href=#3-使用-spring-cloud-sleuth>3. 使用 Spring Cloud Sleuth</a><ul><li><a href=#31-span生的命周期和spring-cloud-sleuth的api>3.1. Span生的命周期和Spring Cloud Sleuth的API</a></li><li><a href=#32-spans-命名>3.2. Spans 命名</a></li><li><a href=#33-用注解管理span>3.3. 用注解管理Span</a></li><li><a href=#34-接下来要读什么>3.4. 接下来要读什么</a></li></ul></li><li><a href=#4-spring-cloud-sleuth的特性>4. Spring Cloud Sleuth的特性</a><ul><li><a href=#41-context-传播>4.1. Context 传播</a></li><li><a href=#42-采样>4.2. 采样</a></li><li><a href=#43-baggage>4.3. Baggage</a></li><li><a href=#44-openzipkin-brave-tracer集成>4.4. OpenZipkin Brave Tracer集成</a></li><li><a href=#45-向zipkin发送span>4.5. 向Zipkin发送Span</a></li><li><a href=#46-日志整合>4.6. 日志整合</a></li><li><a href=#47-接下来要读的内容>4.7. 接下来要读的内容</a></li></ul></li><li><a href=#5-how-to-guides>5. “How-to” Guides</a><ul><li><a href=#51-如何用brave设置sleuth>5.1. 如何用Brave设置Sleuth？</a></li><li><a href=#52-如何通过http设置sleuth与brave--zipkin>5.2. 如何通过HTTP设置Sleuth与Brave & Zipkin？</a></li></ul></li><li><a href=#53-如何通过信息传递将sleuth与brave--zipkin设置在一起>5.3. 如何通过信息传递将Sleuth与Brave & Zipkin设置在一起？</a><ul><li><a href=#54-如何在一个外部系统中看到span>5.4. 如何在一个外部系统中看到Span？</a></li><li><a href=#55-如何使resttemplatewebclient等工作>5.5. 如何使RestTemplate、WebClient等。工作？</a></li><li><a href=#56-如何在http服务器响应中添加头信息>5.6. 如何在HTTP服务器响应中添加头信息？</a></li><li><a href=#57-如何自定义http客户端的span>5.7. 如何自定义HTTP客户端的Span？</a></li><li><a href=#58-如何自定义http服务器的span>5.8. 如何自定义HTTP服务器的Span？</a></li><li><a href=#59-如何在日志中看到应用程序的名称>5.9. 如何在日志中看到应用程序的名称？</a></li><li><a href=#510-how-to-change-the-context-propagation-mechanism>5.10. How to Change The Context Propagation Mechanism?</a></li><li><a href=#511-如何实现我自己的追踪器>5.11. 如何实现我自己的追踪器？</a></li></ul></li><li><a href=#6-spring-cloud-sleuth的定制>6. Spring Cloud Sleuth的定制</a><ul><li><a href=#61-异步通信>6.1. 异步通信</a></li><li><a href=#62-http客户端集成>6.2. HTTP客户端集成</a></li><li><a href=#63-http服务器集成>6.3. HTTP服务器集成</a></li><li><a href=#64-messaging>6.4. Messaging</a></li><li><a href=#65-openfeign>6.5. OpenFeign</a></li><li><a href=#66-opentracing>6.6. OpenTracing</a></li><li><a href=#67-quartz>6.7. Quartz</a></li><li><a href=#68-reactor>6.8. Reactor</a></li><li><a href=#69-redis>6.9. Redis</a></li><li><a href=#610-runnable-and-callable>6.10. Runnable and Callable</a></li><li><a href=#611-rpc>6.11. RPC</a></li><li><a href=#612-rxjava>6.12. RxJava</a></li><li><a href=#613-spring-cloud-circuitbreaker>6.13. Spring Cloud CircuitBreaker</a></li></ul></li><li><a href=#7-配置属性>7. 配置属性</a></li></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><nav aria-label=breadcrumb><ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.springcloud.io/>Home</a></li><li class=breadcrumb-item><a href=https://www.springcloud.io/docs/>Docs</a></li><li class=breadcrumb-item><a href=https://www.springcloud.io/docs/springcloud/>SpringCloud</a></li><li class="breadcrumb-item active" aria-current=page>Spring Cloud Sleuth</li></ol></nav><h1>Spring Cloud Sleuth</h1><p class=lead></p><ul><li>当前版本：3.0.3</li><li>修改时间：2021年7月23日</li><li>官方文档：<a href=https://docs.spring.io/spring-cloud-sleuth/docs/current/reference/html/>https://docs.spring.io/spring-cloud-sleuth/docs/current/reference/html/</a></li><li>源码仓库：<a href=https://github.com/spring-cloud/spring-cloud-sleuth>https://github.com/spring-cloud/spring-cloud-sleuth</a></li></ul><h2 id=1-法律条款>1. 法律条款<a href=#1-法律条款 class=anchor aria-hidden=true>#</a></h2><p>本文件的副本可供你自己使用和分发给其他人，但你不得对这些副本收取任何费用，而且每份副本都要包含本版权声明，无论是以印刷品还是电子方式分发。</p><h2 id=2-开始使用>2. 开始使用<a href=#2-开始使用 class=anchor aria-hidden=true>#</a></h2><p>如果你刚开始使用Spring Cloud Sleuth或Spring，请先阅读本节。它回答了 &ldquo;什么？"、&ldquo;如何？&ldquo;和 &ldquo;为什么？&ldquo;等基本问题。它包括对Spring Cloud Sleuth的介绍，以及安装说明。然后，我们将引导你构建你的第一个Spring Cloud Sleuth应用程序，在此过程中讨论一些核心原则。</p><h3 id=21-spring-cloud-sleuth-介绍>2.1. Spring Cloud Sleuth 介绍<a href=#21-spring-cloud-sleuth-介绍 class=anchor aria-hidden=true>#</a></h3><p>Spring Cloud Sleuth为<a href=https://cloud.spring.io/>Spring Cloud</a>提供分布式追踪解决方案的API。它与<a href=https://github.com/openzipkin/brave>OpenZipkin Brave</a> 集成</p><p>Spring Cloud Sleuth能够追踪你的请求和消息，这样你就可以将该通信与相应的日志条目联系起来。你还可以将追踪信息导出到外部系统，以可视化延迟。Spring Cloud Sleuth直接支持<a href=https://zipkin.io/>OpenZipkin</a>兼容系统。</p><h4 id=211-术语介绍>2.1.1. 术语介绍<a href=#211-术语介绍 class=anchor aria-hidden=true>#</a></h4><p>Spring Cloud Sleuth 借鉴了 <a href=https://research.google.com/pubs/pub36356.html>Dapper’s</a> 术语表.</p><p><strong>Span</strong>: 工作的基本单位。例如，发送一个RPC是一个新的跨度，正如发送对RPC的响应一样。span也有其他数据，如描述、有时间戳的事件、键值注释（标签）、引起它们的span的ID和进程ID（通常是IP地址）。</p><p>跨度可以被启动和停止，并保持跟踪其时间信息。一旦你创建了一个跨度，你必须在未来的某个时间点停止它。</p><p><strong>Tree</strong>：一组跨度形成一个树状结构。例如，如果你运行一个分布式大数据存储，一个跟踪可能由一个PUT请求形成。</p><p><strong>Annotation/Event</strong>：用来记录一个事件在时间上的存在。</p><p>从概念上讲，在一个典型的RPC场景中，我们标记这些事件是为了强调发生了什么样的动作（这并不意味着在物理上这样的事件会被设置在一个跨度上）。</p><ul><li><strong>cs</strong>：客户端发送。客户端已经发出了请求。这个注解表示跨度的开始。</li><li><strong>sr</strong>：服务器收到了。服务器端得到了请求并开始处理它。从这个时间戳中减去<code>cs</code>时间戳可以看出网络延迟。</li><li><strong>ss</strong>：服务器发送。在请求处理完成后的注释（当响应被发回给客户端）。从这个时间戳中减去<code>sr</code>时间戳，可以看出服务器端处理该请求所需的时间。</li><li><strong>cr</strong>：客户端收到了。标志着跨度的结束。客户端已成功收到服务器端的响应。从这个时间戳中减去<code>cs</code>时间戳，显示出客户端从服务器端接收响应所需的全部时间。</li></ul><p>下图显示了<strong>Span</strong>和<strong>Trace</strong>在一个系统中的样子。</p><p><img src=https://cdn.jsdelivr.net/gh/KevinBlandy/springcloud-images/2021/07/24/b4a2078f5e0c4b7aa82691e6a4cf33f3.png alt=" "></p><p>一个<code>note</code>的每种颜色代表一个跨度（有七个跨度&ndash;从<strong>A</strong>到<strong>G</strong>）。请看下面这个<code>note</code>。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>Trace Id = X
+Span Id = D
+Client Sent
+</code></pre></div><p>这个说明表明，当前跨度的<strong>Trace Id</strong>设置为<strong>X</strong>，<strong>Span Id</strong>设置为<strong>D</strong>。另外，从RPC的角度来看，发生了 <code>Client Sen</code>事件。</p><p>让我们考虑更多的note。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>Trace Id = X
+Span Id = A
+(no custom span)
+
+Trace Id = X
+Span Id = C
+(custom span)
+</code></pre></div><p>你可以继续使用已创建的跨度（<code>no custom span</code>的例子），或者你可以手动创建子跨度（有<code>custom span</code>指示的例子）。</p><p>下面的图片显示了跨度的父子关系的样子。</p><p><img src=https://cdn.jsdelivr.net/gh/KevinBlandy/springcloud-images/2021/07/24/a4c26b86588447759c6f6baa744b256b.png alt=" "></p><h3 id=22-发你的第一个基于spring-cloud-sleuth的应用程序>2.2. 发你的第一个基于Spring Cloud sleuth的应用程序<a href=#22-发你的第一个基于spring-cloud-sleuth的应用程序 class=anchor aria-hidden=true>#</a></h3><p>本节介绍了如何开发一个小型的 &ldquo;Hello World!&ldquo;网络应用，其中突出了Spring Cloud Sleuth的一些关键功能。我们使用Maven来构建这个项目，因为大多数IDE都支持它。作为追踪器的实现，我们将使用<a href=https://github.com/openzipkin/brave>OpenZipkin Brave</a>。</p><blockquote><p>你可以通过进入<a href=https://start.spring.io/>start.spring.io</a>并从依赖项搜索器中选择 <code>Web</code>和 <code>Spring Cloud Sleuth</code> 启动器来缩短下面的步骤。这样做会生成一个新的项目结构，这样你就可以<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#getting-started-first-application-code>立即开始编码</a>。</p></blockquote><h4 id=221-创建-pom>2.2.1. 创建 POM<a href=#221-创建-pom class=anchor aria-hidden=true>#</a></h4><p>我们需要先创建一个Maven pom.xml文件。pom.xml是用于构建项目的配置。打开你喜欢的文本编辑器，添加以下内容。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class=nt>&lt;project</span> <span class=na>xmlns=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0&#34;</span> <span class=na>xmlns:xsi=</span><span class=s>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+    <span class=na>xsi:schemaLocation=</span><span class=s>&#34;http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd&#34;</span><span class=nt>&gt;</span>
+    <span class=nt>&lt;modelVersion&gt;</span>4.0.0<span class=nt>&lt;/modelVersion&gt;</span>
+
+    <span class=nt>&lt;groupId&gt;</span>com.example<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>myproject<span class=nt>&lt;/artifactId&gt;</span>
+    <span class=nt>&lt;version&gt;</span>0.0.1-SNAPSHOT<span class=nt>&lt;/version&gt;</span>
+
+    <span class=nt>&lt;parent&gt;</span>
+        <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+        <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-parent<span class=nt>&lt;/artifactId&gt;</span>
+        <span class=c>&lt;!-- Use the latest compatible Spring Boot version. You can check https://spring.io/projects/spring-cloud for more information --&gt;</span>
+        <span class=nt>&lt;version&gt;</span>2.4.6<span class=nt>&lt;/version&gt;</span>
+    <span class=nt>&lt;/parent&gt;</span>
+
+    <span class=c>&lt;!-- Spring Cloud Sleuth requires a Spring Cloud BOM --&gt;</span>
+    <span class=nt>&lt;dependencyManagement&gt;</span>
+        <span class=nt>&lt;dependencies&gt;</span>
+            <span class=nt>&lt;dependency&gt;</span>
+                <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+                <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+                <span class=c>&lt;!-- Provide the latest stable Spring Cloud release train version (e.g. 2020.0.0) --&gt;</span>
+                <span class=nt>&lt;version&gt;</span>${release.train.version}<span class=nt>&lt;/version&gt;</span>
+                <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+                <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+            <span class=nt>&lt;/dependency&gt;</span>
+        <span class=nt>&lt;/dependencies&gt;</span>
+    <span class=nt>&lt;/dependencyManagement&gt;</span>
+
+    <span class=c>&lt;!-- (you don&#39;t need this if you are using a GA version) --&gt;</span>
+    <span class=nt>&lt;repositories&gt;</span>
+        <span class=nt>&lt;repository&gt;</span>
+            <span class=nt>&lt;id&gt;</span>spring-snapshots<span class=nt>&lt;/id&gt;</span>
+            <span class=nt>&lt;url&gt;</span>https://repo.spring.io/snapshot<span class=nt>&lt;/url&gt;</span>
+            <span class=nt>&lt;snapshots&gt;&lt;enabled&gt;</span>true<span class=nt>&lt;/enabled&gt;&lt;/snapshots&gt;</span>
+        <span class=nt>&lt;/repository&gt;</span>
+        <span class=nt>&lt;repository&gt;</span>
+            <span class=nt>&lt;id&gt;</span>spring-milestones<span class=nt>&lt;/id&gt;</span>
+            <span class=nt>&lt;url&gt;</span>https://repo.spring.io/milestone<span class=nt>&lt;/url&gt;</span>
+        <span class=nt>&lt;/repository&gt;</span>
+    <span class=nt>&lt;/repositories&gt;</span>
+    <span class=nt>&lt;pluginRepositories&gt;</span>
+        <span class=nt>&lt;pluginRepository&gt;</span>
+            <span class=nt>&lt;id&gt;</span>spring-snapshots<span class=nt>&lt;/id&gt;</span>
+            <span class=nt>&lt;url&gt;</span>https://repo.spring.io/snapshot<span class=nt>&lt;/url&gt;</span>
+        <span class=nt>&lt;/pluginRepository&gt;</span>
+        <span class=nt>&lt;pluginRepository&gt;</span>
+            <span class=nt>&lt;id&gt;</span>spring-milestones<span class=nt>&lt;/id&gt;</span>
+            <span class=nt>&lt;url&gt;</span>https://repo.spring.io/milestone<span class=nt>&lt;/url&gt;</span>
+        <span class=nt>&lt;/pluginRepository&gt;</span>
+    <span class=nt>&lt;/pluginRepositories&gt;</span>
+<span class=nt>&lt;/project&gt;</span>
+</code></pre></div><p>前面的列表应该给你一个工作的构建。你可以通过运行<code>mvn package</code>来测试它（现在，你可以忽略 &ldquo;“jar will be empty - no content was marked for inclusion!&ldquo;的警告）。</p><blockquote><p>这时，你可以把项目导入IDE（大多数现代Java IDE都包含对Maven的内置支持）。为简单起见，我们在本例中继续使用纯文本编辑器。</p></blockquote><h4 id=222-adding-classpath-依赖>2.2.2. Adding Classpath 依赖<a href=#222-adding-classpath-依赖 class=anchor aria-hidden=true>#</a></h4><p>要添加必要的依赖，编辑你的<code>pom.xml</code>并在<code>parent</code>部分下面添加<code>spring-boot-starter-web</code>依赖。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencies&gt;</span>
+    <span class=c>&lt;!-- Boot&#39;s Web support --&gt;</span>
+    <span class=nt>&lt;dependency&gt;</span>
+        <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
+        <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-web<span class=nt>&lt;/artifactId&gt;</span>
+    <span class=nt>&lt;/dependency&gt;</span>
+    <span class=c>&lt;!-- Sleuth with Brave tracer implementation --&gt;</span>
+    <span class=nt>&lt;dependency&gt;</span>
+        <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+        <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-sleuth<span class=nt>&lt;/artifactId&gt;</span>
+    <span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;/dependencies&gt;</span>
+</code></pre></div><h4 id=223-编写代码>2.2.3. 编写代码<a href=#223-编写代码 class=anchor aria-hidden=true>#</a></h4><p>为了完成我们的应用，我们需要创建一个单独的Java文件。默认情况下，Maven从<code>src/main/java</code>编译源代码，所以你需要创建该目录结构，然后添加一个名为<code>src/main/java/Example.java</code>的文件，包含以下代码。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.slf4j.Logger</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.slf4j.LoggerFactory</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.boot.*</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.boot.autoconfigure.*</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.web.bind.annotation.*</span><span class=o>;</span>
+
+<span class=nd>@RestController</span>
+<span class=nd>@EnableAutoConfiguration</span>
+<span class=kd>public</span> <span class=kd>class</span> <span class=nc>Example</span> <span class=o>{</span>
+
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Logger</span> <span class=n>log</span> <span class=o>=</span> <span class=n>LoggerFactory</span><span class=o>.</span><span class=na>getLogger</span><span class=o>(</span><span class=n>Backend</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+
+    <span class=nd>@RequestMapping</span><span class=o>(</span><span class=s>&#34;/&#34;</span><span class=o>)</span>
+    <span class=n>String</span> <span class=nf>home</span><span class=o>()</span> <span class=o>{</span>
+        <span class=n>log</span><span class=o>.</span><span class=na>info</span><span class=o>(</span><span class=s>&#34;Hello world!&#34;</span><span class=o>);</span>
+        <span class=k>return</span> <span class=s>&#34;Hello World!&#34;</span><span class=o>;</span>
+    <span class=o>}</span>
+
+    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>Example</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><p>虽然这里的代码不多，但有相当多的事情要做。我们在接下来的几节中逐步介绍重要的部分。虽然这里的代码不多，但有相当多的事情要做。我们在接下来的几节中逐步介绍重要的部分。</p><p><strong>@RestController和@RequestMapping注解</strong></p><p>Spring Boot设置了Rest Controller，并使我们的应用程序绑定到Tomcat端口。带有Brave追踪器的Spring Cloud Sleuth将提供对传入请求的检测。</p><h4 id=224-运行该实例>2.2.4. 运行该实例<a href=#224-运行该实例 class=anchor aria-hidden=true>#</a></h4><p>在这一点上，你的应用程序应该工作。由于你使用了<code>spring-boot-starter-parent</code>POM，你有一个有用的<code>run</code>目标，你可以用它来启动该应用程序。在项目根目录下输入<code>SPRING_APPLICATION_NAME=backend mvn spring-boot:run</code>来启动应用程序。你应该看到类似以下的输出。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>$ mvn spring-boot:run
+
+  .   ____          _            __ _ _
+ /<span class=se>\\</span> / ___<span class=s1>&#39;_ __ _ _(_)_ __  __ _ \ \ \ \
+</span><span class=s1>( ( )\___ | &#39;</span>_ <span class=p>|</span> <span class=s1>&#39;_| | &#39;</span>_ <span class=se>\/</span> _<span class=sb>`</span> <span class=p>|</span> <span class=se>\ \ \ \
+</span><span class=se></span> <span class=se>\\</span>/  ___<span class=o>)</span><span class=p>|</span> <span class=p>|</span>_<span class=o>)</span><span class=p>|</span> <span class=p>|</span> <span class=p>|</span> <span class=p>|</span> <span class=p>|</span> <span class=o>||</span> <span class=o>(</span>_<span class=p>|</span> <span class=p>|</span>  <span class=o>)</span> <span class=o>)</span> <span class=o>)</span> <span class=o>)</span>
+  <span class=err>&#39;</span>  <span class=p>|</span>____<span class=p>|</span> .__<span class=p>|</span>_<span class=p>|</span> <span class=p>|</span>_<span class=p>|</span>_<span class=p>|</span> <span class=p>|</span>_<span class=se>\_</span>_, <span class=p>|</span> / / / /
+ <span class=o>=========</span><span class=p>|</span>_<span class=p>|</span><span class=o>==============</span><span class=p>|</span>___/<span class=o>=</span>/_/_/_/
+ ...
+....... . . .
+....... . . . <span class=o>(</span>log output here<span class=o>)</span>
+....... . . .
+........ Started Example in 2.222 seconds <span class=o>(</span>JVM running <span class=k>for</span> 6.514<span class=o>)</span>
+</code></pre></div><p>如果你打开网页浏览器到<code>localhost:8080</code>，你应该看到以下输出。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>Hello World!
+</code></pre></div><p>如果你检查日志，你应该看到一个类似的输出</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>2020-10-21 12:01:16.285  INFO [backend,0b6aaf642574edd3,0b6aaf642574edd3] 289589 --- [nio-9000-exec-1] Example              : Hello world!
+</code></pre></div><p>你可以注意到，日志格式已经更新，有以下信息<code>[backend,0b6aaf642574edd3,0b6aaf642574edd3</code>。这个条目对应于<code>[application name,trace id, span id]</code>。应用程序名称从<code>SPRING_APPLICATION_NAME</code>环境变量中读取。</p><blockquote><p>你可以设置<code>logging.level.org.springframework.web.servlet.DispatcherServlet=DEBUG</code>，而不是在处理程序中明确记录请求。</p></blockquote><p>要优雅地退出应用程序，按<code>ctrl-c</code>。</p><h3 id=23-接下来的步骤>2.3. 接下来的步骤<a href=#23-接下来的步骤 class=anchor aria-hidden=true>#</a></h3><p>希望本节提供了一些Spring Cloud Sleuth的基础知识，让你开始编写自己的应用程序。如果你是一个面向任务的开发者，你可能想跳到<a href=https://spring.io/>spring.io</a>并查看一些<a href=https://spring.io/guides/>入门</a>指南，这些指南解决了 &ldquo;我如何用Spring做这个？&ldquo;的具体问题。我们也有专门针对Spring Cloud Sleuth的&rdquo;<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#howto>how-to</a>&ldquo;参考文档。</p><p>否则，下一个合乎逻辑的步骤是阅读<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#using>使用Spring Cloud Sleuth</a>。如果你真的没有耐心，你也可以提前阅读<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#project-features>Spring Cloud Sleuth功能</a>。</p><p>你可以在<a href=https://github.com/spring-cloud/spring-cloud-sleuth/tree/%7Bbranch%7D/spring-cloud-sleuth-samples>samples</a>找到默认项目的样本。</p><h2 id=3-使用-spring-cloud-sleuth>3. 使用 Spring Cloud Sleuth<a href=#3-使用-spring-cloud-sleuth class=anchor aria-hidden=true>#</a></h2><p>本节更详细地介绍了应该如何使用Spring Cloud Sleuth。它涵盖了一些主题，如用Spring Cloud Sleuth API或通过注解控制跨度生命周期。我们还介绍了一些Spring Cloud Sleuth的最佳实践。</p><p>如果你开始使用Spring Cloud Sleuth，在进入本节之前，你可能应该先阅读<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#getting-started>入门</a>指南。</p><h3 id=31-span生的命周期和spring-cloud-sleuth的api>3.1. Span生的命周期和Spring Cloud Sleuth的API<a href=#31-span生的命周期和spring-cloud-sleuth的api class=anchor aria-hidden=true>#</a></h3><p>Spring Cloud Sleuth Core在其 <code>api</code> 模块中包含了所有需要由追踪器实现的必要接口。该项目带有OpenZipkin Brave实现。你可以通过查看<code>org.springframework.cloud.sleuth.brave.bridge</code>来检查追踪器是如何与Sleuth的API桥接的。</p><p>最常用的接口是。</p><ul><li><code>org.springframework.cloud.sleuth.Tracer</code> - 使用追踪器，你可以创建一个根跨度，捕捉请求的关键路径。</li><li><code>org.springframework.cloud.sleuth.Span</code> - Span是一个需要启动和停止的单一工作单元。包含时间信息和事件及标签。</li></ul><p>你也可以直接使用你的追踪器实现的API。</p><p>让我们来看看下面的Span生命周期动作。</p><ul><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#using-creating-and-ending-spans>start</a>：当你开始一个跨度时，它的名字被指定，开始的时间戳被记录。</li><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#using-creating-and-ending-spans>end</a>:：跨度结束（跨度的结束时间被记录下来），如果跨度被取样，它就有资格被收集（例如，到Zipkin）。</li><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#using-continuing-spans>continue</a>：该跨度被继续，例如在另一个线程中。</li><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#using-creating-spans-with-explicit-parent>create with explicit parent</a>：你可以创建一个新的跨度，并为它设置一个明确的父节点。</li></ul><blockquote><p>Spring Cloud Sleuth为你创建一个<code>Tracer</code>的实例。为了使用它，你可以自动连接它。</p></blockquote><h4 id=311-creating-and-ending-spans>3.1.1. Creating and Ending Spans<a href=#311-creating-and-ending-spans class=anchor aria-hidden=true>#</a></h4><p>你可以通过使用Tracer手动创建Span，如下面的例子所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=c1>// 开始一个Span。如果这个线程中存在一个跨度，它将成为
+</span><span class=c1>// `newSpan`的父节点。
+</span><span class=c1></span><span class=n>Span</span> <span class=n>newSpan</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>nextSpan</span><span class=o>().</span><span class=na>name</span><span class=o>(</span><span class=s>&#34;calculateTax&#34;</span><span class=o>);</span>
+<span class=k>try</span> <span class=o>(</span><span class=n>Tracer</span><span class=o>.</span><span class=na>SpanInScope</span> <span class=n>ws</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>withSpan</span><span class=o>(</span><span class=n>newSpan</span><span class=o>.</span><span class=na>start</span><span class=o>()))</span> <span class=o>{</span>
+    <span class=c1>// ...
+</span><span class=c1></span>    <span class=c1>// 你可以标记一个Span
+</span><span class=c1></span>    <span class=n>newSpan</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;taxValue&#34;</span><span class=o>,</span> <span class=n>taxValue</span><span class=o>);</span>
+    <span class=c1>// ...
+</span><span class=c1></span>    <span class=c1>// 你可以在一个`span`上记录一个事件
+</span><span class=c1></span>    <span class=n>newSpan</span><span class=o>.</span><span class=na>event</span><span class=o>(</span><span class=s>&#34;taxCalculated&#34;</span><span class=o>);</span>
+<span class=o>}</span>
+<span class=k>finally</span> <span class=o>{</span>
+    <span class=c1>// 一旦完成，记得要结束`span&#39;。这将允许收集
+</span><span class=c1></span>    <span class=c1>// `span`，将其发送到分布式跟踪系统，例如Zipkin。
+</span><span class=c1></span>    <span class=n>newSpan</span><span class=o>.</span><span class=na>end</span><span class=o>();</span>
+<span class=o>}</span>
+</code></pre></div><p>在前面的例子中，我们可以看到如何创建一个新的span的实例。如果这个线程中已经有一个span，它就会成为新span的父级。</p><blockquote><p>创建<code>Span</code> 后一定要记得 <code>clean</code></p></blockquote><blockquote><p>如果你的<code>span</code>包含一个大于50个字符的名字，这个名字会被截断为50个字符。你的名字必须是明确和具体的。大的名字会导致延迟问题，有时甚至会出现异常。</p></blockquote><h4 id=312-continuing-spans>3.1.2. Continuing Spans<a href=#312-continuing-spans class=anchor aria-hidden=true>#</a></h4><p>有时，你不想创建一个新的<code>span</code>，但你想继续一个。这种情况的一个例子可能如下。</p><ul><li><strong>AOP</strong>: 如果在达到一个<code>aspect</code>之前已经有一个<code>span</code>被创建，你可能不想创建一个新的<code>span</code>。</li></ul><p>为了继续一个 <code>span</code>，你可以在一个线程中存储 <code>span</code>，并将其传递给另一个线程，如下例所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=n>Span</span> <span class=n>spanFromThreadX</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>nextSpan</span><span class=o>().</span><span class=na>name</span><span class=o>(</span><span class=s>&#34;calculateTax&#34;</span><span class=o>);</span>
+<span class=k>try</span> <span class=o>(</span><span class=n>Tracer</span><span class=o>.</span><span class=na>SpanInScope</span> <span class=n>ws</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>withSpan</span><span class=o>(</span><span class=n>spanFromThreadX</span><span class=o>.</span><span class=na>start</span><span class=o>()))</span> <span class=o>{</span>
+    <span class=n>executorService</span><span class=o>.</span><span class=na>submit</span><span class=o>(()</span> <span class=o>-&gt;</span> <span class=o>{</span>
+        <span class=c1>// Pass the span from thread X
+</span><span class=c1></span>        <span class=n>Span</span> <span class=n>continuedSpan</span> <span class=o>=</span> <span class=n>spanFromThreadX</span><span class=o>;</span>
+        <span class=c1>// ...
+</span><span class=c1></span>        <span class=c1>// You can tag a span
+</span><span class=c1></span>        <span class=n>continuedSpan</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;taxValue&#34;</span><span class=o>,</span> <span class=n>taxValue</span><span class=o>);</span>
+        <span class=c1>// ...
+</span><span class=c1></span>        <span class=c1>// You can log an event on a span
+</span><span class=c1></span>        <span class=n>continuedSpan</span><span class=o>.</span><span class=na>event</span><span class=o>(</span><span class=s>&#34;taxCalculated&#34;</span><span class=o>);</span>
+    <span class=o>}).</span><span class=na>get</span><span class=o>();</span>
+<span class=o>}</span>
+<span class=k>finally</span> <span class=o>{</span>
+    <span class=n>spanFromThreadX</span><span class=o>.</span><span class=na>end</span><span class=o>();</span>
+<span class=o>}</span>
+</code></pre></div><h4 id=313-creating-a-span-with-an-explicit-parent>3.1.3. Creating a Span with an explicit Parent<a href=#313-creating-a-span-with-an-explicit-parent class=anchor aria-hidden=true>#</a></h4><p>你可能想启动一个新的 &ldquo;span&rdquo;，并为该span提供一个明确的父节点。假设一个跨度的父级在一个线程中，而你想在另一个线程中启动一个新的跨度。每当你调用<code>Tracer.nextSpan()</code>时，它就会创建一个参考当前范围内的span的span。你可以把span放在作用域中，然后调用<code>Tracer.nextSpan()</code>，如下面的例子所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=c1>// let&#39;s assume that we&#39;re in a thread Y and we&#39;ve received
+</span><span class=c1>// the `initialSpan` from thread X. `initialSpan` will be the parent
+</span><span class=c1>// of the `newSpan`
+</span><span class=c1></span><span class=n>Span</span> <span class=n>newSpan</span> <span class=o>=</span> <span class=kc>null</span><span class=o>;</span>
+<span class=k>try</span> <span class=o>(</span><span class=n>Tracer</span><span class=o>.</span><span class=na>SpanInScope</span> <span class=n>ws</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>withSpan</span><span class=o>(</span><span class=n>initialSpan</span><span class=o>))</span> <span class=o>{</span>
+    <span class=n>newSpan</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>nextSpan</span><span class=o>().</span><span class=na>name</span><span class=o>(</span><span class=s>&#34;calculateCommission&#34;</span><span class=o>);</span>
+    <span class=c1>// ...
+</span><span class=c1></span>    <span class=c1>// You can tag a span
+</span><span class=c1></span>    <span class=n>newSpan</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;commissionValue&#34;</span><span class=o>,</span> <span class=n>commissionValue</span><span class=o>);</span>
+    <span class=c1>// ...
+</span><span class=c1></span>    <span class=c1>// You can log an event on a span
+</span><span class=c1></span>    <span class=n>newSpan</span><span class=o>.</span><span class=na>event</span><span class=o>(</span><span class=s>&#34;commissionCalculated&#34;</span><span class=o>);</span>
+<span class=o>}</span>
+<span class=k>finally</span> <span class=o>{</span>
+    <span class=c1>// Once done remember to end the span. This will allow collecting
+</span><span class=c1></span>    <span class=c1>// the span to send it to e.g. Zipkin. The tags and events set on the
+</span><span class=c1></span>    <span class=c1>// newSpan will not be present on the parent
+</span><span class=c1></span>    <span class=k>if</span> <span class=o>(</span><span class=n>newSpan</span> <span class=o>!=</span> <span class=kc>null</span><span class=o>)</span> <span class=o>{</span>
+        <span class=n>newSpan</span><span class=o>.</span><span class=na>end</span><span class=o>();</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><blockquote><p>创建这样的<code>span</code>后，你必须完成它。否则，它不会被报告（例如向Zipkin）。</p></blockquote><p>你也可以使用<code>Tracer.nextSpan(Span parentSpan)</code>版本来明确提供父级<code>span</code>。</p><h3 id=32-spans-命名>3.2. Spans 命名<a href=#32-spans-命名 class=anchor aria-hidden=true>#</a></h3><p>挑选一个<code>span</code>名称不是一件简单的事情。一个<code>span</code>名称应该描述一个操作名称。这个名字应该是低cardinality，所以它不应该包括标识符。</p><p>因为有很多工具正在进行，所以一些跨度名称是人为的。</p><ul><li><code>controller-method-name</code>当被一个方法名为<code>controllerMethodName</code>的Controller接收时。</li><li><code>async</code>用于用包装好的<code>Callable</code>和<code>Runnable</code>接口进行异步操作。</li><li>用<code>@Scheduled</code>注解的方法会返回该类的简单名称。</li></ul><p>幸运的是，对于异步处理，你可以提供明确的命名。</p><h4 id=321-spanname-annotation>3.2.1. @SpanName Annotation<a href=#321-spanname-annotation class=anchor aria-hidden=true>#</a></h4><p>你可以通过使用<code>@SpanName</code>注解来明确地命名<code>span</code>，如下例所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@SpanName</span><span class=o>(</span><span class=s>&#34;calculateTax&#34;</span><span class=o>)</span>
+<span class=kd>class</span> <span class=nc>TaxCountingRunnable</span> <span class=kd>implements</span> <span class=n>Runnable</span> <span class=o>{</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>
+        <span class=c1>// perform logic
+</span><span class=c1></span>    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><p>在这种情况下，当以下列方式处理时，跨度被命名为 <code>calculateTax</code>.</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=n>Runnable</span> <span class=n>runnable</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TraceRunnable</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>,</span> <span class=n>spanNamer</span><span class=o>,</span> <span class=k>new</span> <span class=n>TaxCountingRunnable</span><span class=o>());</span>
+<span class=n>Future</span><span class=o>&lt;?&gt;</span> <span class=n>future</span> <span class=o>=</span> <span class=n>executorService</span><span class=o>.</span><span class=na>submit</span><span class=o>(</span><span class=n>runnable</span><span class=o>);</span>
+<span class=c1>// ... some additional logic ...
+</span><span class=c1></span><span class=n>future</span><span class=o>.</span><span class=na>get</span><span class=o>();</span>
+</code></pre></div><h4 id=322-tostring-method>3.2.2. toString() Method<a href=#322-tostring-method class=anchor aria-hidden=true>#</a></h4><p>为 <code>Runnable</code> 或 <code>Callable</code> 创建单独的类是很罕见的。通常情况下，人们会创建这些类的匿名实例。你不能对这样的类进行注释。为了克服这个限制，如果没有 <code>@SpanName</code> 注释，我们会检查该类是否有 <code>toString()</code> 方法的自定义实现。</p><p>运行这样的代码会导致创建一个名为 <code>calculateTax</code> 的span，如下面的例子所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=n>Runnable</span> <span class=n>runnable</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TraceRunnable</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>,</span> <span class=n>spanNamer</span><span class=o>,</span> <span class=k>new</span> <span class=n>Runnable</span><span class=o>()</span> <span class=o>{</span>
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>
+        <span class=c1>// perform logic
+</span><span class=c1></span>    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>String</span> <span class=nf>toString</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=s>&#34;calculateTax&#34;</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>});</span>
+<span class=n>Future</span><span class=o>&lt;?&gt;</span> <span class=n>future</span> <span class=o>=</span> <span class=n>executorService</span><span class=o>.</span><span class=na>submit</span><span class=o>(</span><span class=n>runnable</span><span class=o>);</span>
+<span class=c1>// ... some additional logic ...
+</span><span class=c1></span><span class=n>future</span><span class=o>.</span><span class=na>get</span><span class=o>();</span>
+</code></pre></div><h3 id=33-用注解管理span>3.3. 用注解管理Span<a href=#33-用注解管理span class=anchor aria-hidden=true>#</a></h3><p>用注解来管理 <code>Span</code> 有很多好的理由，包括。</p><ul><li>与跨度协作的API无关的手段。使用注解可以让用户在添加跨度时不依赖跨度api的库。这样做可以让Sleuth改变其核心API，对用户代码产生更少的影响。</li><li>减少了基本跨度操作的表面积。如果没有这个功能，你必须使用span api，它的生命周期命令可能被错误地使用。通过只暴露范围、标签和日志功能，你可以在不意外地破坏span生命周期的情况下进行协作。</li><li>与运行时生成的代码进行协作。通过Spring Data和Feign这样的库，接口的实现是在运行时生成的。因此，对对象进行跨度包装是很乏味的。现在你可以为接口和这些接口的参数提供注解。</li></ul><h4 id=331-创建新的span>3.3.1. 创建新的Span<a href=#331-创建新的span class=anchor aria-hidden=true>#</a></h4><p>如果你不想手动创建本地<code>Span</code>，你可以使用<code>@NewSpan</code>注解。另外，我们还提供了<code>@SpanTag</code>注解来自动添加标签。</p><p>现在我们可以考虑一些使用的例子。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NewSpan</span>
+<span class=kt>void</span> <span class=nf>testMethod</span><span class=o>();</span>
+</code></pre></div><p>在没有任何参数的情况下注解方法，会导致创建一个新的跨度，其名称等于注解的方法名称。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NewSpan</span><span class=o>(</span><span class=s>&#34;customNameOnTestMethod4&#34;</span><span class=o>)</span>
+<span class=kt>void</span> <span class=nf>testMethod4</span><span class=o>();</span>
+</code></pre></div><p>如果你在注解中提供值（直接或通过设置<code>name</code>参数），创建的跨度将以提供的值作为名称。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=c1>// method declaration
+</span><span class=c1></span><span class=nd>@NewSpan</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=s>&#34;customNameOnTestMethod5&#34;</span><span class=o>)</span>
+<span class=kt>void</span> <span class=nf>testMethod5</span><span class=o>(</span><span class=nd>@SpanTag</span><span class=o>(</span><span class=s>&#34;testTag&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>param</span><span class=o>);</span>
+
+<span class=c1>// and method execution
+</span><span class=c1></span><span class=k>this</span><span class=o>.</span><span class=na>testBean</span><span class=o>.</span><span class=na>testMethod5</span><span class=o>(</span><span class=s>&#34;test&#34;</span><span class=o>);</span>
+</code></pre></div><p>你可以把名字和标签都结合起来。让我们关注一下后者。在这种情况下，被注解的方法的参数运行时的值成为标签的值。在我们的例子中，标签键是<code>testTag</code>，标签值是<code>test</code>。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NewSpan</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=s>&#34;customNameOnTestMethod3&#34;</span><span class=o>)</span>
+<span class=nd>@Override</span>
+<span class=kd>public</span> <span class=kt>void</span> <span class=nf>testMethod3</span><span class=o>()</span> <span class=o>{</span>
+<span class=o>}</span>
+</code></pre></div><p>你可以把<code>@NewSpan</code>注解放在类和接口上。如果你覆盖了接口的方法，并为<code>@NewSpan</code>注解提供了不同的值，那么最具体的那一个会获胜（在这个例子中，<code>customNameOnTestMethod3</code>被设置）。</p><h4 id=332-continuing-spans>3.3.2. Continuing Spans<a href=#332-continuing-spans class=anchor aria-hidden=true>#</a></h4><p>如果你想给现有的跨度添加标签和注释，你可以使用<code>@ContinueSpan</code>注释，如下例所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=c1>// method declaration
+</span><span class=c1></span><span class=nd>@ContinueSpan</span><span class=o>(</span><span class=n>log</span> <span class=o>=</span> <span class=s>&#34;testMethod11&#34;</span><span class=o>)</span>
+<span class=kt>void</span> <span class=nf>testMethod11</span><span class=o>(</span><span class=nd>@SpanTag</span><span class=o>(</span><span class=s>&#34;testTag11&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>param</span><span class=o>);</span>
+
+<span class=c1>// method execution
+</span><span class=c1></span><span class=k>this</span><span class=o>.</span><span class=na>testBean</span><span class=o>.</span><span class=na>testMethod11</span><span class=o>(</span><span class=s>&#34;test&#34;</span><span class=o>);</span>
+<span class=k>this</span><span class=o>.</span><span class=na>testBean</span><span class=o>.</span><span class=na>testMethod13</span><span class=o>();</span>
+</code></pre></div><p>(注意，与<code>@NewSpan</code>注释相反，你也可以用<code>log</code>参数添加日志)。</p><p>这样一来，跨度就会得到延续，并且。</p><ul><li>创建名为<code>testMethod11.before</code>和<code>testMethod11.after</code>的日志条目。</li><li>如果一个异常被抛出，也会创建一个名为<code>testMethod11.afterFailure</code>的日志条目。</li><li>创建一个键值为<code>testTag11</code>、值为<code>test</code>的标签。</li></ul><h4 id=333-advanced-tag-setting>3.3.3. Advanced Tag Setting<a href=#333-advanced-tag-setting class=anchor aria-hidden=true>#</a></h4><p>有3种不同的方式来添加标签到span中。所有这些都是由<code>SpanTag</code>注释控制的。其优先级如下。</p><ol><li>尝试使用<code>TagValueResolver</code>类型的bean和提供的名称。</li><li>如果没有提供bean的名称，则尝试评估一个表达式。我们搜索一个<code>TagValueExpressionResolver</code>豆。默认实现使用SPEL表达式解析。<strong>重要的是</strong>你只能从SPEL表达式中引用属性。由于安全限制，不允许执行方法。</li><li>如果我们没有找到任何可以评估的表达式，则返回参数的<code>toString()</code>值。</li></ol><p><strong>自定义Extractor</strong></p><p>以下方法的标签值是由<code>TagValueResolver</code> 接口的实现计算出来的。它的类名必须作为 <code>resolver</code> 属性的值被传递。</p><p>考虑一下下面的注解方法。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NewSpan</span>
+<span class=kd>public</span> <span class=kt>void</span> <span class=nf>getAnnotationForTagValueResolver</span><span class=o>(</span>
+        <span class=nd>@SpanTag</span><span class=o>(</span><span class=n>key</span> <span class=o>=</span> <span class=s>&#34;test&#34;</span><span class=o>,</span> <span class=n>resolver</span> <span class=o>=</span> <span class=n>TagValueResolver</span><span class=o>.</span><span class=na>class</span><span class=o>)</span> <span class=n>String</span> <span class=n>test</span><span class=o>)</span> <span class=o>{</span>
+<span class=o>}</span>
+</code></pre></div><p>现在进一步考虑以下<code>TagValueResolver</code> bean的实现。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=s>&#34;myCustomTagValueResolver&#34;</span><span class=o>)</span>
+<span class=kd>public</span> <span class=n>TagValueResolver</span> <span class=nf>tagValueResolver</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>parameter</span> <span class=o>-&gt;</span> <span class=s>&#34;Value from myCustomTagValueResolver&#34;</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div><p>前面的两个例子导致了设置一个等于来自<code>myCustomTagValueResolver</code>的标签值。</p><p><strong>解析一个值的表达式</strong></p><p>考虑以下注释的方法:</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NewSpan</span>
+<span class=kd>public</span> <span class=kt>void</span> <span class=nf>getAnnotationForTagValueExpression</span><span class=o>(</span>
+        <span class=nd>@SpanTag</span><span class=o>(</span><span class=n>key</span> <span class=o>=</span> <span class=s>&#34;test&#34;</span><span class=o>,</span> <span class=n>expression</span> <span class=o>=</span> <span class=s>&#34;&#39;hello&#39; + &#39; characters&#39;&#34;</span><span class=o>)</span> <span class=n>String</span> <span class=n>test</span><span class=o>)</span> <span class=o>{</span>
+<span class=o>}</span>
+</code></pre></div><p>没有自定义实现<code>TagValueExpressionResolver</code>就会导致SPEL表达式的评估，并且在span上设置一个值为<code>4个字符</code>的标签。如果你想使用一些其他的表达式解析机制，你可以创建你自己的bean实现。</p><p><strong>使用 The toString() 方法</strong></p><p>考虑以下注释的方法。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@NewSpan</span>
+<span class=kd>public</span> <span class=kt>void</span> <span class=nf>getAnnotationForArgumentToString</span><span class=o>(</span><span class=nd>@SpanTag</span><span class=o>(</span><span class=s>&#34;test&#34;</span><span class=o>)</span> <span class=n>Long</span> <span class=n>param</span><span class=o>)</span> <span class=o>{</span>
+<span class=o>}</span>
+</code></pre></div><p>以<code>15</code>的值运行前面的方法，会导致设置一个字符串值为<code>"15"</code>的标签。</p><h3 id=34-接下来要读什么>3.4. 接下来要读什么<a href=#34-接下来要读什么 class=anchor aria-hidden=true>#</a></h3><p>现在你应该明白如何使用Spring Cloud Sleuth以及应该遵循的一些最佳实践。现在你可以继续了解具体的<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#project-features>Spring Cloud Sleuth功能</a>，或者你可以跳过前面的内容，阅读<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/integrations>Spring Cloud Sleuth中可用的集成</a>。</p><h2 id=4-spring-cloud-sleuth的特性>4. Spring Cloud Sleuth的特性<a href=#4-spring-cloud-sleuth的特性 class=anchor aria-hidden=true>#</a></h2><p>本节深入探讨了Spring Cloud Sleuth的细节。在这里，你可以了解到你可能想要使用和定制的关键功能。如果你还没有这样做，你可能需要阅读&rdquo;<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#getting-started>入门</a>&ldquo;和&rdquo;<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#using>使用Spring Cloud Sleuth</a>&ldquo;部分，以便你有一个良好的基础知识。</p><h3 id=41-context-传播>4.1. Context 传播<a href=#41-context-传播 class=anchor aria-hidden=true>#</a></h3><p>追踪使用标头传播从服务连接到服务。默认格式是<a href=https://github.com/openzipkin/b3-propagation>B3</a>。与数据格式类似，你也可以配置替代的头格式，只要跟踪和跨度ID与B3兼容。最值得注意的是，这意味着跟踪ID和跨度ID是小写的十六进制，而不是UUID。除了跟踪标识符，其他属性（Baggage）也可以与请求一起传递。远程Baggage必须是预定义的，但在其他方面是灵活的。</p><p>要使用提供的默认值，你可以设置<code>spring.sleuth.propagation.type</code>属性。该值可以是一个列表，在这种情况下，你将传播更多的跟踪头信息。</p><p>对于Brave，我们支持<code>AWS</code>、<code>B3</code>、<code>W3C</code>的传播类型。</p><p>你可以在这个&rdquo;<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#how-to-change-context-propagation>how to section</a> &ldquo;中阅读更多关于如何提供自定义上下文传播的信息。</p><h3 id=42-采样>4.2. 采样<a href=#42-采样 class=anchor aria-hidden=true>#</a></h3><p>Spring Cloud Sleuth将抽样决策推给了追踪器的实现。然而，在有些情况下，你可以在运行时改变采样决定。</p><p>其中一种情况是跳过某些客户端的跨度报告。为了实现这一点，你可以在<code>spring.sleuth.web.client.skip-pattern</code>中设置要跳过的路径模式。另一个选择是提供你自己的自定义<code>org.springframework.cloud.sleuth.SamplerFunction&lt;org.springframework.cloud.sleuth.http.HttpRequest></code>实现并定义何时不应对给定的<code>HttpRequest</code>进行采样。</p><h3 id=43-baggage>4.3. Baggage<a href=#43-baggage class=anchor aria-hidden=true>#</a></h3><p>分布式跟踪是通过传播服务内部和跨服务的字段来进行的，这些字段将跟踪连接在一起：traceId和spanId值得注意。持有这些字段的上下文可以选择推送其他字段，这些字段需要保持一致，无论触及的服务有多少。这些额外字段的简单名称是 &ldquo;Baggage&rdquo;。</p><p>Sleuth允许你定义哪些Baggage允许存在于跟踪上下文中，包括使用什么样的头名称。</p><p>下面的例子展示了使用Spring Cloud Sleuth的API设置Baggage值。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=k>try</span> <span class=o>(</span><span class=n>Tracer</span><span class=o>.</span><span class=na>SpanInScope</span> <span class=n>ws</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>withSpan</span><span class=o>(</span><span class=n>initialSpan</span><span class=o>))</span> <span class=o>{</span>
+    <span class=n>BaggageInScope</span> <span class=n>businessProcess</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>createBaggage</span><span class=o>(</span><span class=n>BUSINESS_PROCESS</span><span class=o>).</span><span class=na>set</span><span class=o>(</span><span class=s>&#34;ALM&#34;</span><span class=o>);</span>
+    <span class=n>BaggageInScope</span> <span class=n>countryCode</span> <span class=o>=</span> <span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>.</span><span class=na>createBaggage</span><span class=o>(</span><span class=n>COUNTRY_CODE</span><span class=o>).</span><span class=na>set</span><span class=o>(</span><span class=s>&#34;FO&#34;</span><span class=o>);</span>
+    <span class=k>try</span> <span class=o>{</span>
+</code></pre></div><blockquote><p>目前对Baggage项目的数量或大小没有限制。请记住，过多的Baggage会降低系统的吞吐量或增加RPC的延迟。在极端情况下，过多的Baggage会使应用程序崩溃，原因是超过了传输级的消息或标题的容量。</p></blockquote><p>你可以使用属性来定义没有特殊配置的字段，如名称映射。</p><ul><li><code>spring.sleuth.baggage.remote-fields</code>是一个接受并传播给远程服务的头名称的列表。</li><li><code>spring.sleuth.baggage.local-fields</code>是一个要在本地传播的名称列表。</li></ul><p>这些键不适用前缀。你所设置的就是实际使用的。</p><p>在这两个属性中的任何一个中设置的名称都会导致一个相同名称的 &ldquo;Baggage&rdquo;。</p><p>为了自动将Baggage值设置为Slf4j的MDC，你必须用一个允许的本地或远程键的列表来设置<code>spring.sleuth.baggage.correlation-fields</code>属性。例如，<code>spring.sleuth.baggage.correlation-fields=country-code</code>将把<code>country-code</code>包袱的值设置到MDC。</p><p>注意，额外的字段会从下一个下游跟踪上下文开始传播并添加到 MDC 中。要在当前跟踪上下文中立即将额外字段添加到 MDC 中，请将该字段配置为更新时刷新。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=c1>// configuration
+</span><span class=c1></span><span class=nd>@Bean</span>
+<span class=n>BaggageField</span> <span class=nf>countryCodeField</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>BaggageField</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=s>&#34;country-code&#34;</span><span class=o>);</span>
+<span class=o>}</span>
+
+<span class=nd>@Bean</span>
+<span class=n>ScopeDecorator</span> <span class=nf>mdcScopeDecorator</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>MDCScopeDecorator</span><span class=o>.</span><span class=na>newBuilder</span><span class=o>()</span>
+            <span class=o>.</span><span class=na>clear</span><span class=o>()</span>
+            <span class=o>.</span><span class=na>add</span><span class=o>(</span><span class=n>SingleCorrelationField</span><span class=o>.</span><span class=na>newBuilder</span><span class=o>(</span><span class=n>countryCodeField</span><span class=o>())</span>
+                    <span class=o>.</span><span class=na>flushOnUpdate</span><span class=o>()</span>
+                    <span class=o>.</span><span class=na>build</span><span class=o>())</span>
+            <span class=o>.</span><span class=na>build</span><span class=o>();</span>
+<span class=o>}</span>
+
+<span class=c1>// service
+</span><span class=c1></span><span class=nd>@Autowired</span>
+<span class=n>BaggageField</span> <span class=n>countryCodeField</span><span class=o>;</span>
+
+<span class=n>countryCodeField</span><span class=o>.</span><span class=na>updateValue</span><span class=o>(</span><span class=s>&#34;new-value&#34;</span><span class=o>);</span>
+</code></pre></div><blockquote><p>请记住，向MDC添加条目会大大降低你的应用程序的性能!</p></blockquote><p>如果你想把Baggage条目作为标签加入，以便能够通过Baggage条目搜索跨度，你可以用允许的行李键列表设置<code>spring.sleuth.baggage.tag-fields</code>的值。要禁用该功能，你必须通过<code>spring.sleuth.propagation.tag.enabled=false</code>属性。</p><h4 id=431-baggage-versus-tags>4.3.1 Baggage versus Tags<a href=#431-baggage-versus-tags class=anchor aria-hidden=true>#</a></h4><p>与跟踪ID一样，Baggage被附加到消息或请求中，通常作为头文件。标签是以Span的形式发送到Zipkin的键值对。Baggage值默认不加入span，这意味着除非你选择加入，否则你不能根据Baggage进行搜索。</p><p>要使Baggage也成为标签，请使用属性<code>spring.sleuth.baggage.tag-fields</code>，像这样。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
+</span><span class=w>  </span><span class=nt>sleuth</span><span class=p>:</span><span class=w>
+</span><span class=w>    </span><span class=nt>baggage</span><span class=p>:</span><span class=w>
+</span><span class=w>      </span><span class=nt>foo</span><span class=p>:</span><span class=w> </span><span class=l>bar</span><span class=w>
+</span><span class=w>      </span><span class=nt>remoteFields</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span>- <span class=l>country-code</span><span class=w>
+</span><span class=w>        </span>- <span class=l>x-vcap-request-id</span><span class=w>
+</span><span class=w>      </span><span class=nt>tagFields</span><span class=p>:</span><span class=w>
+</span><span class=w>        </span>- <span class=l>country-code</span><span class=w>
+</span></code></pre></div><h3 id=44-openzipkin-brave-tracer集成>4.4. OpenZipkin Brave Tracer集成<a href=#44-openzipkin-brave-tracer集成 class=anchor aria-hidden=true>#</a></h3><p>Spring Cloud Sleuth通过 <code>spring-cloud-sleuth-brave</code>模块中的bridge与OpenZipkin Brave追踪器集成。在本节中，你可以了解到具体的Brave集成。</p><p>你可以选择在你的代码中直接使用Sleuth的API或Brave的API（例如，Sleuth的<code>Tracer</code>或Brave的<code>Tracer</code>）。如果你想直接使用这个追踪器实现的API，请阅读<a href=https://github.com/openzipkin/brave>他们的文档以了解更多信息</a>。</p><h4 id=441-brave-basics>4.4.1. Brave Basics<a href=#441-brave-basics class=anchor aria-hidden=true>#</a></h4><p>以下是你可能使用的最核心的类型。</p><ul><li><code>brave.SpanCustomizer</code> - 改变当前正在进行的span。</li><li><code>brave.Tracer</code> - 开始临时性的新span。</li></ul><p>以下是OpenZipkin Brave项目中最相关的链接。</p><ul><li><a href=https://github.com/openzipkin/brave/tree/master/brave>Brave’s core library</a></li><li><a href=https://github.com/openzipkin/brave/tree/master/brave#baggage>Baggage (propagated fields)</a></li><li><a href=https://github.com/openzipkin/brave/tree/master/instrumentation/http>HTTP tracing</a></li></ul><h4 id=442-brave-sampling>4.4.2. Brave Sampling<a href=#442-brave-sampling class=anchor aria-hidden=true>#</a></h4><p>采样只适用于追踪后端，如Zipkin。无论采样率如何，日志中都会出现跟踪ID。采样是一种防止系统过载的方法，即持续追踪一些但不是所有的请求。</p><p>默认速率为每秒10条，由spring.sleuth.sampler.rate属性控制，当我们知道Sleuth是用于记录以外的原因时，就会适用。使用每秒100条以上的采样率时要特别小心，因为它可能会使你的跟踪系统超载。</p><p>采样器也可以通过Java配置来设置，如下面的例子所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Bean</span>
+<span class=kd>public</span> <span class=n>Sampler</span> <span class=nf>defaultSampler</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>Sampler</span><span class=o>.</span><span class=na>ALWAYS_SAMPLE</span><span class=o>;</span>
+<span class=o>}</span>
+</code></pre></div><blockquote><p>你可以把HTTP标头b3设置为1，或者在进行信息传递时，你可以把spanFlags标头设置为1。这样做可以强制对当前请求进行采样，而不考虑配置。</p></blockquote><p>默认情况下，采样器将与刷新范围机制一起工作。这意味着你可以在运行时改变采样属性，刷新应用程序，这些变化将得到反映。然而，有时围绕采样器创建一个代理并过早地调用它（从<code>@PostConstruct</code>注释的方法）可能会导致死锁。在这种情况下，要么明确地创建一个采样器bean，要么将属性<code>spring.sleuth.sampler.refresh.enabled</code>设置为<code>false</code>以禁用刷新范围支持。</p><h4 id=443-brave-baggage-java-configuration>4.4.3. Brave Baggage Java configuration<a href=#443-brave-baggage-java-configuration class=anchor aria-hidden=true>#</a></h4><p>如果你需要做比上面更高级的事情，请不要定义属性，而是为你使用的包袱字段使用<code>@Bean</code>配置。</p><ul><li><code>BaggagePropagationCustomizer</code>设置baggage字段</li><li>添加一个<code>SingleBaggageField</code>来控制一个<code>Baggage</code>的标题名称。</li><li><code>CorrelationScopeCustomizer</code>设置了MDC字段</li><li>添加一个<code>SingleCorrelationField</code>来改变一个<code>baggage</code>的MDC名称，或者如果更新刷新。</li></ul><h4 id=444-brave-customizations>4.4.4. Brave Customizations<a href=#444-brave-customizations class=anchor aria-hidden=true>#</a></h4><p><code>brave.Tracer</code>对象是由sleuth完全管理的，所以你很少需要影响它。也就是说，Sleuth支持一些<code>Customizer</code>类型，允许你配置任何Sleuth尚未用自动配置或属性完成的东西。</p><p>如果你把下面的一个定义为 &ldquo;Bean&rdquo;，Sleuth将调用它来定制行为。</p><ul><li><code>RpcTracingCustomizer</code> - 用于RPC标记和采样策略</li><li><code>HttpTracingCustomizer</code> - 用于HTTP标记和采样策略</li><li><code>MessagingTracingCustomizer</code> - 用于消息标记和取样策略</li><li><code>CurrentTraceContextCustomizer</code> - 集成装饰器，如关联性。</li><li><code>BaggagePropagationCustomizer</code> - 用于在进程中和在标题上传播包袱字段</li><li><code>CorrelationScopeDecoratorCustomizer</code> - 用于范围装饰，如MDC（日志）字段的相关。</li></ul><p><strong>Brave Sampling Customizations</strong></p><p>如果需要客户端/服务器采样，只需注册一个<code>brave.sampler.SamplerFunction&lt;HttpRequest></code>类型的Bean，并将该Bean命名为<code>sleuthHttpClientSampler</code>用于客户端采样，<code>sleuthHttpServerSampler</code>用于服务器采样。</p><p>为了方便起见，<code>@HttpClientSampler</code>和<code>@HttpServerSampler</code>注解可以用来注入适当的Bean或通过其静态字符串<code>NAME</code>字段来引用Bean名称。</p><p>查看Brave的代码，看看如何制作一个基于路径的采样器的例子<a href=https://github.com/openzipkin/brave/tree/master/instrumentation/http#sampling-policy>github.com/openzipkin/brave/tree/master/instrumentation/http#sampling-policy</a></p><p>如果你想完全重写<code>HttpTracing</code>bean，你可以使用<code>SkipPatternProvider</code>接口来检索那些不应该被采样的跨度的URL<code>Pattern</code>。下面你可以看到一个在服务器端使用<code>SkipPatternProvider</code>的例子，<code>Sampler&lt;HttpRequest></code>。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+    <span class=kd>class</span> <span class=nc>Config</span> <span class=o>{</span>
+  <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>HttpServerSampler</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+  <span class=n>SamplerFunction</span><span class=o>&lt;</span><span class=n>HttpRequest</span><span class=o>&gt;</span> <span class=nf>myHttpSampler</span><span class=o>(</span><span class=n>SkipPatternProvider</span> <span class=n>provider</span><span class=o>)</span> <span class=o>{</span>
+      <span class=n>Pattern</span> <span class=n>pattern</span> <span class=o>=</span> <span class=n>provider</span><span class=o>.</span><span class=na>skipPattern</span><span class=o>();</span>
+      <span class=k>return</span> <span class=n>request</span> <span class=o>-&gt;</span> <span class=o>{</span>
+          <span class=n>String</span> <span class=n>url</span> <span class=o>=</span> <span class=n>request</span><span class=o>.</span><span class=na>path</span><span class=o>();</span>
+          <span class=kt>boolean</span> <span class=n>shouldSkip</span> <span class=o>=</span> <span class=n>pattern</span><span class=o>.</span><span class=na>matcher</span><span class=o>(</span><span class=n>url</span><span class=o>).</span><span class=na>matches</span><span class=o>();</span>
+          <span class=k>if</span> <span class=o>(</span><span class=n>shouldSkip</span><span class=o>)</span> <span class=o>{</span>
+              <span class=k>return</span> <span class=kc>false</span><span class=o>;</span>
+          <span class=o>}</span>
+          <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
+      <span class=o>};</span>
+  <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><h4 id=445-brave-messaging>4.4.5. Brave Messaging<a href=#445-brave-messaging class=anchor aria-hidden=true>#</a></h4><p>Sleuth自动配置了<code>MessagingTracing</code>bean，作为Kafka或JMS等消息传递工具的基础。</p><p>如果需要定制生产者/消费者的消息跟踪采样，只需注册一个<code>brave.sampler.SamplerFunction&lt;MessagingRequest></code>类型的bean，并为生产者采样的bean命名为<code>sleuthProducerSampler</code>，为消费者采样命名为<code>sleuthConsumerSampler</code>。</p><p>为了方便起见，<code>@ProducerSampler</code>和<code>@ConsumerSampler</code>注解可用于注入适当的Bean或通过其静态字符串<code>NAME</code>字段引用Bean名称。</p><p>例如。这是一个每秒追踪100个消费者请求的采样器，除了 &ldquo;alerts"通道。其他请求将使用由<code>Tracing</code>组件提供的全局速率。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+    <span class=kd>class</span> <span class=nc>Config</span> <span class=o>{</span>
+  <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>ConsumerSampler</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+  <span class=n>SamplerFunction</span><span class=o>&lt;</span><span class=n>MessagingRequest</span><span class=o>&gt;</span> <span class=nf>myMessagingSampler</span><span class=o>()</span> <span class=o>{</span>
+      <span class=k>return</span> <span class=n>MessagingRuleSampler</span><span class=o>.</span><span class=na>newBuilder</span><span class=o>().</span><span class=na>putRule</span><span class=o>(</span><span class=n>channelNameEquals</span><span class=o>(</span><span class=s>&#34;alerts&#34;</span><span class=o>),</span> <span class=n>Sampler</span><span class=o>.</span><span class=na>NEVER_SAMPLE</span><span class=o>)</span>
+              <span class=o>.</span><span class=na>putRule</span><span class=o>(</span><span class=n>Matchers</span><span class=o>.</span><span class=na>alwaysMatch</span><span class=o>(),</span> <span class=n>RateLimitingSampler</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=n>100</span><span class=o>)).</span><span class=na>build</span><span class=o>();</span>
+  <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p>更多内容请见<a href=https://github.com/openzipkin/brave/tree/master/instrumentation/messaging#sampling-policy>github.com/openzipkin/brave/tree/master/instrumentation/messaging#sampling-policy</a></p><h4 id=446-brave-opentracing>4.4.6. Brave Opentracing<a href=#446-brave-opentracing class=anchor aria-hidden=true>#</a></h4><p>你可以通过<code>io.opentracing.brave:brave-opentracing</code> bridge 与Brave和<a href=https://opentracing.io/>OpenTracing</a>集成。只要把它添加到classpath中，OpenTracing的<code>Tracer</code>就会被自动设置。</p><h3 id=45-向zipkin发送span>4.5. 向Zipkin发送Span<a href=#45-向zipkin发送span class=anchor aria-hidden=true>#</a></h3><p>Spring Cloud Sleuth提供了与<a href=https://zipkin.io/>OpenZipkin</a>分布式跟踪系统的各种集成。无论选择何种追踪器实现，只需在classpath中添加<code>spring-cloud-sleuth-zipkin</code>，就可以开始向Zipkin发送Span。你可以选择通过HTTP或消息传递来实现。你可以在&rdquo;<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#how-to-set-up-sleuth-with-brave-zipkin-messaging>how to section</a> &ldquo;中阅读更多关于如何做到这一点的信息。</p><p>当span被关闭时，它将通过HTTP发送给Zipkin。该通信是异步的。你可以通过设置<code>spring.zipkin.baseUrl</code>属性来配置URL，如下所示。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.baseUrl</span><span class=p>:</span><span class=w> </span><span class=l>https://192.168.99.100:9411/</span><span class=w>
+</span></code></pre></div><p>如果想通过服务发现找到Zipkin，可以在URL内传递Zipkin的服务ID，如下例所示为<code>zipkinserver</code>服务ID。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.baseUrl</span><span class=p>:</span><span class=w> </span><span class=l>https://zipkinserver/</span><span class=w>
+</span></code></pre></div><p>要禁用该功能，只需将<code>spring.zipkin.discovery-client-enabled</code>设置为<code>false</code>。</p><p>当发现客户端功能启用时，Sleuth使用<code>LoadBalancerClient</code>来查找Zipkin服务器的URL。这意味着你可以设置负载平衡的配置。</p><p>如果你在classpath上有<code>web</code>、<code>rabbit</code>、<code>activemq</code>或<code>kafka</code>在一起，你可能需要挑选你想发送spans到zipkin的方式。为此，将<code>web</code>、<code>rabbit</code>、<code>activemq</code>或<code>kafka</code>设置为<code>spring.zipkin.sender.type</code>属性。下面的例子显示了设置<code>web</code>的sender类型。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.sender.type</span><span class=p>:</span><span class=w> </span><span class=l>web</span><span class=w>
+</span></code></pre></div><p>要定制通过HTTP向Zipkin发送span的<code>RestTemplate</code>，可以注册<code>ZipkinRestTemplateCustomizer</code> bean。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+    <span class=kd>class</span> <span class=nc>MyConfig</span> <span class=o>{</span>
+    <span class=nd>@Bean</span> <span class=n>ZipkinRestTemplateCustomizer</span> <span class=nf>myCustomizer</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=k>new</span> <span class=n>ZipkinRestTemplateCustomizer</span><span class=o>()</span> <span class=o>{</span>
+            <span class=nd>@Override</span>
+            <span class=kt>void</span> <span class=nf>customize</span><span class=o>(</span><span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>)</span> <span class=o>{</span>
+                <span class=c1>// customize the RestTemplate
+</span><span class=c1></span>            <span class=o>}</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p>然而，如果你想控制创建<code>RestTemplate</code>对象的整个过程，你必须创建一个<code>zipkin2.reporter.Sender</code>类型的bean。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Bean</span> <span class=n>Sender</span> <span class=nf>myRestTemplateSender</span><span class=o>(</span><span class=n>ZipkinProperties</span> <span class=n>zipkin</span><span class=o>,</span>
+        <span class=n>ZipkinRestTemplateCustomizer</span> <span class=n>zipkinRestTemplateCustomizer</span><span class=o>)</span> <span class=o>{</span>
+    <span class=n>RestTemplate</span> <span class=n>restTemplate</span> <span class=o>=</span> <span class=n>mySuperCustomRestTemplate</span><span class=o>();</span>
+    <span class=n>zipkinRestTemplateCustomizer</span><span class=o>.</span><span class=na>customize</span><span class=o>(</span><span class=n>restTemplate</span><span class=o>);</span>
+    <span class=k>return</span> <span class=n>myCustomSender</span><span class=o>(</span><span class=n>zipkin</span><span class=o>,</span> <span class=n>restTemplate</span><span class=o>);</span>
+<span class=o>}</span>
+</code></pre></div><p>默认情况下，api路径将被设置为<code>api/v2/spans</code>或<code>api/v1/spans</code>，取决于编码器版本。如果你想使用自定义的api路径，你可以使用以下属性进行配置（空的情况下，设置&rdquo;"）。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.api-path</span><span class=p>:</span><span class=w> </span><span class=l>v2/path2</span><span class=w>
+</span></code></pre></div><h4 id=451-自定义-service-名称>4.5.1. 自定义 service 名称<a href=#451-自定义-service-名称 class=anchor aria-hidden=true>#</a></h4><p>默认情况下，Sleuth假定，当你向Zipkin发送span时，你希望span的服务名称等于<code>spring.application.name</code>属性的值。不过，情况并非总是如此。在有些情况下，你想为来自你的应用程序的所有span明确提供一个不同的服务名称。为了达到这个目的，你可以向你的应用程序传递以下属性来覆盖这个值（这个例子是针对一个名为<code>myService</code>的服务）。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.service.name</span><span class=p>:</span><span class=w> </span><span class=l>myService</span><span class=w>
+</span></code></pre></div><h4 id=452-host-locator>4.5.2. Host Locator<a href=#452-host-locator class=anchor aria-hidden=true>#</a></h4><blockquote><p>本节是关于从服务发现中定义主机。它不是关于通过服务发现找到Zipkin。</p></blockquote><p>为了定义对应于一个特定`span&rsquo;的主机，我们需要解决主机名和端口。默认的方法是从服务器属性中获取这些值。如果这些没有设置，我们尝试从网络接口检索主机名。</p><p>如果你启用了发现客户端，并且喜欢从服务注册表中的注册实例检索主机地址，你必须设置<code>spring.zipkin.locator.discovery.enabled</code>属性（它适用于基于HTTP和基于流的跨度报告），如下所示。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.locator.discovery.enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></code></pre></div><h4 id=453-customization-of-reported-spans>4.5.3. Customization of Reported Spans<a href=#453-customization-of-reported-spans class=anchor aria-hidden=true>#</a></h4><p>在Sleuth中，我们用一个固定的名字来生成Span。有些用户希望根据标签的值来修改名称。</p><p>Sleuth注册了一个<code>SpanFilter</code>bean，可以自动跳过报告给定名称模式的Span。属性<code>spring.sleuth.span-filter.span-name-patterns-to-skip</code>包含span名称的默认跳过模式。属性<code>spring.sleuth.span-filter.additional-span-name-patterns-to-skip</code>将把提供的Span名称模式追加到现有的模式中。为了禁用这个功能，只需将<code>spring.sleuth.span-filter.enabled</code>设为<code>false</code>。</p><p><strong>Brave Customization of Reported Spans</strong></p><blockquote><p>本节仅适用于Brave追踪器。</p></blockquote><p>在报告Span之前（例如，向Zipkin），你可能想以某种方式修改该Span。你可以通过实现 &ldquo;SpanHandler"来实现。</p><p>下面的例子显示了如何注册两个实现<code>SpanHandler</code>的bean。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Bean</span>
+<span class=n>SpanHandler</span> <span class=nf>handlerOne</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>SpanHandler</span><span class=o>()</span> <span class=o>{</span>
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>end</span><span class=o>(</span><span class=n>TraceContext</span> <span class=n>traceContext</span><span class=o>,</span> <span class=n>MutableSpan</span> <span class=n>span</span><span class=o>,</span> <span class=n>Cause</span> <span class=n>cause</span><span class=o>)</span> <span class=o>{</span>
+            <span class=n>span</span><span class=o>.</span><span class=na>name</span><span class=o>(</span><span class=s>&#34;foo&#34;</span><span class=o>);</span>
+            <span class=k>return</span> <span class=kc>true</span><span class=o>;</span> <span class=c1>// keep this span
+</span><span class=c1></span>        <span class=o>}</span>
+    <span class=o>};</span>
+<span class=o>}</span>
+
+<span class=nd>@Bean</span>
+<span class=n>SpanHandler</span> <span class=nf>handlerTwo</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>SpanHandler</span><span class=o>()</span> <span class=o>{</span>
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=kt>boolean</span> <span class=nf>end</span><span class=o>(</span><span class=n>TraceContext</span> <span class=n>traceContext</span><span class=o>,</span> <span class=n>MutableSpan</span> <span class=n>span</span><span class=o>,</span> <span class=n>Cause</span> <span class=n>cause</span><span class=o>)</span> <span class=o>{</span>
+            <span class=n>span</span><span class=o>.</span><span class=na>name</span><span class=o>(</span><span class=n>span</span><span class=o>.</span><span class=na>name</span><span class=o>()</span> <span class=o>+</span> <span class=s>&#34; bar&#34;</span><span class=o>);</span>
+            <span class=k>return</span> <span class=kc>true</span><span class=o>;</span> <span class=c1>// keep this span
+</span><span class=c1></span>        <span class=o>}</span>
+    <span class=o>};</span>
+<span class=o>}</span>
+</code></pre></div><p>前面的例子导致报告的span的名称改为<code>foo bar</code>，就在它被报告之前（例如，给Zipkin）。</p><h4 id=454-覆盖zipkin的自动配置>4.5.4. 覆盖Zipkin的自动配置<a href=#454-覆盖zipkin的自动配置 class=anchor aria-hidden=true>#</a></h4><p>从2.1.0版本开始，Spring Cloud Sleuth支持向多个追踪系统发送追踪信息。为了使其发挥作用，每个追踪系统都需要有一个<code>Reporter&lt;Span></code>和<code>Sender</code>。如果你想覆盖所提供的bean，你需要给它们一个特定的名字。要做到这一点，你可以分别使用<code>ZipkinAutoConfiguration.Reporter_BEAN_NAME</code>和<code>ZipkinAutoConfiguration.SENDER_BEAN_NAME</code>。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=kd>protected</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>MyConfig</span> <span class=o>{</span>
+
+    <span class=nd>@Bean</span><span class=o>(</span><span class=n>ZipkinAutoConfiguration</span><span class=o>.</span><span class=na>REPORTER_BEAN_NAME</span><span class=o>)</span>
+    <span class=n>Reporter</span><span class=o>&lt;</span><span class=n>zipkin2</span><span class=o>.</span><span class=na>Span</span><span class=o>&gt;</span> <span class=nf>myReporter</span><span class=o>(</span><span class=nd>@Qualifier</span><span class=o>(</span><span class=n>ZipkinAutoConfiguration</span><span class=o>.</span><span class=na>SENDER_BEAN_NAME</span><span class=o>)</span> <span class=n>MySender</span> <span class=n>mySender</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>AsyncReporter</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=n>mySender</span><span class=o>);</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Bean</span><span class=o>(</span><span class=n>ZipkinAutoConfiguration</span><span class=o>.</span><span class=na>SENDER_BEAN_NAME</span><span class=o>)</span>
+    <span class=n>MySender</span> <span class=nf>mySender</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=k>new</span> <span class=n>MySender</span><span class=o>();</span>
+    <span class=o>}</span>
+
+    <span class=kd>static</span> <span class=kd>class</span> <span class=nc>MySender</span> <span class=kd>extends</span> <span class=n>Sender</span> <span class=o>{</span>
+
+        <span class=kd>private</span> <span class=kt>boolean</span> <span class=n>spanSent</span> <span class=o>=</span> <span class=kc>false</span><span class=o>;</span>
+
+        <span class=kt>boolean</span> <span class=nf>isSpanSent</span><span class=o>()</span> <span class=o>{</span>
+            <span class=k>return</span> <span class=k>this</span><span class=o>.</span><span class=na>spanSent</span><span class=o>;</span>
+        <span class=o>}</span>
+
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=n>Encoding</span> <span class=nf>encoding</span><span class=o>()</span> <span class=o>{</span>
+            <span class=k>return</span> <span class=n>Encoding</span><span class=o>.</span><span class=na>JSON</span><span class=o>;</span>
+        <span class=o>}</span>
+
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=kt>int</span> <span class=nf>messageMaxBytes</span><span class=o>()</span> <span class=o>{</span>
+            <span class=k>return</span> <span class=n>Integer</span><span class=o>.</span><span class=na>MAX_VALUE</span><span class=o>;</span>
+        <span class=o>}</span>
+
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=kt>int</span> <span class=nf>messageSizeInBytes</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=kt>byte</span><span class=o>[]&gt;</span> <span class=n>encodedSpans</span><span class=o>)</span> <span class=o>{</span>
+            <span class=k>return</span> <span class=n>encoding</span><span class=o>().</span><span class=na>listSizeInBytes</span><span class=o>(</span><span class=n>encodedSpans</span><span class=o>);</span>
+        <span class=o>}</span>
+
+        <span class=nd>@Override</span>
+        <span class=kd>public</span> <span class=n>Call</span><span class=o>&lt;</span><span class=n>Void</span><span class=o>&gt;</span> <span class=nf>sendSpans</span><span class=o>(</span><span class=n>List</span><span class=o>&lt;</span><span class=kt>byte</span><span class=o>[]&gt;</span> <span class=n>encodedSpans</span><span class=o>)</span> <span class=o>{</span>
+            <span class=k>this</span><span class=o>.</span><span class=na>spanSent</span> <span class=o>=</span> <span class=kc>true</span><span class=o>;</span>
+            <span class=k>return</span> <span class=n>Call</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=kc>null</span><span class=o>);</span>
+        <span class=o>}</span>
+
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><h3 id=46-日志整合>4.6. 日志整合<a href=#46-日志整合 class=anchor aria-hidden=true>#</a></h3><p>Sleuth用包括服务名称（<code>%{spring.zipkin.service.name}</code>或<code>%{spring.application.name}</code>，如果之前没有设置）、span ID（<code>%{spanId}</code>）和trace ID（<code>%{traceId}</code>）等变量配置日志上下文。这些有助于你将日志与分布式跟踪联系起来，并允许你选择使用什么工具来排除服务的故障。</p><p>一旦你发现任何有错误的日志，你可以在消息中寻找跟踪ID。把它粘贴到你的分布式跟踪系统中，以可视化整个跟踪，不管第一个请求最终击中了多少个服务。</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>backend.log:  2020-04-09 17:45:40.516 ERROR [backend,5e8eeec48b08e26882aba313eb08f0a4,dcc1df555b5777b3] 97203 --- [nio-9000-exec-1] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+frontend.log:2020-04-09 17:45:40.574 ERROR [frontend,5e8eeec48b08e26882aba313eb08f0a4,82aba313eb08f0a4] 97192 --- [nio-8081-exec-2] o.s.c.s.i.web.ExceptionLoggingFilter     : Uncaught exception thrown
+</code></pre></div><p>上面，你会注意到跟踪ID是<code>5e8eeec48b08e26882aba313eb08f0a4</code> ，例如。这个日志配置是由Sleuth自动设置的。你可以通过<code>spring.sleuth.enabled=false</code>属性禁用Sleuth，或者放入你自己的<code>logging.pattern.level</code>属性来禁用它。</p><p>如果你使用一个日志聚合工具（如<a href=https://www.elastic.co/products/kibana>Kibana</a>, <a href=https://www.splunk.com/>Splunk</a>, 和其他），你可以对发生的事件进行排序。来自Kibana的一个例子类似于下面的图片。</p><p><img src=https://cdn.jsdelivr.net/gh/KevinBlandy/springcloud-images/2021/07/25/3c975295b96f4b65ad8911fd52f2740f.png alt=" "></p><p>如果你想使用<a href=https://www.elastic.co/guide/en/logstash/current/index.html>Logstash</a>，下面列出了Logstash的Grok模式。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>filter {
+  # pattern matching logback pattern
+  grok {
+    match =&gt; { &#34;message&#34; =&gt; &#34;%{TIMESTAMP_ISO8601:timestamp}\s+%{LOGLEVEL:severity}\s+\[%{DATA:service},%{DATA:trace},%{DATA:span}\]\s+%{DATA:pid}\s+---\s+\[%{DATA:thread}\]\s+%{DATA:class}\s+:\s+%{GREEDYDATA:rest}&#34; }
+  }
+  date {
+    match =&gt; [&#34;timestamp&#34;, &#34;ISO8601&#34;]
+  }
+  mutate {
+    remove_field =&gt; [&#34;timestamp&#34;]
+  }
+}
+</code></pre></div><blockquote><p>如果您想将 Grok 与 Cloud Foundry 的日志一起使用，您必须使用以下模式。</p></blockquote><div class=highlight><pre class=chroma><code class=language-text data-lang=text>filter {
+  # pattern matching logback pattern
+  grok {
+    match =&gt; { &#34;message&#34; =&gt; &#34;(?m)OUT\s+%{TIMESTAMP_ISO8601:timestamp}\s+%{LOGLEVEL:severity}\s+\[%{DATA:service},%{DATA:trace},%{DATA:span}\]\s+%{DATA:pid}\s+---\s+\[%{DATA:thread}\]\s+%{DATA:class}\s+:\s+%{GREEDYDATA:rest}&#34; }
+  }
+  date {
+    match =&gt; [&#34;timestamp&#34;, &#34;ISO8601&#34;]
+  }
+  mutate {
+    remove_field =&gt; [&#34;timestamp&#34;]
+  }
+}
+</code></pre></div><h4 id=461-使用logstash的json-logback>4.6.1. 使用Logstash的JSON Logback<a href=#461-使用logstash的json-logback class=anchor aria-hidden=true>#</a></h4><p>通常情况下，你不希望将你的日志存储在文本文件中，而是存储在Logstash可以立即提取的JSON文件中。要做到这一点，你必须做到以下几点（为了便于阅读，我们用<code>groupId:artifactId:version</code>的符号来传递依赖关系）。</p><p><strong>Dependencies Setup</strong></p><ol><li>确保 Logback 在 classpath 上 ( <code>ch.qos.logback:logback-core</code> ) 。</li><li>2.添加 Logstash Logback 编码。例如，要使用<code>4.6</code>版本，添加<code>net.logstash.logback:logstash-logback-encoder:4.6</code>。</li></ol><p><strong>Logback设置</strong></p><p>考虑一下下面这个Logback配置文件的例子（logback-spring.xml）。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=cp>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class=nt>&lt;configuration&gt;</span>
+    <span class=nt>&lt;include</span> <span class=na>resource=</span><span class=s>&#34;org/springframework/boot/logging/logback/defaults.xml&#34;</span><span class=nt>/&gt;</span>
+    <span class=nt>&lt;springProperty</span> <span class=na>scope=</span><span class=s>&#34;context&#34;</span> <span class=na>name=</span><span class=s>&#34;springAppName&#34;</span> <span class=na>source=</span><span class=s>&#34;spring.application.name&#34;</span><span class=nt>/&gt;</span>
+    <span class=c>&lt;!-- Example for logging into the build folder of your project --&gt;</span>
+    <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;LOG_FILE&#34;</span> <span class=na>value=</span><span class=s>&#34;${BUILD_FOLDER:-build}/${springAppName}&#34;</span><span class=nt>/&gt;</span>
+
+    <span class=c>&lt;!-- You can override this to have a custom pattern --&gt;</span>
+    <span class=nt>&lt;property</span> <span class=na>name=</span><span class=s>&#34;CONSOLE_LOG_PATTERN&#34;</span>
+              <span class=na>value=</span><span class=s>&#34;%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}&#34;</span><span class=nt>/&gt;</span>
+
+    <span class=c>&lt;!-- Appender to log to console --&gt;</span>
+    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;console&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.ConsoleAppender&#34;</span><span class=nt>&gt;</span>
+        <span class=nt>&lt;filter</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.classic.filter.ThresholdFilter&#34;</span><span class=nt>&gt;</span>
+            <span class=c>&lt;!-- Minimum logging level to be presented in the console logs--&gt;</span>
+            <span class=nt>&lt;level&gt;</span>DEBUG<span class=nt>&lt;/level&gt;</span>
+        <span class=nt>&lt;/filter&gt;</span>
+        <span class=nt>&lt;encoder&gt;</span>
+            <span class=nt>&lt;pattern&gt;</span>${CONSOLE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+            <span class=nt>&lt;charset&gt;</span>utf8<span class=nt>&lt;/charset&gt;</span>
+        <span class=nt>&lt;/encoder&gt;</span>
+    <span class=nt>&lt;/appender&gt;</span>
+
+    <span class=c>&lt;!-- Appender to log to file --&gt;</span>
+    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;flatfile&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+        <span class=nt>&lt;file&gt;</span>${LOG_FILE}<span class=nt>&lt;/file&gt;</span>
+        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+            <span class=nt>&lt;fileNamePattern&gt;</span>${LOG_FILE}.%d{yyyy-MM-dd}.gz<span class=nt>&lt;/fileNamePattern&gt;</span>
+            <span class=nt>&lt;maxHistory&gt;</span>7<span class=nt>&lt;/maxHistory&gt;</span>
+        <span class=nt>&lt;/rollingPolicy&gt;</span>
+        <span class=nt>&lt;encoder&gt;</span>
+            <span class=nt>&lt;pattern&gt;</span>${CONSOLE_LOG_PATTERN}<span class=nt>&lt;/pattern&gt;</span>
+            <span class=nt>&lt;charset&gt;</span>utf8<span class=nt>&lt;/charset&gt;</span>
+        <span class=nt>&lt;/encoder&gt;</span>
+    <span class=nt>&lt;/appender&gt;</span>
+    <span class=c>&lt;!-- Appender to log to file in a JSON format --&gt;</span>
+    <span class=nt>&lt;appender</span> <span class=na>name=</span><span class=s>&#34;logstash&#34;</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.RollingFileAppender&#34;</span><span class=nt>&gt;</span>
+        <span class=nt>&lt;file&gt;</span>${LOG_FILE}.json<span class=nt>&lt;/file&gt;</span>
+        <span class=nt>&lt;rollingPolicy</span> <span class=na>class=</span><span class=s>&#34;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&#34;</span><span class=nt>&gt;</span>
+            <span class=nt>&lt;fileNamePattern&gt;</span>${LOG_FILE}.json.%d{yyyy-MM-dd}.gz<span class=nt>&lt;/fileNamePattern&gt;</span>
+            <span class=nt>&lt;maxHistory&gt;</span>7<span class=nt>&lt;/maxHistory&gt;</span>
+        <span class=nt>&lt;/rollingPolicy&gt;</span>
+        <span class=nt>&lt;encoder</span> <span class=na>class=</span><span class=s>&#34;net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder&#34;</span><span class=nt>&gt;</span>
+            <span class=nt>&lt;providers&gt;</span>
+                <span class=nt>&lt;timestamp&gt;</span>
+                    <span class=nt>&lt;timeZone&gt;</span>UTC<span class=nt>&lt;/timeZone&gt;</span>
+                <span class=nt>&lt;/timestamp&gt;</span>
+                <span class=nt>&lt;pattern&gt;</span>
+                    <span class=nt>&lt;pattern&gt;</span>
+                        {
+                        &#34;timestamp&#34;: &#34;@timestamp&#34;,
+                        &#34;severity&#34;: &#34;%level&#34;,
+                        &#34;service&#34;: &#34;${springAppName:-}&#34;,
+                        &#34;trace&#34;: &#34;%X{traceId:-}&#34;,
+                        &#34;span&#34;: &#34;%X{spanId:-}&#34;,
+                        &#34;pid&#34;: &#34;${PID:-}&#34;,
+                        &#34;thread&#34;: &#34;%thread&#34;,
+                        &#34;class&#34;: &#34;%logger{40}&#34;,
+                        &#34;rest&#34;: &#34;%message&#34;
+                        }
+                    <span class=nt>&lt;/pattern&gt;</span>
+                <span class=nt>&lt;/pattern&gt;</span>
+            <span class=nt>&lt;/providers&gt;</span>
+        <span class=nt>&lt;/encoder&gt;</span>
+    <span class=nt>&lt;/appender&gt;</span>
+    <span class=nt>&lt;root</span> <span class=na>level=</span><span class=s>&#34;INFO&#34;</span><span class=nt>&gt;</span>
+        <span class=nt>&lt;appender-ref</span> <span class=na>ref=</span><span class=s>&#34;console&#34;</span><span class=nt>/&gt;</span>
+        <span class=c>&lt;!-- uncomment this to have also JSON logs --&gt;</span>
+        <span class=c>&lt;!--&lt;appender-ref ref=&#34;logstash&#34;/&gt;--&gt;</span>
+        <span class=c>&lt;!--&lt;appender-ref ref=&#34;flatfile&#34;/&gt;--&gt;</span>
+    <span class=nt>&lt;/root&gt;</span>
+<span class=nt>&lt;/configuration&gt;</span>
+</code></pre></div><p>即Logback配置文件。</p><ul><li>将应用程序的信息以JSON格式记录到<code>build/${spring.application.name}.json</code>文件。</li><li>已经注释了两个额外的应用者：控制台和标准日志文件。</li><li>具有与上一节中介绍的相同的日志模式。</li></ul><blockquote><p>如果你使用一个自定义的<code>logback-spring.xml</code>，你必须在<code>bootstrap</code>中传递<code>spring.application.name</code>，而不是<code>application</code>属性文件。否则，你的自定义logback文件就不能正确读取该属性。</p></blockquote><h3 id=47-接下来要读的内容>4.7. 接下来要读的内容<a href=#47-接下来要读的内容 class=anchor aria-hidden=true>#</a></h3><p>如果你想进一步了解本节讨论的任何一个类，你可以直接浏览<a href=https://github.com/spring-cloud/spring-cloud-sleuth/tree/main>源代码</a>。如果你有具体问题，请看<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#howto>如何做</a>部分。</p><p>如果你对Spring Cloud Sleuth的核心功能感到满意，你可以继续阅读<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#integrations.adoc>Spring Cloud Sleuth的集成</a>。</p><h2 id=5-how-to-guides>5. “How-to” Guides<a href=#5-how-to-guides class=anchor aria-hidden=true>#</a></h2><p>本节为使用Spring Cloud Sleuth时经常出现的一些常见的 &ldquo;如何做&mldr;&mldr; &ldquo;问题提供答案。它的覆盖面并不全面，但确实涵盖了相当多的内容。</p><p>如果你有一个特定的问题，而我们在这里没有涉及，你可能想去看看<a href=https://stackoverflow.com/tags/spring-cloud-sleuth>stackoverflow.com</a>，看看是否有人已经提供了答案。Stack Overflow也是一个提出新问题的好地方（请使用<code>spring-cloud-sleuth</code>标签）。</p><p>我们也非常乐意扩展这个部分。如果你想添加一个 &ldquo;如何做&rdquo;，请向我们发送一个<a href=https://github.com/spring-cloud/spring-cloud-sleuth/tree/main>拉动请求</a>。</p><h3 id=51-如何用brave设置sleuth>5.1. 如何用Brave设置Sleuth？<a href=#51-如何用brave设置sleuth class=anchor aria-hidden=true>#</a></h3><p>将Sleuth starter 添加到classpath。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencyManagement&gt;</span>
+      <span class=nt>&lt;dependencies&gt;</span>
+          <span class=nt>&lt;dependency&gt;</span>
+              <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+              <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+              <span class=nt>&lt;version&gt;</span>${release.train-version}<span class=nt>&lt;/version&gt;</span>
+              <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+              <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+          <span class=nt>&lt;/dependency&gt;</span>
+      <span class=nt>&lt;/dependencies&gt;</span>
+<span class=nt>&lt;/dependencyManagement&gt;</span>
+
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-sleuth<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><h3 id=52-如何通过http设置sleuth与brave--zipkin>5.2. 如何通过HTTP设置Sleuth与Brave & Zipkin？<a href=#52-如何通过http设置sleuth与brave--zipkin class=anchor aria-hidden=true>#</a></h3><p>将Sleuth启动器和Zipkin添加到classpath。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencyManagement&gt;</span>
+      <span class=nt>&lt;dependencies&gt;</span>
+          <span class=nt>&lt;dependency&gt;</span>
+              <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+              <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+              <span class=nt>&lt;version&gt;</span>${release.train-version}<span class=nt>&lt;/version&gt;</span>
+              <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+              <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+          <span class=nt>&lt;/dependency&gt;</span>
+      <span class=nt>&lt;/dependencies&gt;</span>
+<span class=nt>&lt;/dependencyManagement&gt;</span>
+
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-sleuth<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-sleuth-zipkin<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><h2 id=53-如何通过信息传递将sleuth与brave--zipkin设置在一起>5.3. 如何通过信息传递将Sleuth与Brave & Zipkin设置在一起？<a href=#53-如何通过信息传递将sleuth与brave--zipkin设置在一起 class=anchor aria-hidden=true>#</a></h2><p>如果你想使用RabbitMQ、Kafka或ActiveMQ而不是HTTP，请添加<code>spring-rabbit</code>、<code>spring-kafka</code>或<code>org.apache.activemq:activemq-client</code>依赖项。默认的目标名称是<code>Zipkin</code>。</p><p>如果使用Kafka，你必须添加Kafka依赖性。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencyManagement&gt;</span>
+      <span class=nt>&lt;dependencies&gt;</span>
+          <span class=nt>&lt;dependency&gt;</span>
+              <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+              <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+              <span class=nt>&lt;version&gt;</span>${release.train-version}<span class=nt>&lt;/version&gt;</span>
+              <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+              <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+          <span class=nt>&lt;/dependency&gt;</span>
+      <span class=nt>&lt;/dependencies&gt;</span>
+<span class=nt>&lt;/dependencyManagement&gt;</span>
+
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-sleuth<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-sleuth-zipkin<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.kafka<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-kafka<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><p>另外，你需要相应地设置<code>spring.zipkin.sender.type</code>属性。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.sender.type</span><span class=p>:</span><span class=w> </span><span class=l>kafka</span><span class=w>
+</span></code></pre></div><p>如果你想在RabbitMQ上使用Sleuth，请添加<code>spring-cloud-starter-sleuth</code>、<code>spring-cloud-sleuth-zipkin</code>和<code>spring-rabbit</code>依赖项。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencyManagement&gt;</span>
+      <span class=nt>&lt;dependencies&gt;</span>
+          <span class=nt>&lt;dependency&gt;</span>
+              <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+              <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+              <span class=nt>&lt;version&gt;</span>${release.train-version}<span class=nt>&lt;/version&gt;</span>
+              <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+              <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+          <span class=nt>&lt;/dependency&gt;</span>
+      <span class=nt>&lt;/dependencies&gt;</span>
+<span class=nt>&lt;/dependencyManagement&gt;</span>
+
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-sleuth<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-sleuth-zipkin<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.amqp<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-rabbit<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><p>如果你想在ActiveMQ上使用Sleuth，请添加<code>spring-cloud-starter-sleuth</code>、<code>spring-cloud-sleuth-zipkin</code>和<code>activemq-client</code>依赖项。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependencyManagement&gt;</span>
+      <span class=nt>&lt;dependencies&gt;</span>
+          <span class=nt>&lt;dependency&gt;</span>
+              <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+              <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
+              <span class=nt>&lt;version&gt;</span>${release.train-version}<span class=nt>&lt;/version&gt;</span>
+              <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
+              <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
+          <span class=nt>&lt;/dependency&gt;</span>
+      <span class=nt>&lt;/dependencies&gt;</span>
+<span class=nt>&lt;/dependencyManagement&gt;</span>
+
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-sleuth<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-sleuth-zipkin<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+<span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>org.apache.activemq<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>activemq-client<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><p>另外，你需要相应地设置<code>spring.zipkin.sender.type</code>属性。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.zipkin.sender.type</span><span class=p>:</span><span class=w> </span><span class=l>activemq</span><span class=w>
+</span></code></pre></div><h3 id=54-如何在一个外部系统中看到span>5.4. 如何在一个外部系统中看到Span？<a href=#54-如何在一个外部系统中看到span class=anchor aria-hidden=true>#</a></h3><p>如果你看不到Span被报告给外部系统（如Zipkin），那么很可能是由于以下原因。</p><ul><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#not-sampled-span>你的Span没有被采样</a></li><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#missing-dependency>你忘记添加向外部系统报告的依赖关系（如<code>spring-cloud-sleuth-zipkin</code>）</a></li><li><a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#connection-misconfiguration>你错误地配置了与外部系统的连接</a></li></ul><h4 id=541-你的span没有被采样>5.4.1. 你的Span没有被采样<a href=#541-你的span没有被采样 class=anchor aria-hidden=true>#</a></h4><p>为了检查跨度是否没有被采样，只要看看可导出的标志是否被设置就可以了。让我们看一下下面的例子。</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>2020-10-21 12:01:16.285  INFO [backend,0b6aaf642574edd3,0b6aaf642574edd3,true] 289589 --- [nio-9000-exec-1] Example              : Hello world!
+</code></pre></div><p>如果<code>[backend,0b6aaf642574edd3,0b6aaf642574edd3,true]</code>部分的布尔值为 &ldquo;true&rdquo;，意味着该跨度正在被采样，应该被报告。</p><h4 id=542-缺少依赖性>5.4.2. 缺少依赖性<a href=#542-缺少依赖性 class=anchor aria-hidden=true>#</a></h4><p>直到Sleuth 3.0.0，<code>spring-cloud-starter-zipkin</code>这个依赖项包括<code>spring-cloud-starter-sleuth</code>依赖项和<code>spring-cloud-sleuth-zipkin</code>依赖项。在3.0.0版本中，<code>spring-cloud-starter-zipkin</code>被移除，所以你需要把它改为<code>spring-cloud-sleuth-zipkin</code>。</p><h4 id=543-连接错误配置>5.4.3. 连接错误配置<a href=#543-连接错误配置 class=anchor aria-hidden=true>#</a></h4><p>仔细检查远程系统地址是否正确（例如<code>spring.zipkin.baseUrl</code>），如果试图通过broker进行通信，你的broker连接设置正确。</p><h3 id=55-如何使resttemplatewebclient等工作>5.5. 如何使RestTemplate、WebClient等。工作？<a href=#55-如何使resttemplatewebclient等工作 class=anchor aria-hidden=true>#</a></h3><p>如果你观察到追踪上下文没有被传播，那么原因是以下之一。</p><ul><li>我们没有对指定的库进行检测</li><li>我们正在检测该库，但是你错误地配置了设置。</li></ul><p>如果缺乏检测能力，请提交<a href=https://github.com/spring-cloud/spring-cloud-sleuth/issues>问题</a>，要求增加这种检测。</p><p>在配置错误的情况下，请确保你用来通信的客户端是一个Spring Bean。如果你通过 <code>new</code> 操作符手动创建客户端，那么仪表功能将不起作用。</p><p>工具化工作的例子。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Configuration</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.web.client.RestTemplate</span><span class=o>;</span>
+
+<span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=kd>class</span> <span class=nc>MyConfiguration</span> <span class=o>{</span>
+    <span class=nd>@Bean</span> <span class=n>RestTemplate</span> <span class=nf>myRestTemplate</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=k>new</span> <span class=n>RestTemplate</span><span class=o>();</span>
+    <span class=o>}</span>
+<span class=o>}</span>
+
+<span class=nd>@Service</span>
+<span class=kd>class</span> <span class=nc>MyService</span> <span class=o>{</span>
+    <span class=kd>private</span> <span class=kd>final</span> <span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>;</span>
+
+    <span class=n>MyService</span><span class=o>(</span><span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>this</span><span class=o>.</span><span class=na>restTemplate</span> <span class=o>=</span> <span class=n>restTemplate</span><span class=o>;</span>
+    <span class=o>}</span>
+
+    <span class=n>String</span> <span class=nf>makeACall</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=k>this</span><span class=o>.</span><span class=na>restTemplate</span><span class=o>.</span><span class=na>getForObject</span><span class=o>(</span><span class=s>&#34;http://example.com&#34;</span><span class=o>,</span> <span class=n>String</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><p>仪表盘不起作用的例子。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Service</span>
+<span class=kd>class</span> <span class=nc>MyService</span> <span class=o>{</span>
+
+    <span class=n>String</span> <span class=nf>makeACall</span><span class=o>()</span> <span class=o>{</span>
+        <span class=c1>// This will not work because RestTemplate is not a bean
+</span><span class=c1></span>        <span class=k>return</span> <span class=k>new</span> <span class=n>RestTemplate</span><span class=o>().</span><span class=na>getForObject</span><span class=o>(</span><span class=s>&#34;http://example.com&#34;</span><span class=o>,</span> <span class=n>String</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><h3 id=56-如何在http服务器响应中添加头信息>5.6. 如何在HTTP服务器响应中添加头信息？<a href=#56-如何在http服务器响应中添加头信息 class=anchor aria-hidden=true>#</a></h3><p>注册一个<code>HttpResponseParser</code>类型的bean，其名称为<code>HttpServerResponseParser.NAME</code>。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=kn>import</span> <span class=nn>org.springframework.cloud.sleuth.http.HttpResponseParser</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.cloud.sleuth.instrument.web.HttpServerResponseParser</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Bean</span><span class=o>;</span>
+<span class=kn>import</span> <span class=nn>org.springframework.context.annotation.Configuration</span><span class=o>;</span>
+
+<span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=kd>class</span> <span class=nc>MyConfig</span> <span class=o>{</span>
+
+    <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>HttpServerResponseParser</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+    <span class=n>HttpResponseParser</span> <span class=nf>myHttpResponseParser</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>response</span><span class=o>,</span> <span class=n>context</span><span class=o>,</span> <span class=n>span</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+            <span class=n>Object</span> <span class=n>unwrap</span> <span class=o>=</span> <span class=n>response</span><span class=o>.</span><span class=na>unwrap</span><span class=o>();</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>unwrap</span> <span class=k>instanceof</span> <span class=n>HttpServletResponse</span><span class=o>)</span> <span class=o>{</span>
+                <span class=n>HttpServletResponse</span> <span class=n>resp</span> <span class=o>=</span> <span class=o>(</span><span class=n>HttpServletResponse</span><span class=o>)</span> <span class=n>unwrap</span><span class=o>;</span>
+                <span class=n>resp</span><span class=o>.</span><span class=na>addHeader</span><span class=o>(</span><span class=s>&#34;MyCustom&#34;</span><span class=o>,</span> <span class=s>&#34;Header&#34;</span><span class=o>);</span>
+            <span class=o>}</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><blockquote><p>你的Span需要被取样，以便解析器工作。这意味着你需要能够将Span导出到例如Zipkin。</p></blockquote><h3 id=57-如何自定义http客户端的span>5.7. 如何自定义HTTP客户端的Span？<a href=#57-如何自定义http客户端的span class=anchor aria-hidden=true>#</a></h3><p>注册一个<code>HttpRequestParser</code>类型的Bean，其名称为<code>HttpClientRequestParser.NAME</code>，以便为请求方添加定制。注册一个<code>HttpResponseParser</code>类型的Bean，其名称为<code>HttpClientRequestParser.NAME</code>，以便为响应端添加定制功能。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>ClientParserConfiguration</span> <span class=o>{</span>
+
+    <span class=c1>// example for Feign
+</span><span class=c1></span>    <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>HttpClientRequestParser</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+    <span class=n>HttpRequestParser</span> <span class=nf>myHttpClientRequestParser</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=n>context</span><span class=o>,</span> <span class=n>span</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+            <span class=c1>// Span customization
+</span><span class=c1></span>            <span class=n>span</span><span class=o>.</span><span class=na>name</span><span class=o>(</span><span class=n>request</span><span class=o>.</span><span class=na>method</span><span class=o>());</span>
+            <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ClientRequest&#34;</span><span class=o>,</span> <span class=s>&#34;Tag&#34;</span><span class=o>);</span>
+            <span class=n>Object</span> <span class=n>unwrap</span> <span class=o>=</span> <span class=n>request</span><span class=o>.</span><span class=na>unwrap</span><span class=o>();</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>unwrap</span> <span class=k>instanceof</span> <span class=n>feign</span><span class=o>.</span><span class=na>Request</span><span class=o>)</span> <span class=o>{</span>
+                <span class=n>feign</span><span class=o>.</span><span class=na>Request</span> <span class=n>req</span> <span class=o>=</span> <span class=o>(</span><span class=n>feign</span><span class=o>.</span><span class=na>Request</span><span class=o>)</span> <span class=n>unwrap</span><span class=o>;</span>
+                <span class=c1>// Span customization
+</span><span class=c1></span>                <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ClientRequestFeign&#34;</span><span class=o>,</span> <span class=n>req</span><span class=o>.</span><span class=na>httpMethod</span><span class=o>().</span><span class=na>name</span><span class=o>());</span>
+            <span class=o>}</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+
+    <span class=c1>// example for Feign
+</span><span class=c1></span>    <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>HttpClientResponseParser</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+    <span class=n>HttpResponseParser</span> <span class=nf>myHttpClientResponseParser</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>response</span><span class=o>,</span> <span class=n>context</span><span class=o>,</span> <span class=n>span</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+            <span class=c1>// Span customization
+</span><span class=c1></span>            <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ClientResponse&#34;</span><span class=o>,</span> <span class=s>&#34;Tag&#34;</span><span class=o>);</span>
+            <span class=n>Object</span> <span class=n>unwrap</span> <span class=o>=</span> <span class=n>response</span><span class=o>.</span><span class=na>unwrap</span><span class=o>();</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>unwrap</span> <span class=k>instanceof</span> <span class=n>feign</span><span class=o>.</span><span class=na>Response</span><span class=o>)</span> <span class=o>{</span>
+                <span class=n>feign</span><span class=o>.</span><span class=na>Response</span> <span class=n>resp</span> <span class=o>=</span> <span class=o>(</span><span class=n>feign</span><span class=o>.</span><span class=na>Response</span><span class=o>)</span> <span class=n>unwrap</span><span class=o>;</span>
+                <span class=c1>// Span customization
+</span><span class=c1></span>                <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ClientResponseFeign&#34;</span><span class=o>,</span> <span class=n>String</span><span class=o>.</span><span class=na>valueOf</span><span class=o>(</span><span class=n>resp</span><span class=o>.</span><span class=na>status</span><span class=o>()));</span>
+            <span class=o>}</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><h3 id=58-如何自定义http服务器的span>5.8. 如何自定义HTTP服务器的Span？<a href=#58-如何自定义http服务器的span class=anchor aria-hidden=true>#</a></h3><p>注册一个<code>HttpRequestParser</code>类型的Bean，其名称为<code>HttpServerRequestParser.NAME</code>，以便为请求方添加定制。注册一个<code>HttpResponseParser</code>类型的Bean，其名称为<code>HttpServerResponseParser.NAME</code>，以便为响应端添加定制功能。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>ServerParserConfiguration</span> <span class=o>{</span>
+
+    <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>HttpServerRequestParser</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+    <span class=n>HttpRequestParser</span> <span class=nf>myHttpRequestParser</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=n>context</span><span class=o>,</span> <span class=n>span</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+            <span class=c1>// Span customization
+</span><span class=c1></span>            <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ServerRequest&#34;</span><span class=o>,</span> <span class=s>&#34;Tag&#34;</span><span class=o>);</span>
+            <span class=n>Object</span> <span class=n>unwrap</span> <span class=o>=</span> <span class=n>request</span><span class=o>.</span><span class=na>unwrap</span><span class=o>();</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>unwrap</span> <span class=k>instanceof</span> <span class=n>HttpServletRequest</span><span class=o>)</span> <span class=o>{</span>
+                <span class=n>HttpServletRequest</span> <span class=n>req</span> <span class=o>=</span> <span class=o>(</span><span class=n>HttpServletRequest</span><span class=o>)</span> <span class=n>unwrap</span><span class=o>;</span>
+                <span class=c1>// Span customization
+</span><span class=c1></span>                <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ServerRequestServlet&#34;</span><span class=o>,</span> <span class=n>req</span><span class=o>.</span><span class=na>getMethod</span><span class=o>());</span>
+            <span class=o>}</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>HttpServerResponseParser</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+    <span class=n>HttpResponseParser</span> <span class=nf>myHttpResponseParser</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>response</span><span class=o>,</span> <span class=n>context</span><span class=o>,</span> <span class=n>span</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+            <span class=c1>// Span customization
+</span><span class=c1></span>            <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ServerResponse&#34;</span><span class=o>,</span> <span class=s>&#34;Tag&#34;</span><span class=o>);</span>
+            <span class=n>Object</span> <span class=n>unwrap</span> <span class=o>=</span> <span class=n>response</span><span class=o>.</span><span class=na>unwrap</span><span class=o>();</span>
+            <span class=k>if</span> <span class=o>(</span><span class=n>unwrap</span> <span class=k>instanceof</span> <span class=n>HttpServletResponse</span><span class=o>)</span> <span class=o>{</span>
+                <span class=n>HttpServletResponse</span> <span class=n>resp</span> <span class=o>=</span> <span class=o>(</span><span class=n>HttpServletResponse</span><span class=o>)</span> <span class=n>unwrap</span><span class=o>;</span>
+                <span class=c1>// Span customization
+</span><span class=c1></span>                <span class=n>span</span><span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;ServerResponseServlet&#34;</span><span class=o>,</span> <span class=n>String</span><span class=o>.</span><span class=na>valueOf</span><span class=o>(</span><span class=n>resp</span><span class=o>.</span><span class=na>getStatus</span><span class=o>()));</span>
+            <span class=o>}</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><blockquote><p>你的Span需要被取样，以便解析器工作。这意味着你需要能够将跨度导出到例如Zipkin。</p></blockquote><h3 id=59-如何在日志中看到应用程序的名称>5.9. 如何在日志中看到应用程序的名称？<a href=#59-如何在日志中看到应用程序的名称 class=anchor aria-hidden=true>#</a></h3><p>假设你没有改变默认的日志格式，在<code>bootstrap.yml</code>中设置<code>spring.application.name</code>属性，而不是在<code>application.yml</code>。</p><blockquote><p>有了新的Spring Cloud配置Bootstrap，这应该不再需要了，因为不再有Bootstrap Context。</p></blockquote><h3 id=510-how-to-change-the-context-propagation-mechanism>5.10. How to Change The Context Propagation Mechanism?<a href=#510-how-to-change-the-context-propagation-mechanism class=anchor aria-hidden=true>#</a></h3><p>要使用提供的默认值，你可以设置<code>spring.sleuth.propagation.type</code>属性。该值可以是一个列表，在这种情况下，你将传播更多的跟踪头信息。</p><p>对于Brave，我们支持<code>AWS</code>、<code>B3</code>、<code>W3C</code>的传播类型。</p><p>如果你想提供一个自定义的传播机制，将<code>spring.sleuth.propagation.type</code>属性设置为<code>CUSTOM</code>并实现你自己的bean（对于Brave来说是<code>Propagation.Factory</code>）。下面你可以找到这些例子。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Component</span>
+<span class=kd>class</span> <span class=nc>CustomPropagator</span> <span class=kd>extends</span> <span class=n>Propagation</span><span class=o>.</span><span class=na>Factory</span> <span class=kd>implements</span> <span class=n>Propagation</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=o>{</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>List</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>keys</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>Arrays</span><span class=o>.</span><span class=na>asList</span><span class=o>(</span><span class=s>&#34;myCustomTraceId&#34;</span><span class=o>,</span> <span class=s>&#34;myCustomSpanId&#34;</span><span class=o>);</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>TraceContext</span><span class=o>.</span><span class=na>Injector</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=nf>injector</span><span class=o>(</span><span class=n>Setter</span><span class=o>&lt;</span><span class=n>R</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>setter</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=o>(</span><span class=n>traceContext</span><span class=o>,</span> <span class=n>request</span><span class=o>)</span> <span class=o>-&gt;</span> <span class=o>{</span>
+            <span class=n>setter</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=s>&#34;myCustomTraceId&#34;</span><span class=o>,</span> <span class=n>traceContext</span><span class=o>.</span><span class=na>traceIdString</span><span class=o>());</span>
+            <span class=n>setter</span><span class=o>.</span><span class=na>put</span><span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=s>&#34;myCustomSpanId&#34;</span><span class=o>,</span> <span class=n>traceContext</span><span class=o>.</span><span class=na>spanIdString</span><span class=o>());</span>
+        <span class=o>};</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=n>TraceContext</span><span class=o>.</span><span class=na>Extractor</span><span class=o>&lt;</span><span class=n>R</span><span class=o>&gt;</span> <span class=nf>extractor</span><span class=o>(</span><span class=n>Getter</span><span class=o>&lt;</span><span class=n>R</span><span class=o>,</span> <span class=n>String</span><span class=o>&gt;</span> <span class=n>getter</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>request</span> <span class=o>-&gt;</span> <span class=n>TraceContextOrSamplingFlags</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=n>TraceContext</span><span class=o>.</span><span class=na>newBuilder</span><span class=o>()</span>
+                <span class=o>.</span><span class=na>traceId</span><span class=o>(</span><span class=n>HexCodec</span><span class=o>.</span><span class=na>lowerHexToUnsignedLong</span><span class=o>(</span><span class=n>getter</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=s>&#34;myCustomTraceId&#34;</span><span class=o>)))</span>
+                <span class=o>.</span><span class=na>spanId</span><span class=o>(</span><span class=n>HexCodec</span><span class=o>.</span><span class=na>lowerHexToUnsignedLong</span><span class=o>(</span><span class=n>getter</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>request</span><span class=o>,</span> <span class=s>&#34;myCustomSpanId&#34;</span><span class=o>))).</span><span class=na>build</span><span class=o>());</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=o>&lt;</span><span class=n>K</span><span class=o>&gt;</span> <span class=n>Propagation</span><span class=o>&lt;</span><span class=n>K</span><span class=o>&gt;</span> <span class=nf>create</span><span class=o>(</span><span class=n>KeyFactory</span><span class=o>&lt;</span><span class=n>K</span><span class=o>&gt;</span> <span class=n>keyFactory</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>StringPropagationAdapter</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=k>this</span><span class=o>,</span> <span class=n>keyFactory</span><span class=o>);</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><h3 id=511-如何实现我自己的追踪器>5.11. 如何实现我自己的追踪器？<a href=#511-如何实现我自己的追踪器 class=anchor aria-hidden=true>#</a></h3><p>Spring Cloud Sleuth API包含所有需要由追踪器实现的必要接口。该项目带有OpenZipkin Brave的实现。你可以通过查看<code>org.springframework.cloud.sleuth.brave.bridge</code>模块来检查这两个追踪器是如何与Sleuth的API连接的。</p><h2 id=6-spring-cloud-sleuth的定制>6. Spring Cloud Sleuth的定制<a href=#6-spring-cloud-sleuth的定制 class=anchor aria-hidden=true>#</a></h2><p>在本节中，我们将介绍如何定制Spring Cloud Sleuth的各个部分。</p><h3 id=61-异步通信>6.1. 异步通信<a href=#61-异步通信 class=anchor aria-hidden=true>#</a></h3><p>在本节中，我们将介绍如何用Spring Cloud Sleuth定制异步通信。</p><h4 id=611-async注解的方法>6.1.1. @Async注解的方法<a href=#611-async注解的方法 class=anchor aria-hidden=true>#</a></h4><p>该功能适用于所有追踪器的实现。</p><p>在Spring Cloud Sleuth中，我们对异步相关的组件进行检测，以便在线程之间传递跟踪信息。你可以通过将<code>spring.sleuth.async.enabled</code>的值设置为<code>false</code>来禁用这种行为。</p><p>如果你用<code>@Async</code>来注释你的方法，我们会自动修改现有的Span，如下所示。</p><ul><li>如果方法被注解为<code>@SpanName</code>，注解的值就是Span的名字。</li><li>如果该方法没有用<code>@SpanName</code>注释，那么Span的名字就是被注释的方法的名字。</li><li>Span被标记为该方法的类名和方法名。</li></ul><p>由于我们正在修改现有的span，如果你想保持它的原始名称（例如通过接收HTTP请求创建的span），你应该用<code>@Async</code>注解的方法包裹你的<code>@NewSpan</code>注解或者手动创建一个新的span。</p><h4 id=612-scheduled-注释的方法>6.1.2. @Scheduled 注释的方法<a href=#612-scheduled-注释的方法 class=anchor aria-hidden=true>#</a></h4><p>该功能适用于所有追踪器的实现。</p><p>在Spring Cloud Sleuth中，我们对预定方法的执行进行了检测，这样追踪信息就会在线程之间传递。你可以通过将<code>spring.sleuth.schedulated.enabled</code>的值设置为<code>false</code>来禁用这种行为。</p><p>如果你用<code>@Scheduled</code>来注释你的方法，我们会自动创建一个新的跨度，具有以下特征。</p><ul><li>span的名字是被注释的方法的名字。</li><li>span被标记为该方法的类名和方法名。</li></ul><p>如果你想跳过对某些<code>@Scheduled</code>注释类的span创建，你可以将<code>spring.sleuth.schedulated.skipPattern</code>设置为正则表达式，与<code>@Scheduled</code>注释类的完全合格名称相匹配。</p><h4 id=613-executor-executorservice-和-scheduledexecutorservice>6.1.3. Executor, ExecutorService, 和 ScheduledExecutorService<a href=#613-executor-executorservice-和-scheduledexecutorservice class=anchor aria-hidden=true>#</a></h4><p>该功能适用于所有追踪器的实现。</p><p>我们提供<code>LazyTraceExecutor</code>，<code>TraceableExecutorService</code>，和<code>TraceableScheduledExecutorService</code>。这些实现在每次提交、调用或安排新任务时都会创建跨度。</p><p>下面的例子显示了在使用<code>CompletableFuture</code>时如何用<code>TraceableExecutorService</code>传递跟踪信息。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=n>CompletableFuture</span><span class=o>&lt;</span><span class=n>Long</span><span class=o>&gt;</span> <span class=n>completableFuture</span> <span class=o>=</span> <span class=n>CompletableFuture</span><span class=o>.</span><span class=na>supplyAsync</span><span class=o>(()</span> <span class=o>-&gt;</span> <span class=o>{</span>
+    <span class=c1>// perform some logic
+</span><span class=c1></span>    <span class=k>return</span> <span class=n>1_000_000L</span><span class=o>;</span>
+<span class=o>},</span> <span class=k>new</span> <span class=n>TraceableExecutorService</span><span class=o>(</span><span class=n>beanFactory</span><span class=o>,</span> <span class=n>executorService</span><span class=o>,</span>
+        <span class=c1>// &#39;calculateTax&#39; explicitly names the span - this param is optional
+</span><span class=c1></span>        <span class=s>&#34;calculateTax&#34;</span><span class=o>));</span>
+</code></pre></div><blockquote><p>Sleuth不能与<code>parallelStream()</code>一起工作。如果你想让追踪信息通过流传播，你必须使用<code>supplyAsync(..)</code>的方法，如前面所示。</p></blockquote><p>如果有一些实现了<code>Executor</code>接口的Bean被你排除在span创建之外，你可以使用<code>spring.sleuth.async.ignored-beans</code>属性，你可以提供一个Bean名称的列表。</p><p>你可以通过将<code>spring.sleuth.async.enabled</code>的值设置为<code>false</code>来禁用这种行为。</p><p><strong>自定义Executors</strong></p><p>有时，你需要设置一个自定义的 <code>AsyncExecutor</code> 实例。下面的例子展示了如何设置这样一个自定义的<code>Executor</code>。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=nd>@EnableAutoConfiguration</span>
+<span class=nd>@EnableAsync</span>
+<span class=c1>// add the infrastructure role to ensure that the bean gets auto-proxied
+</span><span class=c1></span><span class=nd>@Role</span><span class=o>(</span><span class=n>BeanDefinition</span><span class=o>.</span><span class=na>ROLE_INFRASTRUCTURE</span><span class=o>)</span>
+<span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>CustomExecutorConfig</span> <span class=kd>extends</span> <span class=n>AsyncConfigurerSupport</span> <span class=o>{</span>
+
+    <span class=nd>@Autowired</span>
+    <span class=n>BeanFactory</span> <span class=n>beanFactory</span><span class=o>;</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>Executor</span> <span class=nf>getAsyncExecutor</span><span class=o>()</span> <span class=o>{</span>
+        <span class=n>ThreadPoolTaskExecutor</span> <span class=n>executor</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ThreadPoolTaskExecutor</span><span class=o>();</span>
+        <span class=c1>// CUSTOMIZE HERE
+</span><span class=c1></span>        <span class=n>executor</span><span class=o>.</span><span class=na>setCorePoolSize</span><span class=o>(</span><span class=n>7</span><span class=o>);</span>
+        <span class=n>executor</span><span class=o>.</span><span class=na>setMaxPoolSize</span><span class=o>(</span><span class=n>42</span><span class=o>);</span>
+        <span class=n>executor</span><span class=o>.</span><span class=na>setQueueCapacity</span><span class=o>(</span><span class=n>11</span><span class=o>);</span>
+        <span class=n>executor</span><span class=o>.</span><span class=na>setThreadNamePrefix</span><span class=o>(</span><span class=s>&#34;MyExecutor-&#34;</span><span class=o>);</span>
+        <span class=c1>// DON&#39;T FORGET TO INITIALIZE
+</span><span class=c1></span>        <span class=n>executor</span><span class=o>.</span><span class=na>initialize</span><span class=o>();</span>
+        <span class=k>return</span> <span class=k>new</span> <span class=n>LazyTraceExecutor</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>beanFactory</span><span class=o>,</span> <span class=n>executor</span><span class=o>);</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><blockquote><p>为了确保你的配置得到后处理，记得在你的<code>@Configuration</code>类上添加<code>@Role(BeanDefinition.ROLE_INFRASTRUCTURE)</code>。</p></blockquote><h3 id=62-http客户端集成>6.2. HTTP客户端集成<a href=#62-http客户端集成 class=anchor aria-hidden=true>#</a></h3><p>这一部分的功能可以通过设置<code>spring.sleuth.web.client.enabled</code>属性值为<code>false</code>来禁用。</p><h4 id=621-同步-rest-template>6.2.1. 同步 Rest Template<a href=#621-同步-rest-template class=anchor aria-hidden=true>#</a></h4><p>这个功能对所有追踪器的实现都是可用的。</p><p>我们注入一个<code>RestTemplate</code>拦截器，以确保所有的追踪信息被传递给请求。每次调用时，都会创建一个新的Span。它在收到响应时被关闭。为了阻止同步的<code>RestTemplate</code>功能，将<code>spring.sleuth.web.client.enabled</code>设置为<code>false</code>。</p><blockquote><p>你必须把<code>RestTemplate</code>注册为一个Bean，这样拦截器才会被注入。如果你用 <code>new</code> 关键字创建了一个<code>RestTemplate</code>实例，仪表就不会起作用。</p></blockquote><h4 id=622-异步-rest-template>6.2.2. 异步 Rest Template<a href=#622-异步-rest-template class=anchor aria-hidden=true>#</a></h4><p>这个功能对所有追踪器的实现都是可用的。</p><p>从Sleuth <code>2.0.0</code>开始，我们不再注册<code>AsyncRestTemplate</code>类型的bean。这取决于你是否能创建这样一个Bean。然后我们对它进行检测。</p><p>要阻止 <code>AsyncRestTemplate</code> 功能，将<code>spring.sleuth.web.async.client.enabled</code>设置为<code>false</code>。要禁止创建默认的<code>TraceAsyncClientHttpRequestFactoryWrapper</code>，请将<code>spring.sleuth.web.async.client.factory.enabled</code>设置为<code>false</code>。如果你根本不想创建<code>AsyncRestClient</code>，请将<code>spring.sleuth.web.async.client.template.enabled</code>设置为<code>false</code>。</p><p><strong>Multiple Asynchronous Rest Templates</strong></p><p>有时你需要使用异步Rest模板的多个实现。在下面的片段中，你可以看到一个例子，说明如何设置这样一个自定义的<code>AsyncRestTemplate</code>。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+<span class=kd>public</span> <span class=kd>static</span> <span class=kd>class</span> <span class=nc>TestConfig</span> <span class=o>{</span>
+
+    <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=s>&#34;customAsyncRestTemplate&#34;</span><span class=o>)</span>
+    <span class=kd>public</span> <span class=n>AsyncRestTemplate</span> <span class=nf>traceAsyncRestTemplate</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=k>new</span> <span class=n>AsyncRestTemplate</span><span class=o>(</span><span class=n>asyncClientFactory</span><span class=o>(),</span> <span class=n>clientHttpRequestFactory</span><span class=o>());</span>
+    <span class=o>}</span>
+
+    <span class=kd>private</span> <span class=n>ClientHttpRequestFactory</span> <span class=nf>clientHttpRequestFactory</span><span class=o>()</span> <span class=o>{</span>
+        <span class=n>ClientHttpRequestFactory</span> <span class=n>clientHttpRequestFactory</span> <span class=o>=</span> <span class=k>new</span> <span class=n>CustomClientHttpRequestFactory</span><span class=o>();</span>
+        <span class=c1>// CUSTOMIZE HERE
+</span><span class=c1></span>        <span class=k>return</span> <span class=n>clientHttpRequestFactory</span><span class=o>;</span>
+    <span class=o>}</span>
+
+    <span class=kd>private</span> <span class=n>AsyncClientHttpRequestFactory</span> <span class=nf>asyncClientFactory</span><span class=o>()</span> <span class=o>{</span>
+        <span class=n>AsyncClientHttpRequestFactory</span> <span class=n>factory</span> <span class=o>=</span> <span class=k>new</span> <span class=n>CustomAsyncClientHttpRequestFactory</span><span class=o>();</span>
+        <span class=c1>// CUSTOMIZE HERE
+</span><span class=c1></span>        <span class=k>return</span> <span class=n>factory</span><span class=o>;</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><p><strong>WebClient</strong></p><p>这个功能对所有追踪器的实现都是可用的。</p><p>我们注入了一个<code>ExchangeFilterFunction</code>实现，它创建了一个跨度，并通过成功和错误的回调，负责关闭客户端的跨度。</p><p>要阻止这个功能，请将<code>spring.sleuth.web.client.enabled</code>设置为<code>false</code>。</p><p>你必须把<code>WebClient</code>注册为一个Bean，这样才能应用追踪工具。如果你用 <code>new</code> 关键字创建一个<code>WebClient</code>实例，追踪工具就不会工作。</p><p><strong>Traverson</strong></p><p>这个功能对所有追踪器的实现都是可用的。</p><p>如果你使用<a href=https://docs.spring.io/spring-hateoas/docs/current/reference/html/#client.traverson>Traverson</a>库，你可以把<code>RestTemplate</code>作为一个bean注入你的Traverson对象。由于<code>RestTemplate</code>已经被拦截了，你可以在你的客户端获得对追踪的完全支持。下面的伪代码显示了如何做到这一点。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Autowired</span> <span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>;</span>
+
+<span class=n>Traverson</span> <span class=n>traverson</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Traverson</span><span class=o>(</span><span class=n>URI</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=s>&#34;https://some/address&#34;</span><span class=o>),</span>
+    <span class=n>MediaType</span><span class=o>.</span><span class=na>APPLICATION_JSON</span><span class=o>,</span> <span class=n>MediaType</span><span class=o>.</span><span class=na>APPLICATION_JSON_UTF8</span><span class=o>).</span><span class=na>setRestOperations</span><span class=o>(</span><span class=n>restTemplate</span><span class=o>);</span>
+<span class=c1>// use Traverson
+</span></code></pre></div><p><strong>Apache HttpClientBuilder 和 HttpAsyncClientBuilder</strong></p><p>这个功能适用于Brave追踪器的实现。</p><p>我们对<code>HttpClientBuilder</code>和<code>HttpAsyncClientBuilder</code>进行检测，以便追踪上下文被注入到发送的请求中。</p><p>要阻止这些功能，请将<code>spring.sleuth.web.client.enabled</code>设置为<code>false</code>。</p><p><strong>Netty HttpClient</strong></p><p>这个功能对所有追踪器的实现都是可用的。</p><p>我们使用Netty的<code>HttpClient</code>。</p><p>要阻止这个功能，将<code>spring.sleuth.web.client.enabled</code>设置为<code>false</code>。</p><p>你必须把<code>HttpClient</code>注册为一个Bean，这样才会有仪器分析。如果你用 <code>new</code> 关键字创建一个<code>HttpClient</code>实例，仪器分析就不会发生。</p><p><strong>UserInfoRestTemplateCustomizer</strong></p><p>这个功能对所有追踪器的实现都是可用的。</p><p>我们使用Spring Security的<code>UserInfoRestTemplateCustomizer</code>。</p><p>要阻止这个功能，请将<code>spring.sleuth.web.client.enabled</code>设置为<code>false</code>。</p><h3 id=63-http服务器集成>6.3. HTTP服务器集成<a href=#63-http服务器集成 class=anchor aria-hidden=true>#</a></h3><p>这一部分的功能可以通过设置<code>spring.sleuth.web.enabled</code>属性的值等于<code>false</code>来禁用。</p><h4 id=631-http-filter>6.3.1. HTTP Filter<a href=#631-http-filter class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于所有追踪器的实现。</p><p>通过<code>TracingFilter</code>，所有被采样的传入请求都会导致创建一个Span。你可以通过设置<code>spring.sleuth.web.skipPattern</code>属性来配置你想跳过的URI。如果你在classpath上有<code>ManagementServerProperties</code>，它的<code>contextPath</code>值会被附加到所提供的跳过模式上。如果你想重复使用Sleuth的默认跳过模式，只需添加你自己的模式，通过使用<code>spring.sleuth.web.extraSkipPattern</code>传递这些模式。</p><p>默认情况下，所有的spring boot执行器端点都被自动添加到跳过模式中。如果你想禁用这种行为，请将<code>spring.sleuth.web.ignore-auto-configured-skip-patterns</code>设为<code>true</code>。</p><p>要改变跟踪过滤器的注册顺序，请设置<code>spring.sleuth.web.filter-order</code>属性。</p><p>要禁用记录未捕获异常的过滤器，可以禁用<code>spring.sleuth.web.exception-throwing-filter-enabled</code>属性。</p><h4 id=632-handlerinterceptor>6.3.2. HandlerInterceptor<a href=#632-handlerinterceptor class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于所有追踪器的实现。</p><p>由于我们希望span的名称是精确的，我们使用一个<code>TraceHandlerInterceptor</code>，它或者包裹一个现有的<code>HandlerInterceptor</code>，或者直接添加到现有的<code>HandlerInterceptors</code>列表中。<code>TraceHandlerInterceptor</code>为给定的<code>HttpServletRequest</code>添加一个特殊的请求属性。如果<code>TracingFilter</code>没有看到这个属性，它就会创建一个 &ldquo;fallback&rdquo; span，这是一个在服务器端创建的额外span，以便在UI中正确显示跟踪。如果发生这种情况，可能是缺少仪器。在这种情况下，请在Spring Cloud Sleuth中提交一个问题。</p><h4 id=633-async-servlet-support>6.3.3. Async Servlet support<a href=#633-async-servlet-support class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于所有追踪器的实现。</p><p>如果你的控制器返回一个<code>Callable</code>或<code>WebAsyncTask</code>，Spring Cloud Sleuth会继续现有的跨度，而不是创建一个新的。</p><h4 id=634-webflux-support>6.3.4. WebFlux support<a href=#634-webflux-support class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于所有追踪器的实现。</p><p>通过<code>TraceWebFilter</code>，所有被采样的传入请求都会产生一个Span。这个Span的名字是<code>http:</code> + 请求被发送到的路径。例如，如果请求被发送到<code>/this/that</code>，其名称就是<code>http:/this/that</code>。你可以通过使用<code>spring.sleuth.web.skipPattern</code>属性来配置你想跳过的URI。如果你在classpath上有<code>ManagementServerProperties</code>，它的<code>contextPath</code>值会被附加到所提供的跳过模式上。如果你想重复使用Sleuth的默认跳过模式，并附加你自己的模式，可以通过使用<code>spring.sleuth.web.extraSkipPattern</code>来传递这些模式。</p><p>为了在性能和上下文传播方面达到最佳效果，我们建议你将<code>spring.sleuth.reactor.instrumation-type</code>切换为<code>MANUAL</code>。为了在span的范围内执行代码，你可以调用<code>WebFluxSleuthOperators.withSpanInScope</code>。例子。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;/simpleManual&#34;</span><span class=o>)</span>
+<span class=kd>public</span> <span class=n>Mono</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>simpleManual</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>Mono</span><span class=o>.</span><span class=na>just</span><span class=o>(</span><span class=s>&#34;hello&#34;</span><span class=o>).</span><span class=na>map</span><span class=o>(</span><span class=n>String</span><span class=o>::</span><span class=n>toUpperCase</span><span class=o>).</span><span class=na>doOnEach</span><span class=o>(</span><span class=n>WebFluxSleuthOperators</span>
+            <span class=o>.</span><span class=na>withSpanInScope</span><span class=o>(</span><span class=n>SignalType</span><span class=o>.</span><span class=na>ON_NEXT</span><span class=o>,</span> <span class=n>signal</span> <span class=o>-&gt;</span> <span class=n>log</span><span class=o>.</span><span class=na>info</span><span class=o>(</span><span class=s>&#34;Hello from simple [{}]&#34;</span><span class=o>,</span> <span class=n>signal</span><span class=o>.</span><span class=na>get</span><span class=o>())));</span>
+<span class=o>}</span>
+</code></pre></div><p>要改变追踪过滤器的注册顺序，请设置<code>spring.sleuth.web.filter-order</code>属性。</p><h3 id=64-messaging>6.4. Messaging<a href=#64-messaging class=anchor aria-hidden=true>#</a></h3><p>这一部分的功能可以通过设置<code>spring.sleuth.messaging.enabled</code>属性值为<code>false</code>来禁用。</p><h4 id=641-spring-集成>6.4.1. Spring 集成<a href=#641-spring-集成 class=anchor aria-hidden=true>#</a></h4><p>该功能适用于所有追踪器的实现。</p><p>Spring Cloud Sleuth与<a href=https://projects.spring.io/spring-integration/>Spring Integration</a>集成。它为发布和订阅事件创建跨度。要禁用Spring集成工具，请将<code>spring.sleuth.integration.enabled</code>设为<code>false</code>。</p><p>你可以提供<code>spring.sleuth.integration.pattern</code>模式来明确提供你想包括在追踪中的通道的名字。默认情况下，除了<code>hystrixStreamOutput</code>通道外，所有通道都被包括在内。</p><blockquote><p>当使用<code>Executor</code>构建Spring Integration<code>IntegrationFlow</code>时，你必须使用<code>Executor</code>的未跟踪版本。用<code>TraceableExecutorService</code>装饰Spring Integration Executor通道会导致Span被不适当地关闭。</p></blockquote><p>如果你想自定义从消息头读取和写入追踪上下文的方式，你只需注册一些类型的Bean。</p><ul><li><code>Propagator.Setter&lt;MessageHeaderAccessor></code> - 用于向消息写入头文件</li><li><code>Propagator.Getter&lt;MessageHeaderAccessor></code> - 用于从消息中读取标题。</li></ul><p><strong>Spring Integration Customization</strong></p><p><strong>Customizing messaging spans</strong></p><p>为了改变默认的Span名称和标签，只需注册一个<code>MessageSpanCustomizer</code>类型的bean。你也可以覆盖现有的<code>DefaultMessageSpanCustomizer</code>来扩展现有行为。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Component</span>
+  <span class=kd>class</span> <span class=nc>MyMessageSpanCustomizer</span> <span class=kd>extends</span> <span class=n>DefaultMessageSpanCustomizer</span> <span class=o>{</span>
+      <span class=nd>@Override</span>
+      <span class=kd>public</span> <span class=n>Span</span> <span class=nf>customizeHandle</span><span class=o>(</span><span class=n>Span</span> <span class=n>spanCustomizer</span><span class=o>,</span>
+              <span class=n>Message</span><span class=o>&lt;?&gt;</span> <span class=n>message</span><span class=o>,</span> <span class=n>MessageChannel</span> <span class=n>messageChannel</span><span class=o>)</span> <span class=o>{</span>
+          <span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>customizeHandle</span><span class=o>(</span><span class=n>spanCustomizer</span><span class=o>,</span> <span class=n>message</span><span class=o>,</span> <span class=n>messageChannel</span><span class=o>)</span>
+                  <span class=o>.</span><span class=na>name</span><span class=o>(</span><span class=s>&#34;changedHandle&#34;</span><span class=o>)</span>
+                  <span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;handleKey&#34;</span><span class=o>,</span> <span class=s>&#34;handleValue&#34;</span><span class=o>)</span>
+                  <span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;channelName&#34;</span><span class=o>,</span> <span class=n>channelName</span><span class=o>(</span><span class=n>messageChannel</span><span class=o>));</span>
+      <span class=o>}</span>
+
+      <span class=nd>@Override</span>
+      <span class=kd>public</span> <span class=n>Span</span><span class=o>.</span><span class=na>Builder</span> <span class=nf>customizeSend</span><span class=o>(</span><span class=n>Span</span><span class=o>.</span><span class=na>Builder</span> <span class=n>builder</span><span class=o>,</span>
+              <span class=n>Message</span><span class=o>&lt;?&gt;</span> <span class=n>message</span><span class=o>,</span> <span class=n>MessageChannel</span> <span class=n>messageChannel</span><span class=o>)</span> <span class=o>{</span>
+          <span class=k>return</span> <span class=kd>super</span><span class=o>.</span><span class=na>customizeSend</span><span class=o>(</span><span class=n>builder</span><span class=o>,</span> <span class=n>message</span><span class=o>,</span> <span class=n>messageChannel</span><span class=o>)</span>
+                  <span class=o>.</span><span class=na>name</span><span class=o>(</span><span class=s>&#34;changedSend&#34;</span><span class=o>)</span>
+                  <span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;sendKey&#34;</span><span class=o>,</span> <span class=s>&#34;sendValue&#34;</span><span class=o>)</span>
+                  <span class=o>.</span><span class=na>tag</span><span class=o>(</span><span class=s>&#34;channelName&#34;</span><span class=o>,</span> <span class=n>channelName</span><span class=o>(</span><span class=n>messageChannel</span><span class=o>));</span>
+      <span class=o>}</span>
+  <span class=o>}</span>
+</code></pre></div><h4 id=642-spring-cloud-function和spring-cloud-stream>6.4.2. Spring Cloud Function和Spring Cloud Stream<a href=#642-spring-cloud-function和spring-cloud-stream class=anchor aria-hidden=true>#</a></h4><p>该功能适用于所有追踪器的实现。</p><p>Spring Cloud Sleuth可以检测Spring Cloud Function。实现的方法是提供一个以<code>Message</code> 为参数的<code>Function</code>、<code>Consumer</code> 或 <code>Supplier</code>，例如 <code>Function&lt;Message&lt;String>, Message&lt;Integer>></code>。如果类型不是 <code>Message</code>，那么将不会进行仪器分析。在处理基于Reactor的流时，开箱即用的仪器不会发生，例如<code>Function&lt;Flux&lt;Message&lt;String>></code>, <code>Flux&lt;Message&lt;Integer>></code>。</p><p>由于Spring Cloud Stream重用了Spring Cloud Function，你将获得开箱即用的仪器。</p><p>你可以通过将<code>spring.sleuth.function.enabled</code>的值设置为<code>false</code>来禁用这种行为。</p><p>为了与 reactive Stream函数一起工作，你可以利用<code>MessagingSleuthOperators</code>实用类，它允许你操作输入和输出的消息，以便继续跟踪上下文，并在跟踪上下文中执行自定义代码。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=kd>class</span> <span class=nc>SimpleReactiveManualFunction</span> <span class=kd>implements</span> <span class=n>Function</span><span class=o>&lt;</span><span class=n>Flux</span><span class=o>&lt;</span><span class=n>Message</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;,</span> <span class=n>Flux</span><span class=o>&lt;</span><span class=n>Message</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;&gt;</span> <span class=o>{</span>
+
+    <span class=kd>private</span> <span class=kd>static</span> <span class=kd>final</span> <span class=n>Logger</span> <span class=n>log</span> <span class=o>=</span> <span class=n>LoggerFactory</span><span class=o>.</span><span class=na>getLogger</span><span class=o>(</span><span class=n>SimpleReactiveFunction</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
+
+    <span class=kd>private</span> <span class=kd>final</span> <span class=n>BeanFactory</span> <span class=n>beanFactory</span><span class=o>;</span>
+
+    <span class=n>SimpleReactiveManualFunction</span><span class=o>(</span><span class=n>BeanFactory</span> <span class=n>beanFactory</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>this</span><span class=o>.</span><span class=na>beanFactory</span> <span class=o>=</span> <span class=n>beanFactory</span><span class=o>;</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>Flux</span><span class=o>&lt;</span><span class=n>Message</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=nf>apply</span><span class=o>(</span><span class=n>Flux</span><span class=o>&lt;</span><span class=n>Message</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;&gt;</span> <span class=n>input</span><span class=o>)</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>input</span><span class=o>.</span><span class=na>map</span><span class=o>(</span><span class=n>message</span> <span class=o>-&gt;</span> <span class=o>(</span><span class=n>MessagingSleuthOperators</span><span class=o>.</span><span class=na>asFunction</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>beanFactory</span><span class=o>,</span> <span class=n>message</span><span class=o>))</span>
+                <span class=o>.</span><span class=na>andThen</span><span class=o>(</span><span class=n>msg</span> <span class=o>-&gt;</span> <span class=n>MessagingSleuthOperators</span><span class=o>.</span><span class=na>withSpanInScope</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>beanFactory</span><span class=o>,</span> <span class=n>msg</span><span class=o>,</span> <span class=n>stringMessage</span> <span class=o>-&gt;</span> <span class=o>{</span>
+                    <span class=n>log</span><span class=o>.</span><span class=na>info</span><span class=o>(</span><span class=s>&#34;Hello from simple manual [{}]&#34;</span><span class=o>,</span> <span class=n>stringMessage</span><span class=o>.</span><span class=na>getPayload</span><span class=o>());</span>
+                    <span class=k>return</span> <span class=n>stringMessage</span><span class=o>;</span>
+                <span class=o>})).</span><span class=na>andThen</span><span class=o>(</span><span class=n>msg</span> <span class=o>-&gt;</span> <span class=n>MessagingSleuthOperators</span><span class=o>.</span><span class=na>afterMessageHandled</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>beanFactory</span><span class=o>,</span> <span class=n>msg</span><span class=o>,</span> <span class=kc>null</span><span class=o>))</span>
+                <span class=o>.</span><span class=na>andThen</span><span class=o>(</span><span class=n>msg</span> <span class=o>-&gt;</span> <span class=n>MessageBuilder</span><span class=o>.</span><span class=na>createMessage</span><span class=o>(</span><span class=n>msg</span><span class=o>.</span><span class=na>getPayload</span><span class=o>().</span><span class=na>toUpperCase</span><span class=o>(),</span> <span class=n>msg</span><span class=o>.</span><span class=na>getHeaders</span><span class=o>()))</span>
+                <span class=o>.</span><span class=na>andThen</span><span class=o>(</span><span class=n>msg</span> <span class=o>-&gt;</span> <span class=n>MessagingSleuthOperators</span><span class=o>.</span><span class=na>handleOutputMessage</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>beanFactory</span><span class=o>,</span> <span class=n>msg</span><span class=o>)).</span><span class=na>apply</span><span class=o>(</span><span class=n>message</span><span class=o>));</span>
+    <span class=o>}</span>
+
+<span class=o>}</span>
+</code></pre></div><h4 id=643-spring-rabbitmq>6.4.3. Spring RabbitMq<a href=#643-spring-rabbitmq class=anchor aria-hidden=true>#</a></h4><p>他的功能适用于Brave追踪器的实现。</p><p>我们对<code>RabbitTemplate</code>进行检测，这样追踪头就会被注入消息中。</p><p>要阻止这个功能，请将<code>spring.sleuth.messaging.rabbit.enabled</code>设为<code>false</code>。</p><h4 id=644-spring-kafka>6.4.4. Spring Kafka<a href=#644-spring-kafka class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于Brave追踪器的实现。</p><p>我们对Spring Kafka的 <code>ProducerFactory</code> 和 <code>ConsumerFactory</code> 进行检测，这样追踪头就会被注入创建的Spring Kafka的 <code>Producer</code> 和 <code>Consumer</code> 中。</p><p>要阻止这个功能，请将<code>spring.sleuth.messaging.kafka.enabled</code>设为<code>false</code>。</p><h4 id=645-spring-kafka-streams>6.4.5. Spring Kafka Streams<a href=#645-spring-kafka-streams class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于Brave追踪器的实现。</p><p>我们对<code>KafkaStreams``KafkaClientSupplier</code>进行检测，这样追踪头就会被注入到<code>Producer</code>和<code>Consumer</code>s。<code>KafkaStreamsTracing</code>bean允许通过额外的<code>TransformerSupplier</code>和<code>ProcessorSupplier</code>方法进行进一步追踪。</p><p>要阻止这个功能，请将<code>spring.sleuth.messaging.kafka.streams.enabled</code>设为<code>false</code>。</p><h4 id=646-spring-jms>6.4.6. Spring JMS<a href=#646-spring-jms class=anchor aria-hidden=true>#</a></h4><p>这个功能适用于Brave追踪器的实现。</p><p>我们对<code>JmsTemplate</code>进行分析，以便将追踪的头信息注入到消息中。我们还支持消费者方面的<code>@JmsListener</code>注解方法。</p><p>要阻止这个功能，请将<code>spring.sleuth.messaging.jms.enabled</code>设为<code>false</code>。</p><blockquote><p>我们不支持JMS的baggage传播</p></blockquote><h3 id=65-openfeign>6.5. OpenFeign<a href=#65-openfeign class=anchor aria-hidden=true>#</a></h3><p>该功能适用于所有追踪器的实现。</p><p>默认情况下，Spring Cloud Sleuth通过<code>TraceFeignClientAutoConfiguration</code>提供与Feign的集成。你可以通过设置<code>spring.sleuth.feign.enabled</code>为<code>false</code>来完全禁用它。如果你这样做，就不会有任何与Feign相关的检测发生。</p><p>部分Feign工具化是通过<code>FeignBeanPostProcessor</code>完成的。你可以通过设置<code>spring.sleuth.feign.processor.enabled</code>为<code>false</code>来禁用它。如果你把它设置为 <code>false</code>，Spring Cloud Sleuth就不会对你的任何自定义Feign组件进行检测。然而，所有默认的检测仍然存在。</p><h3 id=66-opentracing>6.6. OpenTracing<a href=#66-opentracing class=anchor aria-hidden=true>#</a></h3><p>该功能适用于所有追踪器的实现。</p><p>Spring Cloud Sleuth与<a href=https://opentracing.io/>OpenTracing</a>兼容。如果你在classpath上有OpenTracing，我们会自动注册OpenTracing的<code>Tracer</code>bean。如果你想禁用它，请将<code>spring.sleuth.opentracing.enabled</code>设为<code>false</code>。</p><h3 id=67-quartz>6.7. Quartz<a href=#67-quartz class=anchor aria-hidden=true>#</a></h3><p>该功能适用于所有追踪器的实现。</p><p>我们通过向quartz 添加Job/Trigge来检测Quartz Scheduler。</p><p>要关闭该功能，请将<code>spring.sleuth.quartz.enabled</code>属性设置为<code>false</code>。</p><h3 id=68-reactor>6.8. Reactor<a href=#68-reactor class=anchor aria-hidden=true>#</a></h3><p>该功能适用于所有追踪器的实现。</p><p>我们有以下基于reactor的应用程序的仪器化模式，可以通过<code>spring.sleuth.reactor.instrumation-type</code>属性来设置。</p><ul><li><code>DECORATE_QUEUES</code> - 通过新的Reactor<a href=https://github.com/reactor/reactor-core/pull/2566>队列包装机制</a> (Reactor 3.4.3)，我们对Reactor切换线程的方式进行仪表化。这将导致与<code>ON_EACH</code>的功能相同，对性能影响较小。</li><li>`DECORATE_ON_EACH'&ndash;将每个Reactor操作者包裹在一个跟踪表示中。在大多数情况下会传递跟踪上下文。这种模式可能会导致性能急剧下降。</li><li><code>DECORATE_ON_LAST</code> - 在跟踪表示中包装最后一个Reactor操作符。在某些情况下会传递跟踪上下文，因此访问MDC上下文可能不工作。这种模式可能导致中等程度的性能下降。</li><li><code>MANUAL</code> - 以最不具侵略性的方式包装每个Reactor，不传递跟踪上下文。这取决于用户的操作。</li></ul><p>目前默认的是<code>ON_EACH</code>，因为向后兼容的原因，但是我们鼓励用户迁移到<code>MANUAL</code>工具，从<code>WebFluxSleuthOperators</code>和<code>MessagingSleuthOperators</code>中获益。性能的提高是巨大的。</p><p>Example</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;/simpleManual&#34;</span><span class=o>)</span>
+<span class=kd>public</span> <span class=n>Mono</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=nf>simpleManual</span><span class=o>()</span> <span class=o>{</span>
+    <span class=k>return</span> <span class=n>Mono</span><span class=o>.</span><span class=na>just</span><span class=o>(</span><span class=s>&#34;hello&#34;</span><span class=o>).</span><span class=na>map</span><span class=o>(</span><span class=n>String</span><span class=o>::</span><span class=n>toUpperCase</span><span class=o>).</span><span class=na>doOnEach</span><span class=o>(</span><span class=n>WebFluxSleuthOperators</span>
+            <span class=o>.</span><span class=na>withSpanInScope</span><span class=o>(</span><span class=n>SignalType</span><span class=o>.</span><span class=na>ON_NEXT</span><span class=o>,</span> <span class=n>signal</span> <span class=o>-&gt;</span> <span class=n>log</span><span class=o>.</span><span class=na>info</span><span class=o>(</span><span class=s>&#34;Hello from simple [{}]&#34;</span><span class=o>,</span> <span class=n>signal</span><span class=o>.</span><span class=na>get</span><span class=o>())));</span>
+<span class=o>}</span>
+</code></pre></div><h3 id=69-redis>6.9. Redis<a href=#69-redis class=anchor aria-hidden=true>#</a></h3><p>这个功能适用于Brave追踪器的实现。</p><p>我们将<code>tracing</code>属性设置为Lettuce<code>ClientResources</code>实例，以启用Lettuce中内置的Brave追踪功能。要禁用Redis支持，将<code>spring.sleuth.redis.enabled</code>属性设为<code>false</code>。</p><h3 id=610-runnable-and-callable>6.10. Runnable and Callable<a href=#610-runnable-and-callable class=anchor aria-hidden=true>#</a></h3><p>这个功能对所有追踪器的实现都是可用的。</p><p>如果你把你的逻辑包在<code>Runnable</code>或<code>Callable</code>中，你可以把这些类包在它们的Sleuth代表中，如下面<code>Runnable</code>的例子所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=n>Runnable</span> <span class=n>runnable</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Runnable</span><span class=o>()</span> <span class=o>{</span>
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=kt>void</span> <span class=nf>run</span><span class=o>()</span> <span class=o>{</span>
+        <span class=c1>// do some work
+</span><span class=c1></span>    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>String</span> <span class=nf>toString</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=s>&#34;spanNameFromToStringMethod&#34;</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>};</span>
+<span class=c1>// Manual `TraceRunnable` creation with explicit &#34;calculateTax&#34; Span name
+</span><span class=c1></span><span class=n>Runnable</span> <span class=n>traceRunnable</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TraceRunnable</span><span class=o>(</span><span class=k>this</span><span class=o>.</span><span class=na>tracer</span><span class=o>,</span> <span class=n>spanNamer</span><span class=o>,</span> <span class=n>runnable</span><span class=o>,</span> <span class=s>&#34;calculateTax&#34;</span><span class=o>);</span>
+</code></pre></div><p>下面的例子显示了如何为<code>Callable</code>做到这一点。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=n>Callable</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>callable</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Callable</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;()</span> <span class=o>{</span>
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>String</span> <span class=nf>call</span><span class=o>()</span> <span class=kd>throws</span> <span class=n>Exception</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=n>someLogic</span><span class=o>();</span>
+    <span class=o>}</span>
+
+    <span class=nd>@Override</span>
+    <span class=kd>public</span> <span class=n>String</span> <span class=nf>toString</span><span class=o>()</span> <span class=o>{</span>
+        <span class=k>return</span> <span class=s>&#34;spanNameFromToStringMethod&#34;</span><span class=o>;</span>
+    <span class=o>}</span>
+<span class=o>};</span>
+<span class=c1>// Manual `TraceCallable` creation with explicit &#34;calculateTax&#34; Span name
+</span><span class=c1></span><span class=n>Callable</span><span class=o>&lt;</span><span class=n>String</span><span class=o>&gt;</span> <span class=n>traceCallable</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TraceCallable</span><span class=o>&lt;&gt;(</span><span class=n>tracer</span><span class=o>,</span> <span class=n>spanNamer</span><span class=o>,</span> <span class=n>callable</span><span class=o>,</span> <span class=s>&#34;calculateTax&#34;</span><span class=o>);</span>
+</code></pre></div><p>这样，你就能确保每次执行时都能创建和关闭一个新的Span。</p><h3 id=611-rpc>6.11. RPC<a href=#611-rpc class=anchor aria-hidden=true>#</a></h3><p>这个功能适用于Brave追踪器的实现。</p><p>Sleuth自动配置了<code>RpcTracing</code>bean，作为RPC工具的基础，如gRPC或Dubbo。</p><p>如果需要定制客户端/服务器的RPC跟踪采样，只需注册一个<code>brave.sampler.SamplerFunction&lt;RpcRequest></code>类型的bean，并将该bean命名为<code>sleuthRpcClientSampler</code>用于客户端采样，<code>sleuthRpcServerSampler</code>用于服务器采样。</p><p>为了方便起见，<code>@RpcClientSampler</code>和<code>@RpcServerSampler</code>注解可用于注入适当的Bean，或通过静态字符串<code>NAME</code>字段引用Bean名称。</p><p>例如。这里有一个采样器，每秒追踪100个 <code>GetUserToken</code> 服务器请求。这不会启动对健康检查服务请求的新追踪。其他请求将使用全局采样配置。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Configuration</span><span class=o>(</span><span class=n>proxyBeanMethods</span> <span class=o>=</span> <span class=kc>false</span><span class=o>)</span>
+    <span class=kd>class</span> <span class=nc>Config</span> <span class=o>{</span>
+  <span class=nd>@Bean</span><span class=o>(</span><span class=n>name</span> <span class=o>=</span> <span class=n>RpcServerSampler</span><span class=o>.</span><span class=na>NAME</span><span class=o>)</span>
+  <span class=n>SamplerFunction</span><span class=o>&lt;</span><span class=n>RpcRequest</span><span class=o>&gt;</span> <span class=nf>myRpcSampler</span><span class=o>()</span> <span class=o>{</span>
+      <span class=n>Matcher</span><span class=o>&lt;</span><span class=n>RpcRequest</span><span class=o>&gt;</span> <span class=n>userAuth</span> <span class=o>=</span> <span class=n>and</span><span class=o>(</span><span class=n>serviceEquals</span><span class=o>(</span><span class=s>&#34;users.UserService&#34;</span><span class=o>),</span> <span class=n>methodEquals</span><span class=o>(</span><span class=s>&#34;GetUserToken&#34;</span><span class=o>));</span>
+      <span class=k>return</span> <span class=n>RpcRuleSampler</span><span class=o>.</span><span class=na>newBuilder</span><span class=o>().</span><span class=na>putRule</span><span class=o>(</span><span class=n>serviceEquals</span><span class=o>(</span><span class=s>&#34;grpc.health.v1.Health&#34;</span><span class=o>),</span> <span class=n>Sampler</span><span class=o>.</span><span class=na>NEVER_SAMPLE</span><span class=o>)</span>
+              <span class=o>.</span><span class=na>putRule</span><span class=o>(</span><span class=n>userAuth</span><span class=o>,</span> <span class=n>RateLimitingSampler</span><span class=o>.</span><span class=na>create</span><span class=o>(</span><span class=n>100</span><span class=o>)).</span><span class=na>build</span><span class=o>();</span>
+  <span class=o>}</span>
+<span class=o>}</span>
+</code></pre></div><p>更多内容请见<a href=https://github.com/openzipkin/brave/tree/master/instrumentation/rpc#sampling-policy>github.com/openzipkin/brave/tree/master/instrumentation/rpc#sampling-policy</a></p><h4 id=6111-dubbo-rpc-support>6.11.1. Dubbo RPC support<a href=#6111-dubbo-rpc-support class=anchor aria-hidden=true>#</a></h4><p>通过与Brave的集成，Spring Cloud Sleuth支持<a href=https://dubbo.apache.org/>Dubbo</a>。只需添加<code>brave-instrumentation-dubbo</code>的依赖关系即可。</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependency&gt;</span>
+    <span class=nt>&lt;groupId&gt;</span>io.zipkin.brave<span class=nt>&lt;/groupId&gt;</span>
+    <span class=nt>&lt;artifactId&gt;</span>brave-instrumentation-dubbo<span class=nt>&lt;/artifactId&gt;</span>
+<span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><p>你还需要设置一个<code>dubbo.properties</code>文件，内容如下。</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>dubbo.provider.filter=tracing
+dubbo.consumer.filter=tracing
+</code></pre></div><p>你可以阅读更多关于Brave - Dubbo整合的信息<a href=https://github.com/openzipkin/brave/tree/master/instrumentation/dubbo-rpc>这里</a>。可以找到一个Spring Cloud Sleuth和Dubbo的例子<a href=https://github.com/openzipkin/sleuth-webmvc-example/compare/add-dubbo-tracing>这里</a>。</p><h4 id=6112-grpc>6.11.2. gRPC<a href=#6112-grpc class=anchor aria-hidden=true>#</a></h4><p>Spring Cloud Sleuth通过Brave追踪器为<a href=https://grpc.io/>gRPC</a>提供了工具。你可以通过设置<code>spring.sleuth.grpc.enabled</code>为<code>false</code>来完全禁用它。</p><p><strong>Variant 1</strong></p><p>Dependencies</p><blockquote><p>gRPC集成依赖于两个外部库来检测客户端和服务器，这两个库都必须在类的路径上，以实现检测。</p></blockquote><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml>        <span class=nt>&lt;dependency&gt;</span>
+            <span class=nt>&lt;groupId&gt;</span>io.github.lognet<span class=nt>&lt;/groupId&gt;</span>
+            <span class=nt>&lt;artifactId&gt;</span>grpc-spring-boot-starter<span class=nt>&lt;/artifactId&gt;</span>
+        <span class=nt>&lt;/dependency&gt;</span>
+        <span class=nt>&lt;dependency&gt;</span>
+            <span class=nt>&lt;groupId&gt;</span>io.zipkin.brave<span class=nt>&lt;/groupId&gt;</span>
+            <span class=nt>&lt;artifactId&gt;</span>brave-instrumentation-grpc<span class=nt>&lt;/artifactId&gt;</span>
+        <span class=nt>&lt;/dependency&gt;</span>
+</code></pre></div><p>Server Instrumentation</p><p>Spring Cloud Sleuth利用grpc-spring-boot-starter将Brave的gRPC服务器拦截器与所有用<code>@GRpcService</code>注解的服务进行注册。</p><p>Client Instrumentation</p><p>gRPC客户端利用<code>ManagedChannelBuilder</code>来构建<code>ManagedChannel</code>，用于与gRPC服务器通信。本机的 <code>ManagedChannelBuilder</code> 提供了静态方法作为构建 <code>ManagedChannel</code> 实例的入口，然而，这种机制是在Spring应用环境的影响之外。</p><blockquote><p>Spring Cloud Sleuth提供了一个 <code>SpringAwareManagedChannelBuilder</code>，可以通过Spring application context进行定制，并由gRPC客户端进行注入。<strong>在创建 <code>ManagedChannel</code>实例时，必须使用这个构建器</strong>。</p></blockquote><p>Sleuth创建了一个<code>TracingManagedChannelBuilderCustomizer</code>，将Brave的客户端拦截器注入到<code>SpringAwareManagedChannelBuilder</code>。</p><p><strong>Variant 2</strong></p><p><a href=https://github.com/yidongnan/grpc-spring-boot-starter>Grpc Spring Boot Starter</a>自动检测Spring Cloud Sleuth和Brave的gRPC仪器的存在，并注册了必要的客户端和/或服务器工具。</p><h3 id=612-rxjava>6.12. RxJava<a href=#612-rxjava class=anchor aria-hidden=true>#</a></h3><p>这个功能对所有追踪器的实现都是可用的。</p><p>我们注册了一个自定义的<a href=https://github.com/ReactiveX/RxJava/wiki/Plugins#rxjavaschedulershook><code>RxJavaSchedulersHook</code></a>，将所有的<code>Action0</code>实例包裹在它们的Sleuth代表中，这被称为<code>TraceAction</code>。这个钩子要么开始，要么继续，取决于在Action被安排之前跟踪是否已经在进行。要禁用自定义的<code>RxJavaSchedulersHook</code>，将<code>spring.sleuth.rxjava.schedulers.hook.enabled</code>设置为<code>false</code>。</p><p>你可以为不希望创建跨度的线程名称定义一个正则表达式列表。要做到这一点，请在<code>spring.sleuth.rxjava.schedulers.ignoredthreads</code>属性中提供一个逗号分隔的正则表达式列表。</p><blockquote><p>对反应式编程和Sleuth的建议方法是使用Reactor支持。</p></blockquote><h3 id=613-spring-cloud-circuitbreaker>6.13. Spring Cloud CircuitBreaker<a href=#613-spring-cloud-circuitbreaker class=anchor aria-hidden=true>#</a></h3><p>这个功能对所有追踪器的实现都是可用的。</p><p>如果你在classpath上有Spring Cloud CircuitBreaker，我们将把传递的命令<code>Supplier</code>和fallback的<code>Function</code>包裹在它的跟踪表示中。为了禁用这个工具，请将<code>spring.sleuth.circuitbreaker.enabled</code>设为<code>false</code>。</p><h2 id=7-配置属性>7. 配置属性<a href=#7-配置属性 class=anchor aria-hidden=true>#</a></h2><p>要查看所有Spring Cloud Netflix相关配置属性的列表，请检查<a href=https://docs.spring.io/spring-cloud-sleuth/docs/3.0.3/reference/htmlsingle/#common-application-properties>附录页面</a>。</p><div class=my-n3></div></main></div></div></div><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Powered by <a href=https://www.netlify.com/>Netlify</a>, <a href=https://gohugo.io/>Hugo</a>, and <a href=https://getdoks.org/>Doks</a></li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.springcloud.io/translation/>翻译计划</a></li><li class=list-inline-item><a href=https://www.springcloud.io/about/>关于</a></li></ul></div></div></div></footer><script src=https://www.springcloud.io/js/bootstrap.min.d67050adf5d370668aede4201f82af781b16970934804995a1ca37c1ee9222c2fc530972aa6d5d2b6124caf1fe318f139aac99df2c1e89af65504fc1185c7972.js integrity="sha512-1nBQrfXTcGaK7eQgH4KveBsWlwk0gEmVoco3we6SIsL8Uwlyqm1dK2EkyvH+MY8TmqyZ3yweia9lUE/BGFx5cg==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/js/highlight.min.21fbbff4ae23e5143eb2cab64edbdb48eb90be561eb53ee5766f2ef52ef0a1c917325706a2cdd769342b64b418c3b3030d8272769e72be6d3798fa05b0018c08.js integrity="sha512-Ifu/9K4j5RQ+ssq2TtvbSOuQvlYetT7ldm8u9S7wockXMlcGos3XaTQrZLQYw7MDDYJydp5yvm03mPoFsAGMCA==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/main.min.773144977fe359704aa8b57933ee2f435ba70c66684dfa06b01c50cf8131162bd2680301697f8d788259ff49ea7dc4d5f02683ad9ed0d53f22e99dddaeab1bab.js integrity="sha512-dzFEl3/jWXBKqLV5M+4vQ1unDGZoTfoGsBxQz4ExFivSaAMBaX+NeIJZ/0nqfcTV8CaDrZ7Q1T8i6Z3drqsbqw==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/index.min.35aca26ae731c3bcbf638f8e0145e805396fa959731d73c0dd870ca20a9488e92fe538953091569b2145766d020d6a3893436763ec0e517e032bfbd4bec8df6f.js integrity="sha512-Nayiaucxw7y/Y4+OAUXoBTlvqVlzHXPA3YcMogqUiOkv5TiVMJFWmyFFdm0CDWo4k0NnY+wOUX4DK/vUvsjfbw==" crossorigin=anonymous defer></script></body></html>
