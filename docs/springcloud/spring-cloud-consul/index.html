@@ -1,331 +1,332 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=preload as=font href=https://www.springcloud.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=https://www.springcloud.io/fonts/vendor/jost/jost-v4-latin-700.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=https://www.springcloud.io/main.9f315399c0f37ff319ccd4f40971e41d0dfcc09c1b1bb649eaa98747dc2f68d3bfb6b943ada8a6d6e219696da36f93cf3b667dcc6b01c32c02bd77da51b3bf7c.css integrity="sha512-nzFTmcDzf/MZzNT0CXHkHQ38wJwbG7ZJ6qmHR9wvaNO/trlDraim1uIZaW2jb5PPO2Z9zGsBwywCvXfaUbO/fA==" crossorigin=anonymous><noscript><style>img.lazyload{display:none}</style></noscript><meta name=keywords content="springcloud官方,springcloud中文文档,springcloud最新文档,springcloud中国"><meta name=robots content="index, follow"><meta name=googlebot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name=bingbot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><title>Spring Cloud Consul - SpringCloud中文社区</title><meta name=description content="Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。"><link rel=canonical href=https://www.springcloud.io/docs/springcloud/spring-cloud-consul/><meta property="og:locale" content="zh-CN"><meta property="og:type" content="article"><meta property="og:title" content="Spring Cloud Consul"><meta property="og:description" content="Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。"><meta property="og:url" content="https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"><meta property="og:site_name" content="SpringCloud中文社区"><meta property="article:published_time" content="2020-11-12T13:26:54+01:00"><meta property="article:modified_time" content="2020-11-12T13:26:54+01:00"><meta property="og:image" content="https://www.springcloud.io/doks.png"><meta property="og:image:alt" content="SpringCloud中文社区"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@getdoks"><meta name=twitter:creator content="@henkverlinde"><meta name=twitter:title content="Spring Cloud Consul"><meta name=twitter:description content="Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。"><meta name=twitter:image content="https://www.springcloud.io/doks.png"><meta name=twitter:image:alt content="Spring Cloud Consul"><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.springcloud.io/#/schema/organization/1","name":"Doks","url":"https://www.springcloud.io/","sameAs":["https://twitter.com/kevinblandy","https://github.com/KevinBlandy"],"logo":{"@type":"ImageObject","@id":"https://www.springcloud.io/#/schema/image/1","url":"https://www.springcloud.io/logo-doks.png","width":512,"height":512,"caption":"Doks"},"image":{"@id":"https://www.springcloud.io/#/schema/image/1"}},{"@type":"WebSite","@id":"https://www.springcloud.io/#/schema/website/1","url":"https://www.springcloud.io/","name":"SpringCloud中文社区","description":"SpringCloud中文社区专注于文档汉化，更新，以及行业前沿资讯的发布。","publisher":{"@id":"https://www.springcloud.io/#/schema/organization/1"}},{"@type":"WebPage","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/","url":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/","name":"Spring Cloud Consul","description":"Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。","isPartOf":{"@id":"https://www.springcloud.io/#/schema/website/1"},"about":{"@id":"https://www.springcloud.io/#/schema/organization/1"},"datePublished":"2020-11-12T13:26:54CET","dateModified":"2020-11-12T13:26:54CET","breadcrumb":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/breadcrumb/1"},"primaryImageOfPage":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/image/2"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"]}]},{"@type":"BreadcrumbList","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/breadcrumb/1","name":"Breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.springcloud.io","url":"https://www.springcloud.io","name":"Home"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.springcloud.io/docs/","url":"https://www.springcloud.io/docs/","name":"Docs"}},{"@type":"ListItem","position":4,"item":{"@type":"WebPage","@id":"https://www.springcloud.io/docs/springcloud/","url":"https://www.springcloud.io/docs/springcloud/","name":"Springcloud"}},{"@type":"ListItem","position":5,"item":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"}}]},{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.springcloud.io/#/schema/article/1","headline":"Spring Cloud Consul","description":"Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。","isPartOf":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"},"mainEntityOfPage":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"},"datePublished":"2020-11-12T13:26:54CET","dateModified":"2020-11-12T13:26:54CET","author":{"@id":"https://www.springcloud.io/#/schema/person/2"},"publisher":{"@id":"https://www.springcloud.io/#/schema/organization/1"},"image":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/image/2"}}]},{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://www.springcloud.io/#/schema/person/2","name":"kevinblandy","sameAs":["https://twitter.com/kevinblandy","https://github.com/KevinBlandy"]}]},{"@context":"https://schema.org","@graph":[{"@type":"ImageObject","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/image/2","url":"https://www.springcloud.io/doks.png","contentUrl":"https://www.springcloud.io/doks.png","caption":"Spring Cloud Consul"}]}]}</script><meta name=theme-color content="#fff"><link rel=apple-touch-icon sizes=180x180 href=https://www.springcloud.io/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://www.springcloud.io/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://www.springcloud.io/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=https://www.springcloud.io/site.webmanifest><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?d725343fdb7604c5bd89b377295901df",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></head><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" type=checkbox id=menu-btn>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><link rel=preload as=font href=https://www.springcloud.io/fonts/vendor/jost/jost-v4-latin-regular.woff2 type=font/woff2 crossorigin><link rel=preload as=font href=https://www.springcloud.io/fonts/vendor/jost/jost-v4-latin-700.woff2 type=font/woff2 crossorigin><link rel=stylesheet href=https://www.springcloud.io/main.210e3fd96822b9043a12fe33ba94f308d981d4b7afee23cc6b49221906f47a69bea0700754f115f6d85627b3652ca9a96c322dc54c001ee2d03d972841695f93.css integrity="sha512-IQ4/2WgiuQQ6Ev4zupTzCNmB1Lev7iPMa0kiGQb0emm+oHAHVPEV9thWJ7NlLKmpbDItxUwAHuLQPZcoQWlfkw==" crossorigin=anonymous><noscript><style>img.lazyload{display:none}</style></noscript><meta name=keywords content="springcloud官方,springcloud中文文档,springcloud最新文档,springcloud中国"><meta name=robots content="index, follow"><meta name=googlebot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><meta name=bingbot content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"><title>Spring Cloud Consul - SpringCloud中文社区</title><meta name=description content="Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。"><link rel=canonical href=https://www.springcloud.io/docs/springcloud/spring-cloud-consul/><meta property="og:locale" content="zh-CN"><meta property="og:type" content="article"><meta property="og:title" content="Spring Cloud Consul"><meta property="og:description" content="Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。"><meta property="og:url" content="https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"><meta property="og:site_name" content="SpringCloud中文社区"><meta property="article:published_time" content="2020-11-12T13:26:54+01:00"><meta property="article:modified_time" content="2020-11-12T13:26:54+01:00"><meta property="og:image" content="https://www.springcloud.io/doks.png"><meta property="og:image:alt" content="SpringCloud中文社区"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@getdoks"><meta name=twitter:creator content="@henkverlinde"><meta name=twitter:title content="Spring Cloud Consul"><meta name=twitter:description content="Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。"><meta name=twitter:image content="https://www.springcloud.io/doks.png"><meta name=twitter:image:alt content="Spring Cloud Consul"><script type=application/ld+json>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.springcloud.io/#/schema/organization/1","name":"Doks","url":"https://www.springcloud.io/","sameAs":["https://twitter.com/kevinblandy","https://github.com/KevinBlandy"],"logo":{"@type":"ImageObject","@id":"https://www.springcloud.io/#/schema/image/1","url":"https://www.springcloud.io/logo-doks.png","width":512,"height":512,"caption":"Doks"},"image":{"@id":"https://www.springcloud.io/#/schema/image/1"}},{"@type":"WebSite","@id":"https://www.springcloud.io/#/schema/website/1","url":"https://www.springcloud.io/","name":"SpringCloud中文社区","description":"SpringCloud中文社区专注于文档汉化，更新，以及行业前沿资讯的发布。","publisher":{"@id":"https://www.springcloud.io/#/schema/organization/1"}},{"@type":"WebPage","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/","url":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/","name":"Spring Cloud Consul","description":"Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。","isPartOf":{"@id":"https://www.springcloud.io/#/schema/website/1"},"about":{"@id":"https://www.springcloud.io/#/schema/organization/1"},"datePublished":"2020-11-12T13:26:54CET","dateModified":"2020-11-12T13:26:54CET","breadcrumb":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/breadcrumb/1"},"primaryImageOfPage":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/image/2"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"]}]},{"@type":"BreadcrumbList","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/breadcrumb/1","name":"Breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://www.springcloud.io","url":"https://www.springcloud.io","name":"Home"}},{"@type":"ListItem","position":3,"item":{"@type":"WebPage","@id":"https://www.springcloud.io/docs/","url":"https://www.springcloud.io/docs/","name":"Docs"}},{"@type":"ListItem","position":4,"item":{"@type":"WebPage","@id":"https://www.springcloud.io/docs/springcloud/","url":"https://www.springcloud.io/docs/springcloud/","name":"Springcloud"}},{"@type":"ListItem","position":5,"item":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"}}]},{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://www.springcloud.io/#/schema/article/1","headline":"Spring Cloud Consul","description":"Spring Cloud Consul通过自动配置和与Spring环境及其他Spring编程模型成语的绑定，为Spring Boot应用程序提供Consul集成。通过一些简单的注解，你可以快速启用和配置你的应用程序内的常见模式，并使用Hashicorp的Consul构建大型分布式系统。提供的模式包括服务发现、分布式配置和控制总线。","isPartOf":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"},"mainEntityOfPage":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/"},"datePublished":"2020-11-12T13:26:54CET","dateModified":"2020-11-12T13:26:54CET","author":{"@id":"https://www.springcloud.io/#/schema/person/2"},"publisher":{"@id":"https://www.springcloud.io/#/schema/organization/1"},"image":{"@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/image/2"}}]},{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://www.springcloud.io/#/schema/person/2","name":"kevinblandy","sameAs":["https://twitter.com/kevinblandy","https://github.com/KevinBlandy"]}]},{"@context":"https://schema.org","@graph":[{"@type":"ImageObject","@id":"https://www.springcloud.io/docs/springcloud/spring-cloud-consul/#/schema/image/2","url":"https://www.springcloud.io/doks.png","contentUrl":"https://www.springcloud.io/doks.png","caption":"Spring Cloud Consul"}]}]}</script><meta name=theme-color content="#fff"><link rel=apple-touch-icon sizes=180x180 href=https://www.springcloud.io/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://www.springcloud.io/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://www.springcloud.io/favicon-16x16.png><link rel=manifest crossorigin=use-credentials href=https://www.springcloud.io/site.webmanifest><script>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?d725343fdb7604c5bd89b377295901df",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script></head><body class="docs single"><div class="header-bar fixed-top"></div><header class="navbar fixed-top navbar-expand-md navbar-light"><div class=container><input class="menu-btn order-0" type=checkbox id=menu-btn>
 <label class="menu-icon d-md-none" for=menu-btn><span class=navicon></span></label><a class="navbar-brand order-1 order-md-0 me-auto" href=https://www.springcloud.io/>SpringCloud中文社区</a>
 <button id=mode class="btn btn-link order-2 order-md-4" type=button aria-label="Toggle mode">
 <span class=toggle-dark><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></span><span class=toggle-light><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span></button><ul class="navbar-nav social-nav order-3 order-md-5"></ul><div class="collapse navbar-collapse order-4 order-md-1"><ul class="navbar-nav main-nav me-auto order-5 order-md-2"><li class=nav-item><a class=nav-link href=https://www.springcloud.io/docs/>中文文档</a></li><li class=nav-item><a class=nav-link href=https://www.springcloud.io/blog/>行业资讯</a></li></ul><div class="break order-6 d-md-none"></div><form class="navbar-form flex-grow-1 order-7 order-md-3"><input id=userinput class="form-control is-search" type=search placeholder="Search docs..." aria-label="Search docs..." autocomplete=off><div id=suggestions class="shadow bg-white rounded"></div></form></div></div></header><div class="wrap container" role=document><div class=content><div class="row flex-xl-nowrap"><div class="col-lg-5 col-xl-4 docs-sidebar"><nav class=docs-links aria-label="Main navigation"><ul class="list-unstyled collapsible-sidebar"><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-SpringBoot aria-expanded=false>
 SpringBoot</button></li><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section-SpringCloud aria-expanded=true>
-SpringCloud</button><div class="collapse show" id=section-SpringCloud><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-alibaba/>Spring Cloud Alibaba</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-bus/>Spring Cloud Bus</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-circuit-breaker/>Spring Cloud Circuit Breaker</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-config/>Spring Cloud Config</a></li><li><a class="docs-link rounded active" href=https://www.springcloud.io/docs/springcloud/spring-cloud-consul/>Spring Cloud Consul</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-gateway/>Spring Cloud Gateway</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-kubernetes/>Spring Cloud Kubernetes</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-netflix/>Spring Cloud Netflix</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-openfeign/>Spring Cloud OpenFeign</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-security-/>Spring Cloud Security</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/>Spring Cloud Sleuth</a></li></ul></div></li></ul></nav></div><nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#1-快速开始>1. 快速开始</a><ul><li><a href=#11-服务发现>1.1. 服务发现</a></li><li><a href=#12-分布式配置>1.2. 分布式配置</a></li></ul></li><li><a href=#2-安装consul>2. 安装Consul</a></li><li><a href=#3-consul-agent>3. Consul Agent</a></li><li><a href=#4-使用consul进行服务发现>4. 使用Consul进行服务发现</a><ul><li><a href=#41-如何激活>4.1. 如何激活</a></li><li><a href=#42-注册到consul>4.2. 注册到Consul</a></li><li><a href=#43-查阅服务>4.3. 查阅服务</a></li><li><a href=#44-consul-catalog-watch>4.4. Consul Catalog Watch</a></li></ul></li><li><a href=#5-使用consul的分布式配置>5. 使用Consul的分布式配置</a><ul><li><a href=#51-如何激活>5.1. 如何激活</a></li><li><a href=#52-spring-boot配置数据导入>5.2. Spring Boot配置数据导入</a></li><li><a href=#53-定制化>5.3. 定制化</a></li><li><a href=#54-config-watch>5.4. Config Watch</a></li><li><a href=#55-yaml或properties的配置>5.5. YAML或Properties的配置</a></li><li><a href=#56-git2consul的配置>5.6. git2consul的配置</a></li><li><a href=#57-快速失败>5.7. 快速失败</a></li></ul></li><li><a href=#6-consul-重试>6. Consul 重试</a></li><li><a href=#7-spring-cloud-bus-和-consul>7. Spring Cloud Bus 和 Consul</a><ul><li><a href=#71-如何激活>7.1. 如何激活</a></li></ul></li><li><a href=#8-circuit-breaker-和-hystrix>8. Circuit Breaker 和 Hystrix</a><ul><li><a href=#9-hystrix-metrics-aggregation-with-turbine-and-consul>9. Hystrix metrics aggregation with Turbine and Consul</a></li></ul></li><li><a href=#10-配置属性>10. 配置属性</a></li></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><nav aria-label=breadcrumb><ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.springcloud.io/>Home</a></li><li class=breadcrumb-item><a href=https://www.springcloud.io/docs/>Docs</a></li><li class=breadcrumb-item><a href=https://www.springcloud.io/docs/springcloud/>SpringCloud</a></li><li class="breadcrumb-item active" aria-current=page>Spring Cloud Consul</li></ol></nav><h1>Spring Cloud Consul</h1><p class=lead></p><ul><li>当前版本：3.0.3</li><li>修改时间：2021年7月23日</li><li>官方文档：<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/>https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/</a></li><li>源码仓库：<a href=https://github.com/spring-cloud/spring-cloud-consul>https://github.com/spring-cloud/spring-cloud-consul</a></li></ul><p>该项目通过自动配置和与Spring环境及其他Spring编程模型习语的绑定，为Spring Boot应用程序提供<a href=https://consul.io/>Consul</a>集成。通过一些简单的注解，你可以在你的应用程序中快速启用和配置常见的模式，并使用基于Consul的组件构建大型分布式系统。提供的模式包括服务发现、控制总线和配置。通过与其他Spring Cloud项目的集成，提供了智能路由和客户端负载平衡、断路器。</p><h2 id=1-快速开始>1. 快速开始<a href=#1-快速开始 class=anchor aria-hidden=true>#</a></h2><p>这篇快速入门指南介绍了如何使用Spring Cloud Consul进行服务发现和分布式配置。</p><p>首先，在你的机器上运行Consul Agent。然后你就可以访问它，并将其作为Spring Cloud Consul的服务注册和配置源。</p><h3 id=11-服务发现>1.1. 服务发现<a href=#11-服务发现 class=anchor aria-hidden=true>#</a></h3><p>要在应用程序中使用这些功能，你可以将其构建为一个依赖<code>spring-cloud-consul-core</code>的Spring Boot应用程序。添加依赖的最方便方式是使用Spring Boot启动器：<code>org.springframework.cloud:spring-cloud-starter-consul-discovery</code>。我们建议使用依赖性管理和<code>spring-boot-starter-parent</code>。</p><p>下面的例子显示了一个典型的Maven配置。</p><p>pom.xml</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;project&gt;</span>
-<span class=nt>&lt;parent&gt;</span>
-    <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
-    <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-parent<span class=nt>&lt;/artifactId&gt;</span>
-    <span class=nt>&lt;version&gt;</span>{spring-boot-version}<span class=nt>&lt;/version&gt;</span>
-    <span class=nt>&lt;relativePath/&gt;</span> <span class=c>&lt;!-- lookup parent from repository --&gt;</span>
-  <span class=nt>&lt;/parent&gt;</span>
+SpringCloud</button><div class="collapse show" id=section-SpringCloud><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-alibaba/>Spring Cloud Alibaba</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-bus/>Spring Cloud Bus</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-circuit-breaker/>Spring Cloud Circuit Breaker</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-config/>Spring Cloud Config</a></li><li><a class="docs-link rounded active" href=https://www.springcloud.io/docs/springcloud/spring-cloud-consul/>Spring Cloud Consul</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-gateway/>Spring Cloud Gateway</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-kubernetes/>Spring Cloud Kubernetes</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-netflix/>Spring Cloud Netflix</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-openfeign/>Spring Cloud OpenFeign</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-security-/>Spring Cloud Security</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-sleuth/>Spring Cloud Sleuth</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/springcloud/spring-cloud-zookeeper/>Spring Cloud Zookeeper</a></li></ul></div></li><li class=mb-1><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle=collapse data-bs-target=#section- aria-expanded=false>
+Spring Cloud Stream</button><div class=collapse id=section-><ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small"><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/spring-cloud-stream/%E6%A6%82%E8%BF%B0/>概述</a></li><li><a class="docs-link rounded" href=https://www.springcloud.io/docs/spring-cloud-stream/rabbit-mq-binder/>Rabbit MQ Binder</a></li></ul></div></li></ul></nav></div><nav class="docs-toc d-none d-xl-block col-xl-3" aria-label="Secondary navigation"><div class=page-links><h3>On this page</h3><nav id=TableOfContents><ul><li><a href=#1-快速开始>1. 快速开始</a><ul><li><a href=#11-服务发现>1.1. 服务发现</a></li><li><a href=#12-分布式配置>1.2. 分布式配置</a></li></ul></li><li><a href=#2-安装consul>2. 安装Consul</a></li><li><a href=#3-consul-agent>3. Consul Agent</a></li><li><a href=#4-使用consul进行服务发现>4. 使用Consul进行服务发现</a><ul><li><a href=#41-如何激活>4.1. 如何激活</a></li><li><a href=#42-注册到consul>4.2. 注册到Consul</a></li><li><a href=#43-查阅服务>4.3. 查阅服务</a></li><li><a href=#44-consul-catalog-watch>4.4. Consul Catalog Watch</a></li></ul></li><li><a href=#5-使用consul的分布式配置>5. 使用Consul的分布式配置</a><ul><li><a href=#51-如何激活>5.1. 如何激活</a></li><li><a href=#52-spring-boot配置数据导入>5.2. Spring Boot配置数据导入</a></li><li><a href=#53-定制化>5.3. 定制化</a></li><li><a href=#54-config-watch>5.4. Config Watch</a></li><li><a href=#55-yaml或properties的配置>5.5. YAML或Properties的配置</a></li><li><a href=#56-git2consul的配置>5.6. git2consul的配置</a></li><li><a href=#57-快速失败>5.7. 快速失败</a></li></ul></li><li><a href=#6-consul-重试>6. Consul 重试</a></li><li><a href=#7-spring-cloud-bus-和-consul>7. Spring Cloud Bus 和 Consul</a><ul><li><a href=#71-如何激活>7.1. 如何激活</a></li></ul></li><li><a href=#8-circuit-breaker-和-hystrix>8. Circuit Breaker 和 Hystrix</a><ul><li><a href=#9-hystrix-metrics-aggregation-with-turbine-and-consul>9. Hystrix metrics aggregation with Turbine and Consul</a></li></ul></li><li><a href=#10-配置属性>10. 配置属性</a></li></ul></nav></div></nav><main class="docs-content col-lg-11 col-xl-9"><nav aria-label=breadcrumb><ol class=breadcrumb><li class=breadcrumb-item><a href=https://www.springcloud.io/>Home</a></li><li class=breadcrumb-item><a href=https://www.springcloud.io/docs/>Docs</a></li><li class=breadcrumb-item><a href=https://www.springcloud.io/docs/springcloud/>SpringCloud</a></li><li class="breadcrumb-item active" aria-current=page>Spring Cloud Consul</li></ol></nav><h1>Spring Cloud Consul</h1><p class=lead></p><ul><li>当前版本：3.0.3</li><li>修改时间：2021年7月23日</li><li>官方文档：<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/>https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/</a></li><li>源码仓库：<a href=https://github.com/spring-cloud/spring-cloud-consul>https://github.com/spring-cloud/spring-cloud-consul</a></li></ul><p>该项目通过自动配置和与Spring环境及其他Spring编程模型习语的绑定，为Spring Boot应用程序提供<a href=https://consul.io/>Consul</a>集成。通过一些简单的注解，你可以在你的应用程序中快速启用和配置常见的模式，并使用基于Consul的组件构建大型分布式系统。提供的模式包括服务发现、控制总线和配置。通过与其他Spring Cloud项目的集成，提供了智能路由和客户端负载平衡、断路器。</p><h2 id=1-快速开始>1. 快速开始<a href=#1-快速开始 class=anchor aria-hidden=true>#</a></h2><p>这篇快速入门指南介绍了如何使用Spring Cloud Consul进行服务发现和分布式配置。</p><p>首先，在你的机器上运行Consul Agent。然后你就可以访问它，并将其作为Spring Cloud Consul的服务注册和配置源。</p><h3 id=11-服务发现>1.1. 服务发现<a href=#11-服务发现 class=anchor aria-hidden=true>#</a></h3><p>要在应用程序中使用这些功能，你可以将其构建为一个依赖<code>spring-cloud-consul-core</code>的Spring Boot应用程序。添加依赖的最方便方式是使用Spring Boot启动器：<code>org.springframework.cloud:spring-cloud-starter-consul-discovery</code>。我们建议使用依赖性管理和<code>spring-boot-starter-parent</code>。</p><p>下面的例子显示了一个典型的Maven配置。</p><p>pom.xml</p><pre><code class=language-xml>&lt;project&gt;
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;{spring-boot-version}&lt;/version&gt;
+    &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+  &lt;/parent&gt;
 
-  <span class=nt>&lt;dependencies&gt;</span>
-    <span class=nt>&lt;dependency&gt;</span>
-      <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
-      <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-consul-discovery<span class=nt>&lt;/artifactId&gt;</span>
-    <span class=nt>&lt;/dependency&gt;</span>
-    <span class=nt>&lt;dependency&gt;</span>
-      <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
-      <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-test<span class=nt>&lt;/artifactId&gt;</span>
-      <span class=nt>&lt;scope&gt;</span>test<span class=nt>&lt;/scope&gt;</span>
-    <span class=nt>&lt;/dependency&gt;</span>
-  <span class=nt>&lt;/dependencies&gt;</span>
-  <span class=nt>&lt;dependencyManagement&gt;</span>
-    <span class=nt>&lt;dependencies&gt;</span>
-      <span class=nt>&lt;dependency&gt;</span>
-        <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
-        <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
-        <span class=nt>&lt;version&gt;</span>${spring-cloud.version}<span class=nt>&lt;/version&gt;</span>
-        <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
-        <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
-      <span class=nt>&lt;/dependency&gt;</span>
-    <span class=nt>&lt;/dependencies&gt;</span>
-  <span class=nt>&lt;/dependencyManagement&gt;</span>
-  <span class=nt>&lt;build&gt;</span>
-    <span class=nt>&lt;plugins&gt;</span>
-      <span class=nt>&lt;plugin&gt;</span>
-        <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
-        <span class=nt>&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class=nt>&lt;/artifactId&gt;</span>
-      <span class=nt>&lt;/plugin&gt;</span>
-    <span class=nt>&lt;/plugins&gt;</span>
-  <span class=nt>&lt;/build&gt;</span>
-<span class=nt>&lt;/project&gt;</span>
-</code></pre></div><p>下面的例子显示了一个典型的Gradle设置。</p><p>build.gradle</p><div class=highlight><pre class=chroma><code class=language-groovy data-lang=groovy><span class=n>plugins</span> <span class=o>{</span>
-  <span class=n>id</span> <span class=s1>&#39;org.springframework.boot&#39;</span> <span class=n>version</span> <span class=n>$</span><span class=o>{</span><span class=n>spring</span><span class=o>-</span><span class=n>boot</span><span class=o>-</span><span class=n>version</span><span class=o>}</span>
-  <span class=n>id</span> <span class=s1>&#39;io.spring.dependency-management&#39;</span> <span class=n>version</span> <span class=n>$</span><span class=o>{</span><span class=n>spring</span><span class=o>-</span><span class=n>dependency</span><span class=o>-</span><span class=n>management</span><span class=o>-</span><span class=n>version</span><span class=o>}</span>
-  <span class=n>id</span> <span class=s1>&#39;java&#39;</span>
-<span class=o>}</span>
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-cloud-starter-consul-discovery&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+        &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+        &lt;type&gt;pom&lt;/type&gt;
+        &lt;scope&gt;import&lt;/scope&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</code></pre><p>下面的例子显示了一个典型的Gradle设置。</p><p>build.gradle</p><pre><code class=language-groovy>plugins {
+  id 'org.springframework.boot' version ${spring-boot-version}
+  id 'io.spring.dependency-management' version ${spring-dependency-management-version}
+  id 'java'
+}
 
-<span class=n>repositories</span> <span class=o>{</span>
-  <span class=n>mavenCentral</span><span class=o>()</span>
-<span class=o>}</span>
+repositories {
+  mavenCentral()
+}
 
-<span class=n>dependencies</span> <span class=o>{</span>
-  <span class=n>implementation</span> <span class=s1>&#39;org.springframework.cloud:spring-cloud-starter-consul-discovery&#39;</span>
-  <span class=n>testImplementation</span> <span class=s1>&#39;org.springframework.boot:spring-boot-starter-test&#39;</span>
-<span class=o>}</span>
-<span class=n>dependencyManagement</span> <span class=o>{</span>
-  <span class=n>imports</span> <span class=o>{</span>
-    <span class=n>mavenBom</span> <span class=s2>&#34;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&#34;</span>
-  <span class=o>}</span>
-<span class=o>}</span>
-</code></pre></div><p>现在你可以创建一个标准的Spring Boot应用程序，比如下面的HTTP服务器。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@SpringBootApplication</span>
-<span class=nd>@RestController</span>
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>Application</span> <span class=o>{</span>
+dependencies {
+  implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+dependencyManagement {
+  imports {
+    mavenBom &quot;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&quot;
+  }
+}
+</code></pre><p>现在你可以创建一个标准的Spring Boot应用程序，比如下面的HTTP服务器。</p><pre><code class=language-java>@SpringBootApplication
+@RestController
+public class Application {
 
-    <span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;/&#34;</span><span class=o>)</span>
-    <span class=kd>public</span> <span class=n>String</span> <span class=nf>home</span><span class=o>()</span> <span class=o>{</span>
-        <span class=k>return</span> <span class=s>&#34;Hello World!&#34;</span><span class=o>;</span>
-    <span class=o>}</span>
+    @GetMapping(&quot;/&quot;)
+    public String home() {
+        return &quot;Hello World!&quot;;
+    }
 
-    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
-        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>Application</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
-    <span class=o>}</span>
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-<span class=o>}</span>
-</code></pre></div><p>当这个HTTP服务器运行时，它会连接到运行在本地默认8500端口的Consul Agent。要修改启动行为，你可以通过<code>application.properties</code>来改变Consul Agent的位置，如下例所示。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>host</span><span class=p>:</span><span class=w> </span><span class=l>localhost</span><span class=w>
-</span><span class=w>      </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8500</span><span class=w>
-</span></code></pre></div><p>现在你可以使用<code>DiscoveryClient</code>、<code>@LoadBalanced</code> <code>RestTemplate</code>或<code>@LoadBalanced</code> <code>WebClient.Builder</code>来从<code>Consul</code>检索服务和实例数据，如以下例子所示。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Autowired</span>
-<span class=kd>private</span> <span class=n>DiscoveryClient</span> <span class=n>discoveryClient</span><span class=o>;</span>
+}
+</code></pre><p>当这个HTTP服务器运行时，它会连接到运行在本地默认8500端口的Consul Agent。要修改启动行为，你可以通过<code>application.properties</code>来改变Consul Agent的位置，如下例所示。</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+</code></pre><p>现在你可以使用<code>DiscoveryClient</code>、<code>@LoadBalanced</code> <code>RestTemplate</code>或<code>@LoadBalanced</code> <code>WebClient.Builder</code>来从<code>Consul</code>检索服务和实例数据，如以下例子所示。</p><pre><code class=language-java>@Autowired
+private DiscoveryClient discoveryClient;
 
-<span class=kd>public</span> <span class=n>String</span> <span class=nf>serviceUrl</span><span class=o>()</span> <span class=o>{</span>
-    <span class=n>List</span><span class=o>&lt;</span><span class=n>ServiceInstance</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=n>discoveryClient</span><span class=o>.</span><span class=na>getInstances</span><span class=o>(</span><span class=s>&#34;STORES&#34;</span><span class=o>);</span>
-    <span class=k>if</span> <span class=o>(</span><span class=n>list</span> <span class=o>!=</span> <span class=kc>null</span> <span class=o>&amp;&amp;</span> <span class=n>list</span><span class=o>.</span><span class=na>size</span><span class=o>()</span> <span class=o>&gt;</span> <span class=n>0</span> <span class=o>)</span> <span class=o>{</span>
-        <span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>0</span><span class=o>).</span><span class=na>getUri</span><span class=o>().</span><span class=na>toString</span><span class=o>();</span>
-    <span class=o>}</span>
-    <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
-<span class=o>}</span>
-</code></pre></div><h3 id=12-分布式配置>1.2. 分布式配置<a href=#12-分布式配置 class=anchor aria-hidden=true>#</a></h3><p>要在应用程序中使用这些功能，您可以将其构建为依赖<code>spring-cloud-consul-core</code>和<code>spring-cloud-consul-config</code>的Spring Boot应用程序。添加依赖的最便捷方式是使用Spring Boot启动器：<code>org.springframework.cloud:spring-cloud-starter-consul-config</code>。我们建议使用依赖性管理和<code>spring-boot-starter-parent</code>。</p><p>下面的例子展示了一个典型的Maven配置。</p><p>pom.xml</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;project&gt;</span>
-<span class=nt>&lt;parent&gt;</span>
-    <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
-    <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-parent<span class=nt>&lt;/artifactId&gt;</span>
-    <span class=nt>&lt;version&gt;</span>{spring-boot-version}<span class=nt>&lt;/version&gt;</span>
-    <span class=nt>&lt;relativePath/&gt;</span> <span class=c>&lt;!-- lookup parent from repository --&gt;</span>
-  <span class=nt>&lt;/parent&gt;</span>
+public String serviceUrl() {
+    List&lt;ServiceInstance&gt; list = discoveryClient.getInstances(&quot;STORES&quot;);
+    if (list != null &amp;&amp; list.size() &gt; 0 ) {
+        return list.get(0).getUri().toString();
+    }
+    return null;
+}
+</code></pre><h3 id=12-分布式配置>1.2. 分布式配置<a href=#12-分布式配置 class=anchor aria-hidden=true>#</a></h3><p>要在应用程序中使用这些功能，您可以将其构建为依赖<code>spring-cloud-consul-core</code>和<code>spring-cloud-consul-config</code>的Spring Boot应用程序。添加依赖的最便捷方式是使用Spring Boot启动器：<code>org.springframework.cloud:spring-cloud-starter-consul-config</code>。我们建议使用依赖性管理和<code>spring-boot-starter-parent</code>。</p><p>下面的例子展示了一个典型的Maven配置。</p><p>pom.xml</p><pre><code class=language-xml>&lt;project&gt;
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;{spring-boot-version}&lt;/version&gt;
+    &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+  &lt;/parent&gt;
 
-  <span class=nt>&lt;dependencies&gt;</span>
-    <span class=nt>&lt;dependency&gt;</span>
-      <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
-      <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-consul-config<span class=nt>&lt;/artifactId&gt;</span>
-    <span class=nt>&lt;/dependency&gt;</span>
-    <span class=nt>&lt;dependency&gt;</span>
-      <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
-      <span class=nt>&lt;artifactId&gt;</span>spring-boot-starter-test<span class=nt>&lt;/artifactId&gt;</span>
-      <span class=nt>&lt;scope&gt;</span>test<span class=nt>&lt;/scope&gt;</span>
-    <span class=nt>&lt;/dependency&gt;</span>
-  <span class=nt>&lt;/dependencies&gt;</span>
-  <span class=nt>&lt;dependencyManagement&gt;</span>
-    <span class=nt>&lt;dependencies&gt;</span>
-      <span class=nt>&lt;dependency&gt;</span>
-        <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
-        <span class=nt>&lt;artifactId&gt;</span>spring-cloud-dependencies<span class=nt>&lt;/artifactId&gt;</span>
-        <span class=nt>&lt;version&gt;</span>${spring-cloud.version}<span class=nt>&lt;/version&gt;</span>
-        <span class=nt>&lt;type&gt;</span>pom<span class=nt>&lt;/type&gt;</span>
-        <span class=nt>&lt;scope&gt;</span>import<span class=nt>&lt;/scope&gt;</span>
-      <span class=nt>&lt;/dependency&gt;</span>
-    <span class=nt>&lt;/dependencies&gt;</span>
-  <span class=nt>&lt;/dependencyManagement&gt;</span>
-  <span class=nt>&lt;build&gt;</span>
-    <span class=nt>&lt;plugins&gt;</span>
-      <span class=nt>&lt;plugin&gt;</span>
-        <span class=nt>&lt;groupId&gt;</span>org.springframework.boot<span class=nt>&lt;/groupId&gt;</span>
-        <span class=nt>&lt;artifactId&gt;</span>spring-boot-maven-plugin<span class=nt>&lt;/artifactId&gt;</span>
-      <span class=nt>&lt;/plugin&gt;</span>
-    <span class=nt>&lt;/plugins&gt;</span>
-  <span class=nt>&lt;/build&gt;</span>
-<span class=nt>&lt;/project&gt;</span>
-</code></pre></div><p>下面的例子显示了一个典型的Gradle设置。</p><p>build.gradle</p><div class=highlight><pre class=chroma><code class=language-groovy data-lang=groovy><span class=n>plugins</span> <span class=o>{</span>
-  <span class=n>id</span> <span class=s1>&#39;org.springframework.boot&#39;</span> <span class=n>version</span> <span class=n>$</span><span class=o>{</span><span class=n>spring</span><span class=o>-</span><span class=n>boot</span><span class=o>-</span><span class=n>version</span><span class=o>}</span>
-  <span class=n>id</span> <span class=s1>&#39;io.spring.dependency-management&#39;</span> <span class=n>version</span> <span class=n>$</span><span class=o>{</span><span class=n>spring</span><span class=o>-</span><span class=n>dependency</span><span class=o>-</span><span class=n>management</span><span class=o>-</span><span class=n>version</span><span class=o>}</span>
-  <span class=n>id</span> <span class=s1>&#39;java&#39;</span>
-<span class=o>}</span>
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-cloud-starter-consul-config&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+  &lt;dependencyManagement&gt;
+    &lt;dependencies&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-cloud-dependencies&lt;/artifactId&gt;
+        &lt;version&gt;${spring-cloud.version}&lt;/version&gt;
+        &lt;type&gt;pom&lt;/type&gt;
+        &lt;scope&gt;import&lt;/scope&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+  &lt;/dependencyManagement&gt;
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+&lt;/project&gt;
+</code></pre><p>下面的例子显示了一个典型的Gradle设置。</p><p>build.gradle</p><pre><code class=language-groovy>plugins {
+  id 'org.springframework.boot' version ${spring-boot-version}
+  id 'io.spring.dependency-management' version ${spring-dependency-management-version}
+  id 'java'
+}
 
-<span class=n>repositories</span> <span class=o>{</span>
-  <span class=n>mavenCentral</span><span class=o>()</span>
-<span class=o>}</span>
+repositories {
+  mavenCentral()
+}
 
-<span class=n>dependencies</span> <span class=o>{</span>
-  <span class=n>implementation</span> <span class=s1>&#39;org.springframework.cloud:spring-cloud-starter-consul-config&#39;</span>
-  <span class=n>testImplementation</span> <span class=s1>&#39;org.springframework.boot:spring-boot-starter-test&#39;</span>
-<span class=o>}</span>
-<span class=n>dependencyManagement</span> <span class=o>{</span>
-  <span class=n>imports</span> <span class=o>{</span>
-    <span class=n>mavenBom</span> <span class=s2>&#34;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&#34;</span>
-  <span class=o>}</span>
-<span class=o>}</span>
-</code></pre></div><p>现在你可以创建一个标准的Spring Boot应用程序，比如下面的HTTP服务器。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@SpringBootApplication</span>
-<span class=nd>@RestController</span>
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>Application</span> <span class=o>{</span>
+dependencies {
+  implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+dependencyManagement {
+  imports {
+    mavenBom &quot;org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}&quot;
+  }
+}
+</code></pre><p>现在你可以创建一个标准的Spring Boot应用程序，比如下面的HTTP服务器。</p><pre><code class=language-java>@SpringBootApplication
+@RestController
+public class Application {
 
-    <span class=nd>@GetMapping</span><span class=o>(</span><span class=s>&#34;/&#34;</span><span class=o>)</span>
-    <span class=kd>public</span> <span class=n>String</span> <span class=nf>home</span><span class=o>()</span> <span class=o>{</span>
-        <span class=k>return</span> <span class=s>&#34;Hello World!&#34;</span><span class=o>;</span>
-    <span class=o>}</span>
+    @GetMapping(&quot;/&quot;)
+    public String home() {
+        return &quot;Hello World!&quot;;
+    }
 
-    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
-        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>Application</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
-    <span class=o>}</span>
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-<span class=o>}</span>
-</code></pre></div><p>该应用程序从Consul检索配置数据。</p><blockquote><p>如果你使用Spring Cloud Consul配置，你需要设置<code>spring.config.import</code>属性，以便与Consul绑定。你可以在<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#config-data-import>Spring Boot配置数据导入部分</a>阅读更多信息。</p></blockquote><h2 id=2-安装consul>2. 安装Consul<a href=#2-安装consul class=anchor aria-hidden=true>#</a></h2><p>请参阅<a href=https://www.consul.io/intro/getting-started/install.html>安装文档</a>，了解如何安装Consul。</p><h2 id=3-consul-agent>3. Consul Agent<a href=#3-consul-agent class=anchor aria-hidden=true>#</a></h2><p>所有Spring Cloud Consul应用程序必须有一个Consul Agent客户端。默认情况下，代理客户端应该在<code>localhost:8500</code>。关于如何启动代理客户端以及如何连接到Consul代理服务器集群的具体细节，请参阅<a href=https://consul.io/docs/agent/basics.html>代理文档</a>。对于开发来说，在你安装了consul之后，你可以使用以下命令启动一个Consul Agent。</p><div class=highlight><pre class=chroma><code class=language-bash data-lang=bash>./src/main/bash/local_run_consul.sh
-</code></pre></div><p>这将在8500端口启动一个服务器模式的代理，用户界面在<code>localhost:8500</code>可用。</p><h2 id=4-使用consul进行服务发现>4. 使用Consul进行服务发现<a href=#4-使用consul进行服务发现 class=anchor aria-hidden=true>#</a></h2><p>服务发现是基于微服务的架构的关键原则之一。试图手工配置每个客户端或某种形式的约定是非常困难的，而且可能非常脆弱。Consul通过<a href=https://www.consul.io/docs/agent/http.html>HTTP API</a>和<a href=https://www.consul.io/docs/agent/dns.html>DNS</a>提供服务发现服务。Spring Cloud Consul利用HTTP API进行服务注册和发现。这并不妨碍非Spring Cloud应用程序利用DNS接口。Consul代理服务器在一个<a href=https://www.consul.io/docs/internals/architecture.html>集群</a>中运行，该集群通过<a href=https://www.consul.io/docs/internals/gossip.html>流言协议</a>进行通信并使用<a href=https://www.consul.io/docs/internals/consensus.html>Raft共识协议</a>。</p><h3 id=41-如何激活>4.1. 如何激活<a href=#41-如何激活 class=anchor aria-hidden=true>#</a></h3><p>要激活Consul服务发现，请使用group为<code>org.springframework.cloud</code>和artifact id为<code>spring-cloud-starter-consul-discovery</code>的<code>starter</code>。请参阅<a href=https://projects.spring.io/spring-cloud/>Spring Cloud项目页面</a>，了解关于用当前Spring Cloud发布列车设置构建系统的细节。</p><h3 id=42-注册到consul>4.2. 注册到Consul<a href=#42-注册到consul class=anchor aria-hidden=true>#</a></h3><p>当客户端在Consul注册时，它提供了关于自己的元数据，如主机和端口、ID、名称和标签。默认情况下，会创建一个HTTP检查，Consul每隔10秒会点击<code>/actuator/health</code>端点。如果健康检查失败，服务实例将被标记为关键。</p><p>示例Consul客户端。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@SpringBootApplication</span>
-<span class=nd>@RestController</span>
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>Application</span> <span class=o>{</span>
+}
+</code></pre><p>该应用程序从Consul检索配置数据。</p><blockquote><p>如果你使用Spring Cloud Consul配置，你需要设置<code>spring.config.import</code>属性，以便与Consul绑定。你可以在<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#config-data-import>Spring Boot配置数据导入部分</a>阅读更多信息。</p></blockquote><h2 id=2-安装consul>2. 安装Consul<a href=#2-安装consul class=anchor aria-hidden=true>#</a></h2><p>请参阅<a href=https://www.consul.io/intro/getting-started/install.html>安装文档</a>，了解如何安装Consul。</p><h2 id=3-consul-agent>3. Consul Agent<a href=#3-consul-agent class=anchor aria-hidden=true>#</a></h2><p>所有Spring Cloud Consul应用程序必须有一个Consul Agent客户端。默认情况下，代理客户端应该在<code>localhost:8500</code>。关于如何启动代理客户端以及如何连接到Consul代理服务器集群的具体细节，请参阅<a href=https://consul.io/docs/agent/basics.html>代理文档</a>。对于开发来说，在你安装了consul之后，你可以使用以下命令启动一个Consul Agent。</p><pre><code class=language-bash>./src/main/bash/local_run_consul.sh
+</code></pre><p>这将在8500端口启动一个服务器模式的代理，用户界面在<code>localhost:8500</code>可用。</p><h2 id=4-使用consul进行服务发现>4. 使用Consul进行服务发现<a href=#4-使用consul进行服务发现 class=anchor aria-hidden=true>#</a></h2><p>服务发现是基于微服务的架构的关键原则之一。试图手工配置每个客户端或某种形式的约定是非常困难的，而且可能非常脆弱。Consul通过<a href=https://www.consul.io/docs/agent/http.html>HTTP API</a>和<a href=https://www.consul.io/docs/agent/dns.html>DNS</a>提供服务发现服务。Spring Cloud Consul利用HTTP API进行服务注册和发现。这并不妨碍非Spring Cloud应用程序利用DNS接口。Consul代理服务器在一个<a href=https://www.consul.io/docs/internals/architecture.html>集群</a>中运行，该集群通过<a href=https://www.consul.io/docs/internals/gossip.html>流言协议</a>进行通信并使用<a href=https://www.consul.io/docs/internals/consensus.html>Raft共识协议</a>。</p><h3 id=41-如何激活>4.1. 如何激活<a href=#41-如何激活 class=anchor aria-hidden=true>#</a></h3><p>要激活Consul服务发现，请使用group为<code>org.springframework.cloud</code>和artifact id为<code>spring-cloud-starter-consul-discovery</code>的<code>starter</code>。请参阅<a href=https://projects.spring.io/spring-cloud/>Spring Cloud项目页面</a>，了解关于用当前Spring Cloud发布列车设置构建系统的细节。</p><h3 id=42-注册到consul>4.2. 注册到Consul<a href=#42-注册到consul class=anchor aria-hidden=true>#</a></h3><p>当客户端在Consul注册时，它提供了关于自己的元数据，如主机和端口、ID、名称和标签。默认情况下，会创建一个HTTP检查，Consul每隔10秒会点击<code>/actuator/health</code>端点。如果健康检查失败，服务实例将被标记为关键。</p><p>示例Consul客户端。</p><pre><code class=language-java>@SpringBootApplication
+@RestController
+public class Application {
 
-    <span class=nd>@RequestMapping</span><span class=o>(</span><span class=s>&#34;/&#34;</span><span class=o>)</span>
-    <span class=kd>public</span> <span class=n>String</span> <span class=nf>home</span><span class=o>()</span> <span class=o>{</span>
-        <span class=k>return</span> <span class=s>&#34;Hello world&#34;</span><span class=o>;</span>
-    <span class=o>}</span>
+    @RequestMapping(&quot;/&quot;)
+    public String home() {
+        return &quot;Hello world&quot;;
+    }
 
-    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
-        <span class=k>new</span> <span class=n>SpringApplicationBuilder</span><span class=o>(</span><span class=n>Application</span><span class=o>.</span><span class=na>class</span><span class=o>).</span><span class=na>web</span><span class=o>(</span><span class=kc>true</span><span class=o>).</span><span class=na>run</span><span class=o>(</span><span class=n>args</span><span class=o>);</span>
-    <span class=o>}</span>
+    public static void main(String[] args) {
+        new SpringApplicationBuilder(Application.class).web(true).run(args);
+    }
 
-<span class=o>}</span>
-</code></pre></div><p>(即完全是正常的Spring Boot应用)。如果Consul客户端位于<code>localhost:8500</code>以外的地方，则需要配置来定位该客户端。例子。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>host</span><span class=p>:</span><span class=w> </span><span class=l>localhost</span><span class=w>
-</span><span class=w>      </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>8500</span><span class=w>
-</span></code></pre></div><blockquote><p>如果你使用<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#spring-cloud-consul-config>Spring Cloud Consul Config</a>，并且设置了<code>spring.cloud.bootstrap.enabled=true</code>或<code>spring.config.use-legacy-processing=true</code>或使用<code>spring-cloud-starter-bootstrap</code>，那么上述值将需要放在<code>bootstrap.yml</code>而不是<code>application.yml</code>中。</p></blockquote><p>默认的服务名称、实例ID和端口取自<code>Environment</code>，分别为<code>${spring.application.name}</code>、Spring Context ID和<code>${server.port}</code>。</p><p>要禁用Consul发现客户端，可以将<code>spring.cloud.consul.discovery.enabled</code>设为<code>false</code>。当<code>spring.cloud.discovery.enabled</code>被设置为<code>false</code>时，Consul发现客户端也将被禁用。</p><p>要禁用服务注册，你可以将<code>spring.cloud.consul.discovery.register</code>设为<code>false</code>。</p><h4 id=421-将管management为一项单独的服务进行注册>4.2.1. 将管Management为一项单独的服务进行注册<a href=#421-将管management为一项单独的服务进行注册 class=anchor aria-hidden=true>#</a></h4><p>当管理服务器的端口被设置为与应用程序的端口不同时，通过设置<code>management.server.port</code>属性，管理服务将被注册为比应用程序服务单独的服务。比如说。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>application</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>myApp</span><span class=w>
-</span><span class=w></span><span class=nt>management</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>server</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>4452</span><span class=w>
-</span></code></pre></div><p>上述配置将注册以下两个服务。</p><ol><li><p>Application Service:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>ID: myApp
+}
+</code></pre><p>(即完全是正常的Spring Boot应用)。如果Consul客户端位于<code>localhost:8500</code>以外的地方，则需要配置来定位该客户端。例子。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+</code></pre><blockquote><p>如果你使用<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#spring-cloud-consul-config>Spring Cloud Consul Config</a>，并且设置了<code>spring.cloud.bootstrap.enabled=true</code>或<code>spring.config.use-legacy-processing=true</code>或使用<code>spring-cloud-starter-bootstrap</code>，那么上述值将需要放在<code>bootstrap.yml</code>而不是<code>application.yml</code>中。</p></blockquote><p>默认的服务名称、实例ID和端口取自<code>Environment</code>，分别为<code>${spring.application.name}</code>、Spring Context ID和<code>${server.port}</code>。</p><p>要禁用Consul发现客户端，可以将<code>spring.cloud.consul.discovery.enabled</code>设为<code>false</code>。当<code>spring.cloud.discovery.enabled</code>被设置为<code>false</code>时，Consul发现客户端也将被禁用。</p><p>要禁用服务注册，你可以将<code>spring.cloud.consul.discovery.register</code>设为<code>false</code>。</p><h4 id=421-将管management为一项单独的服务进行注册>4.2.1. 将管Management为一项单独的服务进行注册<a href=#421-将管management为一项单独的服务进行注册 class=anchor aria-hidden=true>#</a></h4><p>当管理服务器的端口被设置为与应用程序的端口不同时，通过设置<code>management.server.port</code>属性，管理服务将被注册为比应用程序服务单独的服务。比如说。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  application:
+    name: myApp
+management:
+  server:
+    port: 4452
+</code></pre><p>上述配置将注册以下两个服务。</p><ol><li><p>Application Service:</p><pre><code class=language-text>ID: myApp
 Name: myApp
-</code></pre></div></li><li><p>Management Service:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>ID: myApp-management
+</code></pre></li><li><p>Management Service:</p><pre><code class=language-text>ID: myApp-management
 Name: myApp-management
-</code></pre></div></li></ol><p>Management Service将从Application Service继承其<code>instanceId</code>和<code>serviceName</code>。比如说。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>application</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>myApp</span><span class=w>
-</span><span class=w></span><span class=nt>management</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>server</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>port</span><span class=p>:</span><span class=w> </span><span class=m>4452</span><span class=w>
-</span><span class=w></span><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>discovery</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>instance-id</span><span class=p>:</span><span class=w> </span><span class=l>custom-service-id</span><span class=w>
-</span><span class=w>        </span><span class=nt>serviceName</span><span class=p>:</span><span class=w> </span><span class=l>myprefix-${spring.application.name}</span><span class=w>
-</span></code></pre></div><p>上述配置将注册以下两个服务。</p><ol><li><p>Application Service:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>ID: custom-service-id
+</code></pre></li></ol><p>Management Service将从Application Service继承其<code>instanceId</code>和<code>serviceName</code>。比如说。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  application:
+    name: myApp
+management:
+  server:
+    port: 4452
+spring:
+  cloud:
+    consul:
+      discovery:
+        instance-id: custom-service-id
+        serviceName: myprefix-${spring.application.name}
+</code></pre><p>上述配置将注册以下两个服务。</p><ol><li><p>Application Service:</p><pre><code class=language-text>ID: custom-service-id
 Name: myprefix-myApp
-</code></pre></div></li><li><p>Management Service:</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>ID: custom-service-id-management
+</code></pre></li><li><p>Management Service:</p><pre><code class=language-text>ID: custom-service-id-management
 Name: myprefix-myApp-management
-</code></pre></div></li></ol><p>通过以下属性可以进行进一步的定制。</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>/** Port to register the management service under (defaults to management port) */
+</code></pre></li></ol><p>通过以下属性可以进行进一步的定制。</p><pre><code class=language-properties>/** Port to register the management service under (defaults to management port) */
 spring.cloud.consul.discovery.management-port
 
-/** Suffix to use when registering management service (defaults to &#34;management&#34; */
+/** Suffix to use when registering management service (defaults to &quot;management&quot; */
 spring.cloud.consul.discovery.management-suffix
 
-/** Tags to use when registering management service (defaults to &#34;management&#34; */
+/** Tags to use when registering management service (defaults to &quot;management&quot; */
 spring.cloud.consul.discovery.management-tags
-</code></pre></div><h4 id=422-http健康检查>4.2.2. HTTP健康检查<a href=#422-http健康检查 class=anchor aria-hidden=true>#</a></h4><p>Consul实例的健康检查默认为"/actuator/health"，这是Spring Boot Actuator应用程序中健康端点的默认位置。如果你使用非默认的上下文路径或servlet路径（如<code>server.servletPath=/foo</code>）或管理端点路径（如<code>management.server.servlet.context-path=/admin</code>），你需要改变这一点，即使对于Actuator应用程序来说。</p><p>也可以配置Consul用于检查健康端点的时间间隔。&ldquo;10s"和 &ldquo;1m"分别代表10秒和1分钟。</p><p>这个例子说明了上述情况（更多选项请参见附录页中的 <code>spring.cloud.consul.discovery.health-check-*</code> 属性）。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>discovery</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>healthCheckPath</span><span class=p>:</span><span class=w> </span><span class=l>${management.server.servlet.context-path}/actuator/health</span><span class=w>
-</span><span class=w>        </span><span class=nt>healthCheckInterval</span><span class=p>:</span><span class=w> </span><span class=l>15s</span><span class=w>
-</span></code></pre></div><p>你可以通过设置 <code>spring.cloud.consul.discovery.register-health-check=false</code> 完全禁用 HTTP 健康检查。</p><p><strong>Applying Headers</strong></p><p>头信息可以应用于健康检查请求。例如，如果你试图注册一个使用<a href=https://github.com/spring-cloud/spring-cloud-config/blob/master/docs/src/main/asciidoc/spring-cloud-config.adoc#vault-backend>Vault Backend</a>的<a href=https://cloud.spring.io/spring-cloud-config/>Spring Cloud Config</a>服务器。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>discovery</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>health-check-headers</span><span class=p>:</span><span class=w>
-</span><span class=w>          </span><span class=nt>X-Config-Token</span><span class=p>:</span><span class=w> </span><span class=l>6442e58b-d1ea-182e-cfa5-cf9cddef0722</span><span class=w>
-</span></code></pre></div><p>根据HTTP标准，每个header可以有多个值，在这种情况下，可以提供一个数组。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>discovery</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>health-check-headers</span><span class=p>:</span><span class=w>
-</span><span class=w>          </span><span class=nt>X-Config-Token</span><span class=p>:</span><span class=w>
-</span><span class=w>            </span>- <span class=s2>&#34;6442e58b-d1ea-182e-cfa5-cf9cddef0722&#34;</span><span class=w>
-</span><span class=w>            </span>- <span class=s2>&#34;Some other value&#34;</span><span class=w>
-</span></code></pre></div><h4 id=423-actuator-health-indicators>4.2.3. Actuator Health Indicator(s)<a href=#423-actuator-health-indicators class=anchor aria-hidden=true>#</a></h4><p>如果服务实例是一个Spring Boot执行器应用程序，可以向它提供以下的Actuator health indicator.</p><p><strong>DiscoveryClientHealthIndicator</strong></p><p>当Consul服务发现被激活时，一个<a href=https://cloud.spring.io/spring-cloud-commons/2.2.x/reference/html/#health-indicator>DiscoverClientHealthIndicator</a>被配置并提供给执行器健康端点使用。关于配置选项，请看<a href=https://cloud.spring.io/spring-cloud-commons/2.2.x/reference/html/#health-indicator>这里</a>。</p><p><strong>ConsulHealthIndicator</strong></p><p>配置了一个指标来验证<code>ConsulClient</code>的健康状况。</p><p>默认情况下，它检索Consul领导节点状态和所有注册服务。在有许多注册服务的部署中，每次健康检查都要检索所有的服务，成本很高。要跳过服务检索，只检查领导节点状态，请设置 <code>spring.cloud.consul.health-indicator.include-services-query=false</code>。</p><p>要禁用该指标，请设置 <code>management.health.consul.enabled=false</code></p><blockquote><p>当应用程序运行在<a href=https://cloud.spring.io/spring-cloud-commons/2.2.x/reference/html/#the-bootstrap-application-context>bootstrap context mode</a> (默认情况下)，该指标被加载到bootstrap上下文中，不提供给执行器健康端点。</p></blockquote><h4 id=424-metadata>4.2.4. Metadata<a href=#424-metadata class=anchor aria-hidden=true>#</a></h4><p>Consul支持服务的元数据。Spring Cloud的<code>ServiceInstance</code>有一个<code>Map&lt;String, String></code>元数据字段，它是由服务元字段填充的。为了填充元字段，在<code>spring.cloud.consul.discovery.metadata</code>或<code>spring.cloud.consul.discovery.management-metadata</code>属性上设置值。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>discovery</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>metadata</span><span class=p>:</span><span class=w>
-</span><span class=w>          </span><span class=nt>myfield</span><span class=p>:</span><span class=w> </span><span class=l>myvalue</span><span class=w>
-</span><span class=w>          </span><span class=nt>anotherfield</span><span class=p>:</span><span class=w> </span><span class=l>anothervalue</span><span class=w>
-</span></code></pre></div><p>上述配置将产生一个服务，其元字段包含<code>myfield→myvalue</code>和<code>anotherfield→anothervalue</code>。</p><p><strong>Generated Metadata</strong></p><p><code>Consul</code> 自动注册将自动生成一些条目。</p><p>Table 1. 自动生成的元数据</p><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td><code>group</code></td><td>属性 <code>spring.cloud.consul.discovery.instance-group</code> 。这个值只有在<code>instance-group</code>不是空的情况下才会生成。</td></tr><tr><td><code>secure</code></td><td>如果属性<code>spring.cloud.consul.discovery.scheme</code>等于<code>https</code>则为真，否则为: <code>false</code>。</td></tr><tr><td>属性 <code>spring.cloud.consul.discovery.default-zone-metadata-name</code> ，默认为 <code>zone</code>。</td><td>属性 <code>spring.cloud.consul.discovery.instance-zone</code> 。这个值只有在<code>instance-zone</code>不是空的情况下才会生成。</td></tr></tbody></table><blockquote><p>旧版本的Spring Cloud Consul通过解析<code>spring.cloud.consul.discovery.tags</code>属性，从Spring Cloud Commons填充<code>ServiceInstance.getMetadata（）</code>方法。这已不再被支持，请迁移到使用<code>spring.cloud.consul.discovery.metadata</code> Map。</p></blockquote><h4 id=425-使consul实例的id唯一>4.2.5. 使Consul实例的ID唯一<a href=#425-使consul实例的id唯一 class=anchor aria-hidden=true>#</a></h4><p>默认情况下，consul实例的注册ID等于其Spring应用上下文ID。默认情况下，Spring应用上下文ID是<code>${spring.application.name}:comma,separated,profiles:${server.port}</code>。对于大多数情况，这将允许一个服务的多个实例在一台机器上运行。如果需要进一步的唯一性，使用Spring Cloud你可以通过在<code>spring.cloud.consul.discovery.instanceId</code>中提供一个唯一的标识符来覆盖这一点。比如说。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>discovery</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>instanceId</span><span class=p>:</span><span class=w> </span><span class=l>${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}</span><span class=w>
-</span></code></pre></div><p>有了这个元数据，并且在 localhost 上部署了多个服务实例，随机值就会在那里启动，使实例独一无二。在 Cloudfoundry 中，<code>vcap.application.instance_id</code> 将会在 Spring Boot 应用程序中自动填充，因此不需要随机值。</p><h3 id=43-查阅服务>4.3. 查阅服务<a href=#43-查阅服务 class=anchor aria-hidden=true>#</a></h3><h4 id=431-使用负载均衡>4.3.1. 使用负载均衡<a href=#431-使用负载均衡 class=anchor aria-hidden=true>#</a></h4><p>Spring Cloud支持<a href=https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-feign>Feign</a>（一个REST客户端构建器）和<a href=https://docs.spring.io/spring-cloud-commons/docs/current/reference/html/#rest-template-loadbalancer-client>Spring <code>RestTemplate</code></a>，用于使用逻辑服务名称/ID而不是物理URL来查找服务。Feign和具有发现意识的RestTemplate都利用<a href=https://docs.spring.io/spring-cloud-commons/docs/current/reference/html/#spring-cloud-loadbalancer>Spring Cloud LoadBalancer</a>进行客户端的负载均衡。</p><p>如果你想使用RestTemplate访问<code>STORES</code>服务，只需声明。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@LoadBalanced</span>
-<span class=nd>@Bean</span>
-<span class=kd>public</span> <span class=n>RestTemplate</span> <span class=nf>loadbalancedRestTemplate</span><span class=o>()</span> <span class=o>{</span>
-     <span class=k>return</span> <span class=k>new</span> <span class=n>RestTemplate</span><span class=o>();</span>
-<span class=o>}</span>
-</code></pre></div><p>并像这样使用它（注意我们如何使用来自Consul的<code>STORES</code>服务名称/ID，而不是一个完全合格的域名）。</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Autowired</span>
-<span class=n>RestTemplate</span> <span class=n>restTemplate</span><span class=o>;</span>
+</code></pre><h4 id=422-http健康检查>4.2.2. HTTP健康检查<a href=#422-http健康检查 class=anchor aria-hidden=true>#</a></h4><p>Consul实例的健康检查默认为"/actuator/health"，这是Spring Boot Actuator应用程序中健康端点的默认位置。如果你使用非默认的上下文路径或servlet路径（如<code>server.servletPath=/foo</code>）或管理端点路径（如<code>management.server.servlet.context-path=/admin</code>），你需要改变这一点，即使对于Actuator应用程序来说。</p><p>也可以配置Consul用于检查健康端点的时间间隔。&ldquo;10s"和 &ldquo;1m"分别代表10秒和1分钟。</p><p>这个例子说明了上述情况（更多选项请参见附录页中的 <code>spring.cloud.consul.discovery.health-check-*</code> 属性）。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      discovery:
+        healthCheckPath: ${management.server.servlet.context-path}/actuator/health
+        healthCheckInterval: 15s
+</code></pre><p>你可以通过设置 <code>spring.cloud.consul.discovery.register-health-check=false</code> 完全禁用 HTTP 健康检查。</p><p><strong>Applying Headers</strong></p><p>头信息可以应用于健康检查请求。例如，如果你试图注册一个使用<a href=https://github.com/spring-cloud/spring-cloud-config/blob/master/docs/src/main/asciidoc/spring-cloud-config.adoc#vault-backend>Vault Backend</a>的<a href=https://cloud.spring.io/spring-cloud-config/>Spring Cloud Config</a>服务器。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      discovery:
+        health-check-headers:
+          X-Config-Token: 6442e58b-d1ea-182e-cfa5-cf9cddef0722
+</code></pre><p>根据HTTP标准，每个header可以有多个值，在这种情况下，可以提供一个数组。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      discovery:
+        health-check-headers:
+          X-Config-Token:
+            - &quot;6442e58b-d1ea-182e-cfa5-cf9cddef0722&quot;
+            - &quot;Some other value&quot;
+</code></pre><h4 id=423-actuator-health-indicators>4.2.3. Actuator Health Indicator(s)<a href=#423-actuator-health-indicators class=anchor aria-hidden=true>#</a></h4><p>如果服务实例是一个Spring Boot执行器应用程序，可以向它提供以下的Actuator health indicator.</p><p><strong>DiscoveryClientHealthIndicator</strong></p><p>当Consul服务发现被激活时，一个<a href=https://cloud.spring.io/spring-cloud-commons/2.2.x/reference/html/#health-indicator>DiscoverClientHealthIndicator</a>被配置并提供给执行器健康端点使用。关于配置选项，请看<a href=https://cloud.spring.io/spring-cloud-commons/2.2.x/reference/html/#health-indicator>这里</a>。</p><p><strong>ConsulHealthIndicator</strong></p><p>配置了一个指标来验证<code>ConsulClient</code>的健康状况。</p><p>默认情况下，它检索Consul领导节点状态和所有注册服务。在有许多注册服务的部署中，每次健康检查都要检索所有的服务，成本很高。要跳过服务检索，只检查领导节点状态，请设置 <code>spring.cloud.consul.health-indicator.include-services-query=false</code>。</p><p>要禁用该指标，请设置 <code>management.health.consul.enabled=false</code></p><blockquote><p>当应用程序运行在<a href=https://cloud.spring.io/spring-cloud-commons/2.2.x/reference/html/#the-bootstrap-application-context>bootstrap context mode</a> (默认情况下)，该指标被加载到bootstrap上下文中，不提供给执行器健康端点。</p></blockquote><h4 id=424-metadata>4.2.4. Metadata<a href=#424-metadata class=anchor aria-hidden=true>#</a></h4><p>Consul支持服务的元数据。Spring Cloud的<code>ServiceInstance</code>有一个<code>Map&lt;String, String></code>元数据字段，它是由服务元字段填充的。为了填充元字段，在<code>spring.cloud.consul.discovery.metadata</code>或<code>spring.cloud.consul.discovery.management-metadata</code>属性上设置值。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      discovery:
+        metadata:
+          myfield: myvalue
+          anotherfield: anothervalue
+</code></pre><p>上述配置将产生一个服务，其元字段包含<code>myfield→myvalue</code>和<code>anotherfield→anothervalue</code>。</p><p><strong>Generated Metadata</strong></p><p><code>Consul</code> 自动注册将自动生成一些条目。</p><p>Table 1. 自动生成的元数据</p><table><thead><tr><th>Key</th><th>Value</th></tr></thead><tbody><tr><td><code>group</code></td><td>属性 <code>spring.cloud.consul.discovery.instance-group</code> 。这个值只有在<code>instance-group</code>不是空的情况下才会生成。</td></tr><tr><td><code>secure</code></td><td>如果属性<code>spring.cloud.consul.discovery.scheme</code>等于<code>https</code>则为真，否则为: <code>false</code>。</td></tr><tr><td>属性 <code>spring.cloud.consul.discovery.default-zone-metadata-name</code> ，默认为 <code>zone</code>。</td><td>属性 <code>spring.cloud.consul.discovery.instance-zone</code> 。这个值只有在<code>instance-zone</code>不是空的情况下才会生成。</td></tr></tbody></table><blockquote><p>旧版本的Spring Cloud Consul通过解析<code>spring.cloud.consul.discovery.tags</code>属性，从Spring Cloud Commons填充<code>ServiceInstance.getMetadata（）</code>方法。这已不再被支持，请迁移到使用<code>spring.cloud.consul.discovery.metadata</code> Map。</p></blockquote><h4 id=425-使consul实例的id唯一>4.2.5. 使Consul实例的ID唯一<a href=#425-使consul实例的id唯一 class=anchor aria-hidden=true>#</a></h4><p>默认情况下，consul实例的注册ID等于其Spring应用上下文ID。默认情况下，Spring应用上下文ID是<code>${spring.application.name}:comma,separated,profiles:${server.port}</code>。对于大多数情况，这将允许一个服务的多个实例在一台机器上运行。如果需要进一步的唯一性，使用Spring Cloud你可以通过在<code>spring.cloud.consul.discovery.instanceId</code>中提供一个唯一的标识符来覆盖这一点。比如说。</p><p>application.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      discovery:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+</code></pre><p>有了这个元数据，并且在 localhost 上部署了多个服务实例，随机值就会在那里启动，使实例独一无二。在 Cloudfoundry 中，<code>vcap.application.instance_id</code> 将会在 Spring Boot 应用程序中自动填充，因此不需要随机值。</p><h3 id=43-查阅服务>4.3. 查阅服务<a href=#43-查阅服务 class=anchor aria-hidden=true>#</a></h3><h4 id=431-使用负载均衡>4.3.1. 使用负载均衡<a href=#431-使用负载均衡 class=anchor aria-hidden=true>#</a></h4><p>Spring Cloud支持<a href=https://github.com/spring-cloud/spring-cloud-netflix/blob/master/docs/src/main/asciidoc/spring-cloud-netflix.adoc#spring-cloud-feign>Feign</a>（一个REST客户端构建器）和<a href=https://docs.spring.io/spring-cloud-commons/docs/current/reference/html/#rest-template-loadbalancer-client>Spring <code>RestTemplate</code></a>，用于使用逻辑服务名称/ID而不是物理URL来查找服务。Feign和具有发现意识的RestTemplate都利用<a href=https://docs.spring.io/spring-cloud-commons/docs/current/reference/html/#spring-cloud-loadbalancer>Spring Cloud LoadBalancer</a>进行客户端的负载均衡。</p><p>如果你想使用RestTemplate访问<code>STORES</code>服务，只需声明。</p><pre><code class=language-java>@LoadBalanced
+@Bean
+public RestTemplate loadbalancedRestTemplate() {
+     return new RestTemplate();
+}
+</code></pre><p>并像这样使用它（注意我们如何使用来自Consul的<code>STORES</code>服务名称/ID，而不是一个完全合格的域名）。</p><pre><code class=language-java>@Autowired
+RestTemplate restTemplate;
 
-<span class=kd>public</span> <span class=n>String</span> <span class=nf>getFirstProduct</span><span class=o>()</span> <span class=o>{</span>
-   <span class=k>return</span> <span class=k>this</span><span class=o>.</span><span class=na>restTemplate</span><span class=o>.</span><span class=na>getForObject</span><span class=o>(</span><span class=s>&#34;https://STORES/products/1&#34;</span><span class=o>,</span> <span class=n>String</span><span class=o>.</span><span class=na>class</span><span class=o>);</span>
-<span class=o>}</span>
-</code></pre></div><p>如果你在多个数据中心有Consul集群，并且你想访问另一个数据中心的服务，仅有服务名称/ID是不够的。在这种情况下，你可以使用属性<code>spring.cloud.consul.discovery.datacenters.STORES=dc-west</code>，其中STORES是服务名称/id，dc-west是STORES服务所在的数据中心，而不是一个完全合格的域名）。)</p><blockquote><p>Spring Cloud现在还提供对<a href=https://cloud.spring.io/spring-cloud-commons/reference/html/#_spring_resttemplate_as_a_load_balancer_client>Spring Cloud LoadBalancer</a> 的支持。</p></blockquote><h4 id=432-使用discoveryclient>4.3.2. 使用DiscoveryClient<a href=#432-使用discoveryclient class=anchor aria-hidden=true>#</a></h4><p>你也可以使用<code>org.springframework.cloud.client.discovery.DiscoveryClient</code>，它为发现客户端提供了一个简单的API，而不是专门针对Netflix的，比如说</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@Autowired</span>
-<span class=kd>private</span> <span class=n>DiscoveryClient</span> <span class=n>discoveryClient</span><span class=o>;</span>
+public String getFirstProduct() {
+   return this.restTemplate.getForObject(&quot;https://STORES/products/1&quot;, String.class);
+}
+</code></pre><p>如果你在多个数据中心有Consul集群，并且你想访问另一个数据中心的服务，仅有服务名称/ID是不够的。在这种情况下，你可以使用属性<code>spring.cloud.consul.discovery.datacenters.STORES=dc-west</code>，其中STORES是服务名称/id，dc-west是STORES服务所在的数据中心，而不是一个完全合格的域名）。)</p><blockquote><p>Spring Cloud现在还提供对<a href=https://cloud.spring.io/spring-cloud-commons/reference/html/#_spring_resttemplate_as_a_load_balancer_client>Spring Cloud LoadBalancer</a> 的支持。</p></blockquote><h4 id=432-使用discoveryclient>4.3.2. 使用DiscoveryClient<a href=#432-使用discoveryclient class=anchor aria-hidden=true>#</a></h4><p>你也可以使用<code>org.springframework.cloud.client.discovery.DiscoveryClient</code>，它为发现客户端提供了一个简单的API，而不是专门针对Netflix的，比如说</p><pre><code class=language-java>@Autowired
+private DiscoveryClient discoveryClient;
 
-<span class=kd>public</span> <span class=n>String</span> <span class=nf>serviceUrl</span><span class=o>()</span> <span class=o>{</span>
-    <span class=n>List</span><span class=o>&lt;</span><span class=n>ServiceInstance</span><span class=o>&gt;</span> <span class=n>list</span> <span class=o>=</span> <span class=n>discoveryClient</span><span class=o>.</span><span class=na>getInstances</span><span class=o>(</span><span class=s>&#34;STORES&#34;</span><span class=o>);</span>
-    <span class=k>if</span> <span class=o>(</span><span class=n>list</span> <span class=o>!=</span> <span class=kc>null</span> <span class=o>&amp;&amp;</span> <span class=n>list</span><span class=o>.</span><span class=na>size</span><span class=o>()</span> <span class=o>&gt;</span> <span class=n>0</span> <span class=o>)</span> <span class=o>{</span>
-        <span class=k>return</span> <span class=n>list</span><span class=o>.</span><span class=na>get</span><span class=o>(</span><span class=n>0</span><span class=o>).</span><span class=na>getUri</span><span class=o>();</span>
-    <span class=o>}</span>
-    <span class=k>return</span> <span class=kc>null</span><span class=o>;</span>
-<span class=o>}</span>
-</code></pre></div><h3 id=44-consul-catalog-watch>4.4. Consul Catalog Watch<a href=#44-consul-catalog-watch class=anchor aria-hidden=true>#</a></h3><p>Consul Catalog Watch利用了consul<a href=https://www.consul.io/docs/agent/watches.html#services>观察服务</a>的能力。目录监视进行阻塞的Consul HTTP API调用，以确定是否有任何服务改变。如果有新的服务数据，就会发布心跳事件。</p><p>要改变配置观察被调用的频率，请改变<code>spring.cloud.consul.config.discovery.catalog-services-watch-delay</code>。默认值是1000，单位是毫秒。延迟是指前一次调用结束后到下一次调用开始的时间量。</p><p>要禁用目录观察，请设置<code>spring.cloud.consul.discovery.catalogServicesWatch.enabled=false</code>。</p><p>该观察使用Spring的<code>TaskScheduler</code>来安排对consul的调用。默认情况下，它是一个<code>ThreadPoolTaskScheduler</code>，<code>poolSize</code>为1。 要改变<code>TaskScheduler</code>，创建一个<code>TaskScheduler</code>类型的bean，用<code>ConsulDiscoveryClientConfiguration.CATALOG_WATCH_TASK_SCHEDULER_NAME</code>常量命名。</p><h2 id=5-使用consul的分布式配置>5. 使用Consul的分布式配置<a href=#5-使用consul的分布式配置 class=anchor aria-hidden=true>#</a></h2><p>Consul提供了一个<a href=https://consul.io/docs/agent/http/kv.html>Key/Value Store</a>来存储配置和其他元数据。Spring Cloud Consul配置是<a href=https://github.com/spring-cloud/spring-cloud-config>配置服务器和客户端</a>的替代品。在特殊的 &ldquo;bootstrap&rdquo; 阶段，配置被加载到Spring环境中。配置默认存储在<code>/config</code>文件夹中。多个 <code>PropertySource</code> 实例根据应用程序的名称和活动配置文件创建，模仿Spring Cloud Config的属性解析顺序。例如，一个名称为 &ldquo;testApp &ldquo;并使用 &ldquo;dev &ldquo;配置文件的应用程序将创建以下属性源。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>config/testApp,dev/
+public String serviceUrl() {
+    List&lt;ServiceInstance&gt; list = discoveryClient.getInstances(&quot;STORES&quot;);
+    if (list != null &amp;&amp; list.size() &gt; 0 ) {
+        return list.get(0).getUri();
+    }
+    return null;
+}
+</code></pre><h3 id=44-consul-catalog-watch>4.4. Consul Catalog Watch<a href=#44-consul-catalog-watch class=anchor aria-hidden=true>#</a></h3><p>Consul Catalog Watch利用了consul<a href=https://www.consul.io/docs/agent/watches.html#services>观察服务</a>的能力。目录监视进行阻塞的Consul HTTP API调用，以确定是否有任何服务改变。如果有新的服务数据，就会发布心跳事件。</p><p>要改变配置观察被调用的频率，请改变<code>spring.cloud.consul.config.discovery.catalog-services-watch-delay</code>。默认值是1000，单位是毫秒。延迟是指前一次调用结束后到下一次调用开始的时间量。</p><p>要禁用目录观察，请设置<code>spring.cloud.consul.discovery.catalogServicesWatch.enabled=false</code>。</p><p>该观察使用Spring的<code>TaskScheduler</code>来安排对consul的调用。默认情况下，它是一个<code>ThreadPoolTaskScheduler</code>，<code>poolSize</code>为1。 要改变<code>TaskScheduler</code>，创建一个<code>TaskScheduler</code>类型的bean，用<code>ConsulDiscoveryClientConfiguration.CATALOG_WATCH_TASK_SCHEDULER_NAME</code>常量命名。</p><h2 id=5-使用consul的分布式配置>5. 使用Consul的分布式配置<a href=#5-使用consul的分布式配置 class=anchor aria-hidden=true>#</a></h2><p>Consul提供了一个<a href=https://consul.io/docs/agent/http/kv.html>Key/Value Store</a>来存储配置和其他元数据。Spring Cloud Consul配置是<a href=https://github.com/spring-cloud/spring-cloud-config>配置服务器和客户端</a>的替代品。在特殊的 &ldquo;bootstrap&rdquo; 阶段，配置被加载到Spring环境中。配置默认存储在<code>/config</code>文件夹中。多个 <code>PropertySource</code> 实例根据应用程序的名称和活动配置文件创建，模仿Spring Cloud Config的属性解析顺序。例如，一个名称为 &ldquo;testApp &ldquo;并使用 &ldquo;dev &ldquo;配置文件的应用程序将创建以下属性源。</p><pre><code class=language-text>config/testApp,dev/
 config/testApp/
 config/application,dev/
 config/application/
-</code></pre></div><p>最具体的属性来源在顶部，最不具体的在底部。<code>config/application</code>文件夹中的属性适用于所有使用consul进行配置的应用程序。<code>config/testApp</code>文件夹中的属性只适用于名为 &ldquo;testApp &ldquo;的服务实例。</p><p>目前，配置是在应用程序的启动时读取的。向<code>/refresh</code>发送HTTP POST将导致配置被重新加载。<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#spring-cloud-consul-config-watch>Config Watch</a>也将自动检测变化并重新加载应用程序上下文。</p><h3 id=51-如何激活>5.1. 如何激活<a href=#51-如何激活 class=anchor aria-hidden=true>#</a></h3><p>要开始使用Consul配置，请使用 <code>org.springframework.cloud</code> group和 <code>spring-cloud-starter-consul-config</code> artifact id的starter。请参阅<a href=https://projects.spring.io/spring-cloud/>Spring Cloud项目页面</a>，了解用当前的Spring Cloud Release Train设置构建系统的细节。</p><h3 id=52-spring-boot配置数据导入>5.2. Spring Boot配置数据导入<a href=#52-spring-boot配置数据导入 class=anchor aria-hidden=true>#</a></h3><p>Spring Boot 2.4引入了一种通过<code>spring.config.import</code>属性导入配置数据的新方法。现在这是从Consul获取配置的默认方式。</p><p>要选择性地连接到Consul，请在<code>application.properties</code>中设置以下内容。</p><p>application.properties</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>spring.config.import=optional:consul:
-</code></pre></div><p>这将在 <code>http://localhost:8500</code> 的默认位置连接到Consul代理。移除<code>optional:</code>前缀将导致Consul配置在无法连接到Consul时失败。要改变Consul配置的连接属性，可以设置<code>spring.cloud.consul.host</code>和<code>spring.cloud.consul.port</code>或者将主机/端口对添加到<code>spring.config.import</code>语句中，例如，<code>spring.config.import=optional:consul:myhost:8500</code>。import属性中的位置优先于host和port属性。</p><p>Consul配置将根据<code>spring.cloud.consul.config.name</code>（默认为<code>spring.application.name</code>属性的值）和<code>spring.cloud.consul.config.default-context</code>（默认为<code>application</code>），尝试从四个自动上下文加载值。如果你想指定上下文而不是使用计算出来的上下文，你可以在<code>spring.config.import</code>语句中添加这些信息。</p><p>application.properties</p><div class=highlight><pre class=chroma><code class=language-fallback data-lang=fallback>spring.config.import=optional:consul:myhost:8500/contextone;/context/two
-</code></pre></div><p>这将有选择地只从<code>/contextone</code>和<code>/context/two</code>加载配置。</p><blockquote><p>通过<code>spring.config.import</code>导入的Spring Boot配置数据方法不需要一个<code>bootstrap</code>文件（properties或yaml）。</p></blockquote><h3 id=53-定制化>5.3. 定制化<a href=#53-定制化 class=anchor aria-hidden=true>#</a></h3><p>Consul配置可以使用以下属性进行定制。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>config</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
-</span><span class=w>        </span><span class=nt>prefix</span><span class=p>:</span><span class=w> </span><span class=l>configuration</span><span class=w>
-</span><span class=w>        </span><span class=nt>defaultContext</span><span class=p>:</span><span class=w> </span><span class=l>apps</span><span class=w>
-</span><span class=w>        </span><span class=nt>profileSeparator</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;::&#39;</span><span class=w>
-</span></code></pre></div><blockquote><p>如果你设置了<code>spring.cloud.bootstrap.enabled=true</code>或<code>spring.config.use-legacy-processing=true</code>，或者包含了<code>spring-cloud-starter-bootstrap</code>，那么上述数值需要放在<code>bootstrap.yml</code>而不是<code>application.yml</code>中。</p></blockquote><ul><li><code>enabled</code>将此值设置为 &ldquo;false&rdquo;，可禁用Consul配置。</li><li><code>prefix</code>设置配置值的基础文件夹</li><li><code>defaultContext</code>设置所有应用程序使用的文件夹名称。</li><li><code>profileSeparator</code>设置分隔符的值，用于在有配置文件的属性源中分隔配置文件的名称。</li></ul><h3 id=54-config-watch>5.4. Config Watch<a href=#54-config-watch class=anchor aria-hidden=true>#</a></h3><p>Consul Config Watch利用了consul <a href=https://www.consul.io/docs/agent/watches.html#keyprefix>watch a key prefix</a> 的能力。Config Watch进行阻塞式Consul HTTP API调用，以确定当前应用程序的任何相关配置数据是否发生了变化。如果有新的配置数据，就会发布一个刷新事件。这等同于调用<code>/refresh</code>执行器端点。</p><p>要改变配置观察被调用的频率，请改变<code>spring.cloud.consul.config.watch.delay</code>。默认值是1000，单位是毫秒。延迟是指上一次调用结束后到下一次调用开始的时间量。</p><p>要禁用配置观察，请设置<code>spring.cloud.consul.config.watch.enabled=false</code>。</p><p>观察使用Spring的<code>TaskScheduler</code>来安排对consul的调用。默认情况下，它是一个<code>ThreadPoolTaskScheduler</code>，<code>poolSize</code>为1。 要改变<code>TaskScheduler</code>，创建一个<code>TaskScheduler</code>类型的bean，用<code>ConsulConfigAutoConfiguration.CONFIG_WATCH_TASK_SCHEDULER_NAME</code>常量命名。</p><h3 id=55-yaml或properties的配置>5.5. YAML或Properties的配置<a href=#55-yaml或properties的配置 class=anchor aria-hidden=true>#</a></h3><p>相对于单独的键/值对，以YAML或Properties格式来存储属性的blob可能更方便。设置<code>spring.cloud.consul.config.format</code>属性为<code>YAML</code>或<code>properties</code>。例如，使用YAML。</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>config</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>format</span><span class=p>:</span><span class=w> </span><span class=l>YAML</span><span class=w>
-</span></code></pre></div><blockquote><p>如果你设置了 <code>spring.cloud.bootstrap.enabled=true</code> 或 <code>spring.config.use-legacy-processing=true</code>，或者包含了 <code>spring-cloud-starter-bootstrap</code>，那么上述值就需要放在 <code>bootstrap.yml</code> 而不是 <code>application.yml</code> 中。</p></blockquote><p>YAML 必须设置在<code>consul</code>中适当的data <code>key</code>中。使用上面的默认值，键会看起来像。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>config/testApp,dev/data
+</code></pre><p>最具体的属性来源在顶部，最不具体的在底部。<code>config/application</code>文件夹中的属性适用于所有使用consul进行配置的应用程序。<code>config/testApp</code>文件夹中的属性只适用于名为 &ldquo;testApp &ldquo;的服务实例。</p><p>目前，配置是在应用程序的启动时读取的。向<code>/refresh</code>发送HTTP POST将导致配置被重新加载。<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/#spring-cloud-consul-config-watch>Config Watch</a>也将自动检测变化并重新加载应用程序上下文。</p><h3 id=51-如何激活>5.1. 如何激活<a href=#51-如何激活 class=anchor aria-hidden=true>#</a></h3><p>要开始使用Consul配置，请使用 <code>org.springframework.cloud</code> group和 <code>spring-cloud-starter-consul-config</code> artifact id的starter。请参阅<a href=https://projects.spring.io/spring-cloud/>Spring Cloud项目页面</a>，了解用当前的Spring Cloud Release Train设置构建系统的细节。</p><h3 id=52-spring-boot配置数据导入>5.2. Spring Boot配置数据导入<a href=#52-spring-boot配置数据导入 class=anchor aria-hidden=true>#</a></h3><p>Spring Boot 2.4引入了一种通过<code>spring.config.import</code>属性导入配置数据的新方法。现在这是从Consul获取配置的默认方式。</p><p>要选择性地连接到Consul，请在<code>application.properties</code>中设置以下内容。</p><p>application.properties</p><pre><code class=language-properties>spring.config.import=optional:consul:
+</code></pre><p>这将在 <code>http://localhost:8500</code> 的默认位置连接到Consul代理。移除<code>optional:</code>前缀将导致Consul配置在无法连接到Consul时失败。要改变Consul配置的连接属性，可以设置<code>spring.cloud.consul.host</code>和<code>spring.cloud.consul.port</code>或者将主机/端口对添加到<code>spring.config.import</code>语句中，例如，<code>spring.config.import=optional:consul:myhost:8500</code>。import属性中的位置优先于host和port属性。</p><p>Consul配置将根据<code>spring.cloud.consul.config.name</code>（默认为<code>spring.application.name</code>属性的值）和<code>spring.cloud.consul.config.default-context</code>（默认为<code>application</code>），尝试从四个自动上下文加载值。如果你想指定上下文而不是使用计算出来的上下文，你可以在<code>spring.config.import</code>语句中添加这些信息。</p><p>application.properties</p><pre><code class=language-properties>spring.config.import=optional:consul:myhost:8500/contextone;/context/two
+</code></pre><p>这将有选择地只从<code>/contextone</code>和<code>/context/two</code>加载配置。</p><blockquote><p>通过<code>spring.config.import</code>导入的Spring Boot配置数据方法不需要一个<code>bootstrap</code>文件（properties或yaml）。</p></blockquote><h3 id=53-定制化>5.3. 定制化<a href=#53-定制化 class=anchor aria-hidden=true>#</a></h3><p>Consul配置可以使用以下属性进行定制。</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefix: configuration
+        defaultContext: apps
+        profileSeparator: '::'
+</code></pre><blockquote><p>如果你设置了<code>spring.cloud.bootstrap.enabled=true</code>或<code>spring.config.use-legacy-processing=true</code>，或者包含了<code>spring-cloud-starter-bootstrap</code>，那么上述数值需要放在<code>bootstrap.yml</code>而不是<code>application.yml</code>中。</p></blockquote><ul><li><code>enabled</code>将此值设置为 &ldquo;false&rdquo;，可禁用Consul配置。</li><li><code>prefix</code>设置配置值的基础文件夹</li><li><code>defaultContext</code>设置所有应用程序使用的文件夹名称。</li><li><code>profileSeparator</code>设置分隔符的值，用于在有配置文件的属性源中分隔配置文件的名称。</li></ul><h3 id=54-config-watch>5.4. Config Watch<a href=#54-config-watch class=anchor aria-hidden=true>#</a></h3><p>Consul Config Watch利用了consul <a href=https://www.consul.io/docs/agent/watches.html#keyprefix>watch a key prefix</a> 的能力。Config Watch进行阻塞式Consul HTTP API调用，以确定当前应用程序的任何相关配置数据是否发生了变化。如果有新的配置数据，就会发布一个刷新事件。这等同于调用<code>/refresh</code>执行器端点。</p><p>要改变配置观察被调用的频率，请改变<code>spring.cloud.consul.config.watch.delay</code>。默认值是1000，单位是毫秒。延迟是指上一次调用结束后到下一次调用开始的时间量。</p><p>要禁用配置观察，请设置<code>spring.cloud.consul.config.watch.enabled=false</code>。</p><p>观察使用Spring的<code>TaskScheduler</code>来安排对consul的调用。默认情况下，它是一个<code>ThreadPoolTaskScheduler</code>，<code>poolSize</code>为1。 要改变<code>TaskScheduler</code>，创建一个<code>TaskScheduler</code>类型的bean，用<code>ConsulConfigAutoConfiguration.CONFIG_WATCH_TASK_SCHEDULER_NAME</code>常量命名。</p><h3 id=55-yaml或properties的配置>5.5. YAML或Properties的配置<a href=#55-yaml或properties的配置 class=anchor aria-hidden=true>#</a></h3><p>相对于单独的键/值对，以YAML或Properties格式来存储属性的blob可能更方便。设置<code>spring.cloud.consul.config.format</code>属性为<code>YAML</code>或<code>properties</code>。例如，使用YAML。</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      config:
+        format: YAML
+</code></pre><blockquote><p>如果你设置了 <code>spring.cloud.bootstrap.enabled=true</code> 或 <code>spring.config.use-legacy-processing=true</code>，或者包含了 <code>spring-cloud-starter-bootstrap</code>，那么上述值就需要放在 <code>bootstrap.yml</code> 而不是 <code>application.yml</code> 中。</p></blockquote><p>YAML 必须设置在<code>consul</code>中适当的data <code>key</code>中。使用上面的默认值，键会看起来像。</p><pre><code class=language-text>config/testApp,dev/data
 config/testApp/data
 config/application,dev/data
 config/application/data
-</code></pre></div><p>你可以将YAML文档存储在上面列出的任何一个键中。</p><p>你可以使用<code>spring.cloud.consul.config.data-key</code>改变data key。</p><h3 id=56-git2consul的配置>5.6. git2consul的配置<a href=#56-git2consul的配置 class=anchor aria-hidden=true>#</a></h3><p>git2consul是一个Consul社区项目，它将文件从git仓库加载到Consul的单个键中。默认情况下，键的名字就是文件的名字。支持YAML和属性文件，文件扩展名分别为<code>.yml</code>和<code>.properties</code>。设置<code>spring.cloud.consul.config.format</code>属性为<code>FILES</code>。比如说。</p><p>bootstrap.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>cloud</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>consul</span><span class=p>:</span><span class=w>
-</span><span class=w>      </span><span class=nt>config</span><span class=p>:</span><span class=w>
-</span><span class=w>        </span><span class=nt>format</span><span class=p>:</span><span class=w> </span><span class=l>FILES</span><span class=w>
-</span></code></pre></div><p>给出<code>/config</code>中的以下键，<code>development</code> 配置文件和应用程序名称为<code>foo</code>。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>.gitignore
+</code></pre><p>你可以将YAML文档存储在上面列出的任何一个键中。</p><p>你可以使用<code>spring.cloud.consul.config.data-key</code>改变data key。</p><h3 id=56-git2consul的配置>5.6. git2consul的配置<a href=#56-git2consul的配置 class=anchor aria-hidden=true>#</a></h3><p>git2consul是一个Consul社区项目，它将文件从git仓库加载到Consul的单个键中。默认情况下，键的名字就是文件的名字。支持YAML和属性文件，文件扩展名分别为<code>.yml</code>和<code>.properties</code>。设置<code>spring.cloud.consul.config.format</code>属性为<code>FILES</code>。比如说。</p><p>bootstrap.yml</p><pre><code class=language-yaml>spring:
+  cloud:
+    consul:
+      config:
+        format: FILES
+</code></pre><p>给出<code>/config</code>中的以下键，<code>development</code> 配置文件和应用程序名称为<code>foo</code>。</p><pre><code class=language-text>.gitignore
 application.yml
 bar.properties
 foo-development.properties
 foo-production.yml
 foo.properties
 master.ref
-</code></pre></div><p>将创建以下配置资源。</p><div class=highlight><pre class=chroma><code class=language-text data-lang=text>config/foo-development.properties
+</code></pre><p>将创建以下配置资源。</p><pre><code class=language-text>config/foo-development.properties
 config/foo.properties
 config/application.yml
-</code></pre></div><p>每个key的value需要是一个格式正确的YAML或属性文件。</p><h3 id=57-快速失败>5.7. 快速失败<a href=#57-快速失败 class=anchor aria-hidden=true>#</a></h3><p>在某些情况下（如本地开发或某些测试场景），如果consul不能用于配置，可能会很方便，不会失败。设置<code>spring.cloud.consul.config.fail-fast=false</code>将导致配置模块记录一个警告而不是抛出一个异常。这将允许应用程序继续正常启动。</p><blockquote><p>如果你设置了<code>spring.cloud.bootstrap.enabled=true</code>或<code>spring.config.use-legacy-processing=true</code>，或者包含了<code>spring-cloud-starter-bootstrap</code>，那么上述数值需要放在<code>bootstrap.yml</code>而不是<code>application.yml</code>中。</p></blockquote><h2 id=6-consul-重试>6. Consul 重试<a href=#6-consul-重试 class=anchor aria-hidden=true>#</a></h2><p>如果你预计consul代理在你的应用程序启动时可能偶尔不可用，你可以要求它在失败后继续尝试。你需要把<code>spring-retry</code>和<code>spring-boot-starter-aop</code>添加到你的classpath中。默认行为是重试6次，初始回退间隔为1000ms，后续回退的指数乘数为1.1。你可以使用<code>spring.cloud.consul.retry.*</code>配置属性来配置这些属性（以及其他）。这在Spring Cloud Consul配置和发现注册中都适用。</p><blockquote><p>为了完全控制重试，添加一个<code>@Bean</code>类型的<code>RetryOperationsInterceptor</code>，ID为 &ldquo;consulRetryInterceptor&rdquo;。Spring Retry有一个<code>RetryInterceptorBuilder</code>，可以很容易地创建一个。</p></blockquote><h2 id=7-spring-cloud-bus-和-consul>7. Spring Cloud Bus 和 Consul<a href=#7-spring-cloud-bus-和-consul class=anchor aria-hidden=true>#</a></h2><h3 id=71-如何激活>7.1. 如何激活<a href=#71-如何激活 class=anchor aria-hidden=true>#</a></h3><p>要开始使用Consul Bus，请使用 &ldquo;org.springframework.cloud&rdquo; group和 <code>spring-cloud-starter-consul-bus</code> artifact id的starter 。请参阅<a href=https://projects.spring.io/spring-cloud/>Spring Cloud项目页面</a>，了解关于使用当前Spring Cloud发布列车设置构建系统的详细信息。</p><p>参见<a href=https://cloud.spring.io/spring-cloud-bus/>Spring Cloud Bus</a>文档，了解可用的执行器端点以及如何发送自定义消息。</p><h2 id=8-circuit-breaker-和-hystrix>8. Circuit Breaker 和 Hystrix<a href=#8-circuit-breaker-和-hystrix class=anchor aria-hidden=true>#</a></h2><p>应用程序可以使用由Spring Cloud Netflix项目提供的Hystrix熔断器，方法是在项目的pom.xml中包括这个启动器。<code>spring-cloud-starter-hystrix</code> 。Hystrix并不依赖Netflix发现客户端。<code>@EnableHystrix</code>注解应该放在一个配置类上（通常是主类）。然后方法可以用<code>@HystrixCommand</code>来注解，以受到熔断器的保护。更多细节见<a href=https://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_clients>文档</a>。</p><h3 id=9-hystrix-metrics-aggregation-with-turbine-and-consul>9. Hystrix metrics aggregation with Turbine and Consul<a href=#9-hystrix-metrics-aggregation-with-turbine-and-consul class=anchor aria-hidden=true>#</a></h3><p>Turbine（由Spring Cloud Netflix项目提供），聚合了多个实例Hystrix的指标流，因此仪表板可以显示一个聚合视图。Turbine使用<code>DiscoveryClient</code>接口来查找相关实例。要在Spring Cloud Consul中使用Turbine，请以类似于以下例子的方式配置Turbine应用程序。</p><p>pom.xml</p><div class=highlight><pre class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;dependency&gt;</span>
-    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
-    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-netflix-turbine<span class=nt>&lt;/artifactId&gt;</span>
-<span class=nt>&lt;/dependency&gt;</span>
-<span class=nt>&lt;dependency&gt;</span>
-    <span class=nt>&lt;groupId&gt;</span>org.springframework.cloud<span class=nt>&lt;/groupId&gt;</span>
-    <span class=nt>&lt;artifactId&gt;</span>spring-cloud-starter-consul-discovery<span class=nt>&lt;/artifactId&gt;</span>
-<span class=nt>&lt;/dependency&gt;</span>
-</code></pre></div><p>请注意，Turbine的依赖关系不是一个启动器。 turbine starter包括对Netflix Eureka的支持。</p><p>application.yml</p><div class=highlight><pre class=chroma><code class=language-yaml data-lang=yaml><span class=nt>spring.application.name</span><span class=p>:</span><span class=w> </span><span class=l>turbine</span><span class=w>
-</span><span class=w></span><span class=nt>applications</span><span class=p>:</span><span class=w> </span><span class=l>consulhystrixclient</span><span class=w>
-</span><span class=w></span><span class=nt>turbine</span><span class=p>:</span><span class=w>
-</span><span class=w>  </span><span class=nt>aggregator</span><span class=p>:</span><span class=w>
-</span><span class=w>    </span><span class=nt>clusterConfig</span><span class=p>:</span><span class=w> </span><span class=l>${applications}</span><span class=w>
-</span><span class=w>  </span><span class=nt>appConfig</span><span class=p>:</span><span class=w> </span><span class=l>${applications}</span><span class=w>
-</span></code></pre></div><p><code>clusterConfig</code>和<code>appConfig</code>部分必须匹配，所以把逗号分隔的服务ID列表放到一个单独的配置属性中是很有用的。</p><p>Turbine.java</p><div class=highlight><pre class=chroma><code class=language-java data-lang=java><span class=nd>@EnableTurbine</span>
-<span class=nd>@SpringBootApplication</span>
-<span class=kd>public</span> <span class=kd>class</span> <span class=nc>Turbine</span> <span class=o>{</span>
-    <span class=kd>public</span> <span class=kd>static</span> <span class=kt>void</span> <span class=nf>main</span><span class=o>(</span><span class=n>String</span><span class=o>[]</span> <span class=n>args</span><span class=o>)</span> <span class=o>{</span>
-        <span class=n>SpringApplication</span><span class=o>.</span><span class=na>run</span><span class=o>(</span><span class=n>DemoturbinecommonsApplication</span><span class=o>.</span><span class=na>class</span><span class=o>,</span> <span class=n>args</span><span class=o>);</span>
-    <span class=o>}</span>
-<span class=o>}</span>
-</code></pre></div><h2 id=10-配置属性>10. 配置属性<a href=#10-配置属性 class=anchor aria-hidden=true>#</a></h2><p>要查看所有与Consul有关的配置属性列表，请查看<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/appendix.html>附录页面</a>。</p><div class=my-n3></div></main></div></div></div><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Powered by <a href=https://www.netlify.com/>Netlify</a>, <a href=https://gohugo.io/>Hugo</a>, and <a href=https://getdoks.org/>Doks</a></li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.springcloud.io/translation/>翻译计划</a></li><li class=list-inline-item><a href=https://www.springcloud.io/about/>关于</a></li></ul></div></div></div></footer><script src=https://www.springcloud.io/js/bootstrap.min.d67050adf5d370668aede4201f82af781b16970934804995a1ca37c1ee9222c2fc530972aa6d5d2b6124caf1fe318f139aac99df2c1e89af65504fc1185c7972.js integrity="sha512-1nBQrfXTcGaK7eQgH4KveBsWlwk0gEmVoco3we6SIsL8Uwlyqm1dK2EkyvH+MY8TmqyZ3yweia9lUE/BGFx5cg==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/js/highlight.min.21fbbff4ae23e5143eb2cab64edbdb48eb90be561eb53ee5766f2ef52ef0a1c917325706a2cdd769342b64b418c3b3030d8272769e72be6d3798fa05b0018c08.js integrity="sha512-Ifu/9K4j5RQ+ssq2TtvbSOuQvlYetT7ldm8u9S7wockXMlcGos3XaTQrZLQYw7MDDYJydp5yvm03mPoFsAGMCA==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/main.min.773144977fe359704aa8b57933ee2f435ba70c66684dfa06b01c50cf8131162bd2680301697f8d788259ff49ea7dc4d5f02683ad9ed0d53f22e99dddaeab1bab.js integrity="sha512-dzFEl3/jWXBKqLV5M+4vQ1unDGZoTfoGsBxQz4ExFivSaAMBaX+NeIJZ/0nqfcTV8CaDrZ7Q1T8i6Z3drqsbqw==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/index.min.35aca26ae731c3bcbf638f8e0145e805396fa959731d73c0dd870ca20a9488e92fe538953091569b2145766d020d6a3893436763ec0e517e032bfbd4bec8df6f.js integrity="sha512-Nayiaucxw7y/Y4+OAUXoBTlvqVlzHXPA3YcMogqUiOkv5TiVMJFWmyFFdm0CDWo4k0NnY+wOUX4DK/vUvsjfbw==" crossorigin=anonymous defer></script></body></html>
+</code></pre><p>每个key的value需要是一个格式正确的YAML或属性文件。</p><h3 id=57-快速失败>5.7. 快速失败<a href=#57-快速失败 class=anchor aria-hidden=true>#</a></h3><p>在某些情况下（如本地开发或某些测试场景），如果consul不能用于配置，可能会很方便，不会失败。设置<code>spring.cloud.consul.config.fail-fast=false</code>将导致配置模块记录一个警告而不是抛出一个异常。这将允许应用程序继续正常启动。</p><blockquote><p>如果你设置了<code>spring.cloud.bootstrap.enabled=true</code>或<code>spring.config.use-legacy-processing=true</code>，或者包含了<code>spring-cloud-starter-bootstrap</code>，那么上述数值需要放在<code>bootstrap.yml</code>而不是<code>application.yml</code>中。</p></blockquote><h2 id=6-consul-重试>6. Consul 重试<a href=#6-consul-重试 class=anchor aria-hidden=true>#</a></h2><p>如果你预计consul代理在你的应用程序启动时可能偶尔不可用，你可以要求它在失败后继续尝试。你需要把<code>spring-retry</code>和<code>spring-boot-starter-aop</code>添加到你的classpath中。默认行为是重试6次，初始回退间隔为1000ms，后续回退的指数乘数为1.1。你可以使用<code>spring.cloud.consul.retry.*</code>配置属性来配置这些属性（以及其他）。这在Spring Cloud Consul配置和发现注册中都适用。</p><blockquote><p>为了完全控制重试，添加一个<code>@Bean</code>类型的<code>RetryOperationsInterceptor</code>，ID为 &ldquo;consulRetryInterceptor&rdquo;。Spring Retry有一个<code>RetryInterceptorBuilder</code>，可以很容易地创建一个。</p></blockquote><h2 id=7-spring-cloud-bus-和-consul>7. Spring Cloud Bus 和 Consul<a href=#7-spring-cloud-bus-和-consul class=anchor aria-hidden=true>#</a></h2><h3 id=71-如何激活>7.1. 如何激活<a href=#71-如何激活 class=anchor aria-hidden=true>#</a></h3><p>要开始使用Consul Bus，请使用 &ldquo;org.springframework.cloud&rdquo; group和 <code>spring-cloud-starter-consul-bus</code> artifact id的starter 。请参阅<a href=https://projects.spring.io/spring-cloud/>Spring Cloud项目页面</a>，了解关于使用当前Spring Cloud发布列车设置构建系统的详细信息。</p><p>参见<a href=https://cloud.spring.io/spring-cloud-bus/>Spring Cloud Bus</a>文档，了解可用的执行器端点以及如何发送自定义消息。</p><h2 id=8-circuit-breaker-和-hystrix>8. Circuit Breaker 和 Hystrix<a href=#8-circuit-breaker-和-hystrix class=anchor aria-hidden=true>#</a></h2><p>应用程序可以使用由Spring Cloud Netflix项目提供的Hystrix熔断器，方法是在项目的pom.xml中包括这个启动器。<code>spring-cloud-starter-hystrix</code> 。Hystrix并不依赖Netflix发现客户端。<code>@EnableHystrix</code>注解应该放在一个配置类上（通常是主类）。然后方法可以用<code>@HystrixCommand</code>来注解，以受到熔断器的保护。更多细节见<a href=https://projects.spring.io/spring-cloud/spring-cloud.html#_circuit_breaker_hystrix_clients>文档</a>。</p><h3 id=9-hystrix-metrics-aggregation-with-turbine-and-consul>9. Hystrix metrics aggregation with Turbine and Consul<a href=#9-hystrix-metrics-aggregation-with-turbine-and-consul class=anchor aria-hidden=true>#</a></h3><p>Turbine（由Spring Cloud Netflix项目提供），聚合了多个实例Hystrix的指标流，因此仪表板可以显示一个聚合视图。Turbine使用<code>DiscoveryClient</code>接口来查找相关实例。要在Spring Cloud Consul中使用Turbine，请以类似于以下例子的方式配置Turbine应用程序。</p><p>pom.xml</p><pre><code class=language-xml>&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-netflix-turbine&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-consul-discovery&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>请注意，Turbine的依赖关系不是一个启动器。 turbine starter包括对Netflix Eureka的支持。</p><p>application.yml</p><pre><code class=language-yaml>spring.application.name: turbine
+applications: consulhystrixclient
+turbine:
+  aggregator:
+    clusterConfig: ${applications}
+  appConfig: ${applications}
+</code></pre><p><code>clusterConfig</code>和<code>appConfig</code>部分必须匹配，所以把逗号分隔的服务ID列表放到一个单独的配置属性中是很有用的。</p><p>Turbine.java</p><pre><code class=language-java>@EnableTurbine
+@SpringBootApplication
+public class Turbine {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoturbinecommonsApplication.class, args);
+    }
+}
+</code></pre><h2 id=10-配置属性>10. 配置属性<a href=#10-配置属性 class=anchor aria-hidden=true>#</a></h2><p>要查看所有与Consul有关的配置属性列表，请查看<a href=https://docs.spring.io/spring-cloud-consul/docs/current/reference/html/appendix.html>附录页面</a>。</p><div class=my-n3></div></main></div></div></div><footer class="footer text-muted"><div class=container><div class=row><div class="col-lg-8 order-last order-lg-first"><ul class=list-inline><li class=list-inline-item>Powered by <a href=https://www.netlify.com/>Netlify</a>, <a href=https://gohugo.io/>Hugo</a>, and <a href=https://getdoks.org/>Doks</a></li></ul></div><div class="col-lg-8 order-first order-lg-last text-lg-end"><ul class=list-inline><li class=list-inline-item><a href=https://www.springcloud.io/translation/>翻译计划</a></li><li class=list-inline-item><a href=https://www.springcloud.io/about/>关于</a></li></ul></div></div></div></footer><script src=https://www.springcloud.io/js/bootstrap.min.d67050adf5d370668aede4201f82af781b16970934804995a1ca37c1ee9222c2fc530972aa6d5d2b6124caf1fe318f139aac99df2c1e89af65504fc1185c7972.js integrity="sha512-1nBQrfXTcGaK7eQgH4KveBsWlwk0gEmVoco3we6SIsL8Uwlyqm1dK2EkyvH+MY8TmqyZ3yweia9lUE/BGFx5cg==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/js/highlight.min.21fbbff4ae23e5143eb2cab64edbdb48eb90be561eb53ee5766f2ef52ef0a1c917325706a2cdd769342b64b418c3b3030d8272769e72be6d3798fa05b0018c08.js integrity="sha512-Ifu/9K4j5RQ+ssq2TtvbSOuQvlYetT7ldm8u9S7wockXMlcGos3XaTQrZLQYw7MDDYJydp5yvm03mPoFsAGMCA==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/main.min.773144977fe359704aa8b57933ee2f435ba70c66684dfa06b01c50cf8131162bd2680301697f8d788259ff49ea7dc4d5f02683ad9ed0d53f22e99dddaeab1bab.js integrity="sha512-dzFEl3/jWXBKqLV5M+4vQ1unDGZoTfoGsBxQz4ExFivSaAMBaX+NeIJZ/0nqfcTV8CaDrZ7Q1T8i6Z3drqsbqw==" crossorigin=anonymous defer></script><script src=https://www.springcloud.io/index.min.d09e9ffa4d3486e394cd76d789c0134928c1923647b60cf55fd8aa6ba2d1d5714540654b9159091224ddc89d137d8d978b03edd7ade24d5c013536eea089b7a0.js integrity="sha512-0J6f+k00huOUzXbXicATSSjBkjZHtgz1X9iqa6LR1XFFQGVLkVkJEiTdyJ0TfY2XiwPt163iTVwBNTbuoIm3oA==" crossorigin=anonymous defer></script></body></html>
